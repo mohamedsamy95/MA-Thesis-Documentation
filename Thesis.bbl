@@ -1,13 +1,5 @@
 \begin{thebibliography}{xxxx}
 
-\bibitem[Commowick~2007]{Commowick_MICCAI_2007}
-Olivier Commowick and Gr{\'e}goire Malandain.
-\newblock {\em Efficient Selection of the Most Similar Image in a Database for
-  Critical Structures Segmentation}.
-\newblock In Proceedings of the 10th Int. Conf. on Medical Image Computing and
-  Computer-Assisted Intervention - MICCAI 2007, Part II, volume 4792 of {\em
-  LNCS}, pages 203--210. Springer Verlag, 2007.
-
 \bibitem[EDP~2018]{EDP}
 EDP.
 \newblock {\em EDP Open Data}.
@@ -35,12 +27,6 @@ Sir Galton~Francis.
 \newblock Natural inheritance.
 \newblock New York, Macmillan and co, 1894.
 \newblock \url{https://www.biodiversitylibrary.org/bibliography/46339}.
-
-\bibitem[Guimond~2000]{Guimond_CVIU_2000}
-A.~Guimond, J.~Meunier and J.-P. Thirion.
-\newblock {\em Average Brain Models: A Convergence Study}.
-\newblock Computer Vision and Image Understanding, vol.~77, no.~2, pages
-  192--210, 2000.
 
 \bibitem[Kendall~1938]{Kendall}
 M.~G. Kendall.

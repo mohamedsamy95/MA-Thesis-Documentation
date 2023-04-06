@@ -11,11 +11,29 @@
 
 \pagenumbering{roman}
 
- \cleardoublepage
+\cleardoublepage
+\begin{vcenterpage}
+\noindent\rule[2pt]{\textwidth}{0.5pt}
+\begin{center}
+{\large\textbf{Abstract\\}}
+\end{center}
+English version of the German ``Zusammenfassung''.\\
+\noindent\rule[2pt]{\textwidth}{0.5pt}
+\end{vcenterpage}
 
-\section*{Acknowledgments}
+\clearpage
+\begin{vcenterpage}
+\noindent\rule[2pt]{\textwidth}{0.5pt}
+\begin{center}
+{\large\textbf{Zusammenfassung\\}}
+\end{center}
+Deutsche Version des Englischen ``Abstracts''.\\
+\noindent\rule[2pt]{\textwidth}{0.5pt}
+\end{vcenterpage}
 
-Last thing to do :-)
+% \section*{Acknowledgments}
+
+% Last thing to do :-)
 
 \tableofcontents
 
@@ -25,6 +43,7 @@ Last thing to do :-)
 \include{StateOfTheArt.tex}
 \include{Methods.tex}
 \include{Experiments.tex}
+\include{Conclusions.tex}
 
 \appendix
 
@@ -34,35 +53,5 @@ Last thing to do :-)
 \bibliography{Thesis}
 
 %\printnomenclature
-
-\cleardoublepage
-\begin{vcenterpage}
-\noindent\rule[2pt]{\textwidth}{0.5pt}
-\begin{center}
-{\large\textbf{My fancy title\\}}
-\end{center}
-{\large\textbf{Abstract:}}
-English version of the German ``Zusammenfassung''.\\
-
-{\large\textbf{Keywords:}}
-3-6 English keywords
-\\
-\noindent\rule[2pt]{\textwidth}{0.5pt}
-\end{vcenterpage}
-
-\clearpage
-\begin{vcenterpage}
-\noindent\rule[2pt]{\textwidth}{0.5pt}
-\begin{center}
-{\large\textbf{Mein schicker Titel\\}}
-\end{center}
-{\large\textbf{Zusammenfassung:}}
-Deutsche Version des Englischen ``Abstracts''.\\
-
-{\large\textbf{Keywords:}}
-3-6 deutsche Schl\"usselw\"orter
-\\
-\noindent\rule[2pt]{\textwidth}{0.5pt}
-\end{vcenterpage}
 
 \end{document}
