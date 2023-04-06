@@ -109,7 +109,7 @@ In this section, we will demonstrate the architecture of the machine learning mo
     \emph{P.S.: The input layer shape will vary based on the experiment and the number of input features.}}
     \label{fig:MLP}
   \end{figure}
-
+  
 \section{Log analysis}
 In this section, we will describe the different approaches we propose to utilize SCADA log messages and incorporate them into normal behavior models.\\
 In summary, we introduce three different ways for utilizing SCADA log messages: Extracting input features for normal behavior models, Data filtering, and Visualization of warnings.
@@ -118,13 +118,38 @@ We will explain each approach in depth.
 \subsection{Extracting input features}
   Most machine-learning architectures can only work with vector-shaped numerical inputs. Given that there are limited resources in the research field on how to generate 
   numerical vectors from wind turbine SCADA system logs (see \ref{chap:soa}), we came up with two methods that were proven capable of not only generating input features for 
-  machine-learning normal behavior models, but also improving their accuracy (see \ref{chap:experiments}): 1. our Novel method based on domain knowledge and 
+  machine-learning normal behavior models but also improving their accuracy (see \ref{chap:experiments}): 1. our Novel method based on domain knowledge and 
   2. Utilizing an open-source framework for analyzing log data called LogPAI. We will discuss each method in detail.
 
   \subsubsection{Novel method}
-    TODO:\\
+    \textbf{Background:}\\
+    We scanned through the different log messages available in the dataset looking for information that reflects the turbine state and might help the normal behavior model 
+    fit the data more accurately. Since normal behavior models monitor the state of a component by monitoring its temperature, we narrowed the search down to operation and system logs
+    that reflect events causing a change of temperature in major components. We, then, ended up with the following list that we decided to analyze further:\\
+    \begin{table}[H]
+      \centering
+      \begin{tabular}{|c|c|}
+      \hline
+       \textbf{Log text template} & \textbf{Log text sample}\\
+       \hline
+       Gen. ext. vent. \_, temp:\_\_\_\degree C & Gen. ext. vent. 2, temp:65\degree C \\
+       Gen. int. vent. \_, temp:\_\_\_\degree C & Gen. ext. vent. 1, temp:50\degree C \\
+       HV Trafo. vent. \_, temp:\_\_\_\degree C & HV Trafo. vent. 0, temp:2\degree C \\
+       Nac.vent.\_, nac/gear:\_\_\_/\_\_\_\degree C & Nac.vent.3, nac/gear:43/ 54\degree C \\
+  \hline
+  \end{tabular}
+  \caption{Logs}
+      \label{tab:logs}
+\end{table}
     Explain how the logs are filtered/selected, parsed and transformed into feature\\
     Since we're predicting temperatures, we focus on Vent logs only, because they have a clear impact on the temperature change of components (applying domain knowledge).\\
+    \begin{figure}[!htbp]
+      \begin{center}
+        \includegraphics[scale=0.6]{Methods/Vent_Signals.png}
+      \end{center}
+      \caption{Sample control signals: Generator internal vent and its effect on the generator bearings temperature}
+      \label{fig:vent}
+    \end{figure}
 
   \subsubsection{Utilizing LogPAI}
     LogPAI (Log Analysis and Intelligence) is a study project and open-source platform for analyzing and managing log data \cite{LogPAI}. 
