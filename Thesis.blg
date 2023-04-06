@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Thesis.aux
+A level-1 auxiliary file: TitlePage.aux
+A level-1 auxiliary file: DeclAuthorship.aux
+A level-1 auxiliary file: Introduction.aux
+A level-1 auxiliary file: StateOfTheArt.aux
+A level-1 auxiliary file: Methods.aux
+A level-1 auxiliary file: Experiments.aux
+A level-1 auxiliary file: Appendix1.aux
+The style file: ThesisStyle.bst
+Database file #1: Thesis.bib
+Warning--I didn't find a database entry for "Oakes_RStat_1999"
+Warning--empty booktitle in Letzgus_Log
+You've used 13 entries,
+            2415 wiz_defined-function locations,
+            656 strings with 6905 characters,
+and the built_in function-call counts, 4754 in all, are:
+= -- 479
+> -- 166
+< -- 6
++ -- 55
+- -- 54
+* -- 319
+:= -- 751
+add.period$ -- 45
+call.type$ -- 13
+change.case$ -- 67
+chr.to.int$ -- 12
+cite$ -- 14
+duplicate$ -- 216
+empty$ -- 381
+format.name$ -- 67
+if$ -- 1021
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 9
+newline$ -- 73
+num.names$ -- 26
+pop$ -- 93
+preamble$ -- 1
+purify$ -- 92
+quote$ -- 0
+skip$ -- 184
+stack$ -- 0
+substring$ -- 207
+swap$ -- 61
+text.length$ -- 6
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 100
+warning$ -- 1
+while$ -- 36
+width$ -- 17
+write$ -- 180
+(There were 2 warnings)

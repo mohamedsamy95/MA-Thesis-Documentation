@@ -1,0 +1,34 @@
+\chapter{Introduction}
+\label{chap:intro}
+\minitoc
+
+\section{Background}
+In 2020, renewable energy represented 22.1\% of energy consumed in the EU \cite{Renewable_energy_statistics}. This
+percentage is expected to increase drastically in the upcoming years with the target, set by
+the European Commission, of at least 32\% by the year 2030 \cite{Renewable_energy_targets}. With the increasing number
+of renewable energy assets being deployed every year, automated condition monitoring
+solutions are needed for operators to be able to scale up. This need gets more relevant in the
+case of operating offshore wind farms, where the cost of maintenance relative to the levelized
+cost of energy (LCOE) is significantly higher compared with onshore \cite{SCADA_NBM_Review}.
+Several approaches for condition monitoring were developed in the recent years that use
+SCADA1 data given its low cost (normally requiring no additional sensors).
+One of the methods used for condition monitoring using SCADA data is Normal Behavior
+Modelling (NBM). NBM uses the idea of detecting anomalies from normal operation by
+empirically modelling a measured parameter, used to reflect the condition of a specific part of
+the turbine, based on a training phase (usually during a healthy state of the turbine). During
+operation, the difference between the measured and the modelled/predicted signal is used as
+indicator for a possible fault. A difference of 0, with some tolerance, reflects normal conditions,
+whereas a difference greater or less than 0 reflects changed conditions or failures \cite{SCADA_NBM_Review}.
+
+\section{Motivation}
+While NBMs using SCADA data were proven capable of predicting failures \cite{SCADA_NBM_Review}, they are
+treated as black box by the operators since they don’t provide any insights regarding the root
+cause of the failure. Incorporating SCADA log data2 to NBM could help tackle this problem by
+providing some insights to an anomaly detected by the model in case a relevant warning or failure message was logged by the SCADA system around the same time.
+It was also shown that incorporating SCADA logs containing information about operation
+conditions or control events could help improve the accuracy of the model in case of events
+unexplainable by the input signals \cite{Letzgus_Log}.//
+
+Logs were "Never" treated as input feature in NBMs
+
+

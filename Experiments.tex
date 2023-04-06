@@ -1,0 +1,81 @@
+\chapter{Experiments}
+\label{chap:experiments}
+\minitoc
+
+%Experiment I
+\section{Experiment I: Benchmark}
+\label{exp:I}
+
+\subsection{Research question}
+The aim of this experiment is to test the ability of NBM, as defined in the literature, to early-detect failures of a faulty turbine using the ERP dataset. The final model architecture that we pick after running this experiment will serve as a baseline model used as benchmark in the later experiments.
+\subsection{Setup}
+Following elements were used in this experiment:
+\begin{bulletList}
+ \item \textbf{Machine learning models:} Linear regression (baseline) and feed-forward neural network
+ \item \textbf{Target wind turbine:} T09
+ \item \textbf{Dataset:} Training/healthy period: 01/01/2016 - 15/02/2016, Testing/faulty period: 16/02/2016 - 18/10/2016
+ \item \textbf{Input features:} Nac\_Temp\_Avg, Amb\_Temp\_Avg, Gen\_RPM\_Avg, Prod\_LatestAvg\_TotActPwr (or use verbose names of signals: average temperature in nacelle, average ambient temperature, average generator rpm, total active power)
+ \item \textbf{Target feature: } Gen\_Bear\_Temp\_Avg (Average temperature in generator bearing 1 (Non-Drive End))
+  \item \textbf{Recorded failure:} \textit{"Generator bearings replaced at October 17, 2016 9:19 AM"}
+ \item \textbf{Logs used:} None
+\end{bulletList}
+
+\subsection{Results}
+According to the results documented in \ref{tab:Experiment I results}, we conclude that both NBMs are capable of predicting the failure in the monitored part. We will, however, use only the feed-forward network model as benchmark since it outperformed the linear regression model.
+\begin{table}[H]
+        \centering
+    \begin{tabular}{|m{4cm}|m{4cm}|m{4cm}|}
+    \hline
+         \textbf{Comparison metric} & \textbf{Measure for linear regression}   & \textbf{Measure for feed-forward network}\\
+         \hline
+         RMSE & & \\
+         \hline
+         First-detected anomaly timestamp & & \\
+         \hline
+         Number of anomalies detected & & \\
+         \hline
+    \hline
+    \end{tabular}
+    \caption{Experiment I results: Metrics used to compare between the benchmark models}
+        \label{tab:Experiment I results}
+\end{table}
+
+%Experiment II
+
+\section{Experiment II: Incorporating log features into NBM applied on healthy turbine}
+
+\subsection{Research question}
+The aim of this experiment is to quantitatively (RMSE) and qualitatively (number of false alarms) measure the effect of incorporating SCADA-log-based features into the benchmark NBM.
+
+\subsection{Setup}
+Following elements were used in this experiment:
+\begin{bulletList}
+    \item \textbf{Machine learning models:} Feed-forward neural network with single target features and Feed-forward neural network with multiple target features
+    \item \textbf{Target wind turbine:} T01
+    \item \textbf{Dataset:} Training/healthy period: 01/09/2016 - 31/12/2016, Testing period: 01/01/2017 - 31/12/2017
+    \item \textbf{Input features (SCADA signals):} Nac\_Temp\_Avg, Amb\_Temp\_Avg, Gen\_RPM\_Avg, Prod\_LatestAvg\_TotActPwr (or use verbose names of signals: average temperature in nacelle, average ambient temperature, average generator rpm, total active power)
+    \item \textbf{SCADA-log-based input features:} Operation and System log messages containing the word "vent", which resulted in four different features extracted from the following components: Generator external vent, Generator internal vent, High-voltage transformer vent, and Nacelle vent
+    \item \textbf{Target feature for single-output model: } Gen\_Bear\_Temp\_Avg (Average temperature in generator bearing 1 (Non-Drive End))
+    \item \textbf{Target features for multiple-output model:} All signals whose names contain the key words "Gen" and "Temp": 'Gen\_Bear\_Temp\_Avg', 'Gen\_Phase1\_Temp\_Avg', 'Gen\_Phase2\_Temp\_Avg', 'Gen\_Phase3\_Temp\_Avg', 'Gen\_SlipRing\_Temp\_Avg', 'Gen\_Bear2\_Temp\_Avg'
+    \item \textbf{Recorded failure:} No generator-related recorded failures (hence the assumption that the turbine is healthy)
+\end{bulletList}
+
+\subsection{Results}
+According to the results documented in \ref{tab:Experiment I results}, we conclude that both NBMs are capable of predicting the failure in the monitored part. We will, however, use only the feed-forward network model as benchmark since it outperformed the linear regression model.
+\begin{table}[H]
+        \centering
+    \begin{tabular}{|m{4cm}|m{4cm}|m{4cm}|}
+    \hline
+         \textbf{Comparison metric} & \textbf{Measure for linear regression}   & \textbf{Measure for feed-forward network}\\
+         \hline
+         RMSE & & \\
+         \hline
+         First-detected anomaly timestamp & & \\
+         \hline
+         Number of anomalies detected & & \\
+         \hline
+    \hline
+    \end{tabular}
+    \caption{Experiment I results: Metrics used to compare between the benchmark models}
+        \label{tab:Experiment I results}
+\end{table}

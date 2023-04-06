@@ -1,0 +1,68 @@
+\documentclass[a4paper,11pt,twoside]{ThesisStyle}
+
+\include{formatAndDefs}
+
+\begin{document}
+
+\include{TitlePage}
+\include{DeclAuthorship}
+
+\dominitoc
+
+\pagenumbering{roman}
+
+ \cleardoublepage
+
+\section*{Acknowledgments}
+
+Last thing to do :-)
+
+\tableofcontents
+
+\mainmatter
+
+\include{Introduction}
+\include{StateOfTheArt.tex}
+\include{Methods.tex}
+\include{Experiments.tex}
+
+\appendix
+
+\include{Appendix1}
+
+\bibliographystyle{ThesisStyle}
+\bibliography{Thesis}
+
+%\printnomenclature
+
+\cleardoublepage
+\begin{vcenterpage}
+\noindent\rule[2pt]{\textwidth}{0.5pt}
+\begin{center}
+{\large\textbf{My fancy title\\}}
+\end{center}
+{\large\textbf{Abstract:}}
+English version of the German ``Zusammenfassung''.\\
+
+{\large\textbf{Keywords:}}
+3-6 English keywords
+\\
+\noindent\rule[2pt]{\textwidth}{0.5pt}
+\end{vcenterpage}
+
+\clearpage
+\begin{vcenterpage}
+\noindent\rule[2pt]{\textwidth}{0.5pt}
+\begin{center}
+{\large\textbf{Mein schicker Titel\\}}
+\end{center}
+{\large\textbf{Zusammenfassung:}}
+Deutsche Version des Englischen ``Abstracts''.\\
+
+{\large\textbf{Keywords:}}
+3-6 deutsche Schl\"usselw\"orter
+\\
+\noindent\rule[2pt]{\textwidth}{0.5pt}
+\end{vcenterpage}
+
+\end{document}

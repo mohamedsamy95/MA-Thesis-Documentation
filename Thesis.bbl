@@ -1,0 +1,86 @@
+\begin{thebibliography}{xxxx}
+
+\bibitem[Commowick~2007]{Commowick_MICCAI_2007}
+Olivier Commowick and Gr{\'e}goire Malandain.
+\newblock {\em Efficient Selection of the Most Similar Image in a Database for
+  Critical Structures Segmentation}.
+\newblock In Proceedings of the 10th Int. Conf. on Medical Image Computing and
+  Computer-Assisted Intervention - MICCAI 2007, Part II, volume 4792 of {\em
+  LNCS}, pages 203--210. Springer Verlag, 2007.
+
+\bibitem[EDP~2018]{EDP}
+EDP.
+\newblock {\em EDP Open Data}.
+\newblock \url{https://opendata.edp.com/opendata/en/data.html}, July 2018.
+\newblock Accessed: 2023-01-29.
+
+\bibitem[{European Commission}~2023a]{Renewable_energy_statistics}
+{European Commission}.
+\newblock {\em Renewable energy statistics}.
+\newblock
+  \url{https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Renewable_energy_statistics},
+  03 2023.
+\newblock Accessed: 2023-03-26.
+
+\bibitem[{European Commission}~2023b]{Renewable_energy_targets}
+{European Commission}.
+\newblock {\em Renewable energy targets}.
+\newblock
+  \url{https://energy.ec.europa.eu/topics/renewable-energy/renewable-energy-directive-targets-and-rules/renewable-energy-targets_en},
+  2023.
+\newblock Accessed: 2023-03-26.
+
+\bibitem[Galton~1894]{Natural_Inheritance}
+Sir Galton~Francis.
+\newblock Natural inheritance.
+\newblock New York, Macmillan and co, 1894.
+\newblock \url{https://www.biodiversitylibrary.org/bibliography/46339}.
+
+\bibitem[Guimond~2000]{Guimond_CVIU_2000}
+A.~Guimond, J.~Meunier and J.-P. Thirion.
+\newblock {\em Average Brain Models: A Convergence Study}.
+\newblock Computer Vision and Image Understanding, vol.~77, no.~2, pages
+  192--210, 2000.
+
+\bibitem[Kendall~1938]{Kendall}
+M.~G. Kendall.
+\newblock {\em {A NEW MEASURE OF RANK CORRELATION}}.
+\newblock Biometrika, vol.~30, no.~1-2, pages 81--93, 06 1938.
+
+\bibitem[Letzgus~2020]{Letzgus_Log}
+Simon Letzgus.
+\newblock {\em Finding meaningful representations of SCADA-log information for
+  data-driven condition monitoring applications}.
+\newblock 12 2020.
+
+\bibitem[Lyu~2019]{LogPAI}
+Michael~R. Lyu, Jieming Zhu, Pinjia He, Shilin He, Jinyang Liu, Zhuangbin Chen,
+  Yintong Huo, Yuxin Su and Zibin Zheng.
+\newblock {\em LogPAI}.
+\newblock \url{https://logpai.com/}, 2019.
+
+\bibitem[Schmidhuber~2014]{Deep_Learning}
+J{\"{u}}rgen Schmidhuber.
+\newblock {\em Deep Learning in Neural Networks: An Overview}.
+\newblock CoRR, vol.~abs/1404.7828, 2014.
+
+\bibitem[Tautz-Weinert~2017]{SCADA_NBM_Review}
+Jannis Tautz-Weinert and Simon Watson.
+\newblock {\em Using SCADA data for wind turbine condition monitoring - A
+  review}.
+\newblock IET Renewable Power Generation, vol.~11, pages 382--394, 03 2017.
+
+\bibitem[Vestas~2016]{voe}
+Vestas.
+\newblock {\em VestasOnline Enterprise User Guide}.
+\newblock \url{https://voe.vestas.com/public/UserManual.pdf}, 02 2016.
+\newblock Accessed: 2023-02-06.
+
+\bibitem[Wang~2019]{Linear_Regression_Example_1}
+Xiaofeng Wang, Guoliang Lu and Peng Yan.
+\newblock {\em Multiple regression analysis based approach for condition
+  monitoring of industrial rotating machinery using multi-sensors}.
+\newblock In 2019 Prognostics and System Health Management Conference
+  (PHM-Qingdao), pages 1--5, 2019.
+
+\end{thebibliography}
