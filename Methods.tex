@@ -111,7 +111,7 @@ In this section, we will demonstrate the architecture of the machine learning mo
   \end{figure}
   
 \section{Log analysis}
-In this section, we will describe the different approaches we propose to utilize SCADA log messages and incorporate them into normal behavior models.\\
+In this section, we will describe the different approaches we propose to utilize SCADA log messages and incorporate them into normal behavior models.
 In summary, we introduce three different ways for utilizing SCADA log messages: Extracting input features for normal behavior models, Data filtering, and Visualization of warnings.
 We will explain each approach in depth.
 
@@ -125,7 +125,8 @@ We will explain each approach in depth.
     \textbf{Background:}\\
     We scanned through the different log messages available in the dataset looking for information that reflects the turbine state and might help the normal behavior model 
     fit the data more accurately. Since normal behavior models monitor the state of a component by monitoring its temperature, we narrowed the search down to operation and system logs
-    that reflect events causing a change of temperature in major components. We, then, ended up with the following list that we decided to analyze further:\\
+    that reflect events causing a change of temperature in major components. We, then, ended up with a category of logs that shows the states of internal or external ventilators
+    of some components (see \ref{tab:logs}). Being parts of the cooling systems of major components, fans or ventilators must affect the component's temperature.
     \begin{table}[H]
       \centering
       \begin{tabular}{|c|c|}
@@ -133,55 +134,72 @@ We will explain each approach in depth.
        \textbf{Log text template} & \textbf{Log text sample}\\
        \hline
        Gen. ext. vent. \_, temp:\_\_\_\degree C & Gen. ext. vent. 2, temp:65\degree C \\
-       Gen. int. vent. \_, temp:\_\_\_\degree C & Gen. ext. vent. 1, temp:50\degree C \\
+       Gen. int. vent. \_, temp:\_\_\_\degree C & Gen. int. vent. 1, temp:50\degree C \\
        HV Trafo. vent. \_, temp:\_\_\_\degree C & HV Trafo. vent. 0, temp:2\degree C \\
        Nac.vent.\_, nac/gear:\_\_\_/\_\_\_\degree C & Nac.vent.3, nac/gear:43/ 54\degree C \\
-  \hline
-  \end{tabular}
-  \caption{Logs}
+      \hline
+    \end{tabular}
+    \caption{Logs}
       \label{tab:logs}
-\end{table}
-    Explain how the logs are filtered/selected, parsed and transformed into feature\\
-    Since we're predicting temperatures, we focus on Vent logs only, because they have a clear impact on the temperature change of components (applying domain knowledge).\\
+    \end{table}
+
+    Indeed, our analysis showed a clear relationship between the state of a ventilator and the temperature of its turbine component.
+    As shown in \ref{fig:vent}, at low temperatures of the generator bearings, the internal ventilator will switch off. The bearings will then heat up which, in turn, causes
+    the ventilator to turn on which cools the bearings down, and so on\dots
+
     \begin{figure}[!htbp]
       \begin{center}
         \includegraphics[scale=0.6]{Methods/Vent_Signals.png}
       \end{center}
-      \caption{Sample control signals: Generator internal vent and its effect on the generator bearings temperature}
+      \caption{Generator internal vent control signals and their effect on the generator bearings temperature}
       \label{fig:vent}
     \end{figure}
+
+    \begin{flushleft}
+      \textbf{Method:}\\
+      Analyzing the log texts of interest (e.g., \emph{Gen. ext. vent. 2, temp:65\degree C}), we deduce that they provide three pieces of information: 
+      1. Description of the ventilator (e.g., \emph{Gen. ext. vent.}), 2. State of the ventilator (\emph{0, 1, 2 or 3}), 
+      3. Temperature of the turbine component the ventilator is installed in (e.g., \emph{65\degree C}).
+    \end{flushleft}
+    Since the component temperature is regularly provided as a SCADA signal, we decided to focus on the other two parts of the log messages. 
+    Our method simply filters log messages containing the word "vent." and creates a new feature for every ventilator (1.) found in the data having its state (2.) as a value.\\
+    In contrast to the signals data fixed rate of occurrence (10 min), the generated log feature has an inconsistent frequency (the SCADA system creates a new log entry only 
+    when a ventilator changes states). We join both datasets by taking the value of the last occurrence in the log feature vector within a 10-min window relative to a signal reading. 
+    Gaps in the log feature columns in the resulting dataset are then filled by propagating the last valid observation forward to the next valid (a ventilator has the same state as long as it hasn't changed).
+    
+    
 
   \subsubsection{Utilizing LogPAI}
     LogPAI (Log Analysis and Intelligence) is a study project and open-source platform for analyzing and managing log data \cite{LogPAI}. 
     Tsinghua University researchers started the project, which focuses on developing efficient algorithms and tools for log analysis, anomaly detection, and log data visualization.
     LogPAI includes a complete suite of log analysis and processing tools such as Logparser, Loglizer, and Logreduce. 
-    These applications can assist users in preprocessing and parsing raw log data, detecting anomalies and patterns, and summarising log data concisely and understandably.\\
+    These applications can assist users in preprocessing and parsing raw log data, detecting anomalies and patterns, and summarising log data concisely and understandably.
 
-    TODO:\\
-    1. Explain how the LogParser (Drain) works, what the format of the parsed log messages look like and why Drain -> Because online log parser\\
+    TODO:
+    1. Explain how the LogParser (Drain) works, what the format of the parsed log messages look like and why Drain -> Because online log parser. 
     2. Explain how LogLizer creates a feature from parsed logs
 
 \subsection{Data filtering}
-  TODO:\\
+  TODO:
   Stoppages (log as filter)
 
 \subsection{Visualization of warnings}
-  TODO:\\
+  TODO:
   Easy: look for any warning/alarm message (having the word "hot" or "high temperature") related to the target component (having the name of the component in the message) 
   and append to the anomaly on the operation dashboard
 
 \section{Anomaly detection}
-  TODO:\\
+  TODO:
   Define anomalies (what is an anomaly in general?).\\
   Discuss anomaly detection methods used in other papers\\
   Argue why there's no standard way of defining/measuring an anomaly\\
   Describe the way our anomaly detection works.
 
 \subsection{Alarms}
-  TODO:\\
+  TODO:
   Discuss the difference between Anomaly and alarm and why we wanna limit the number of alarms being sent to operators (false alarms are costly!)
 
 \section{Summary}
-TODO:\\
+TODO:
 PUSH TO THE TOP//
 Diagram of all methods put together: ML model + log feature + Anomaly detection + Alarms,...

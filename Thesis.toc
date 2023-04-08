@@ -15,7 +15,7 @@
 \contentsline {section}{\numberline {3.3}Log analysis}{8}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Extracting input features}{8}{subsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.1.1}Novel method}{9}{subsubsection.3.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.3.1.2}Utilizing LogPAI}{10}{subsubsection.3.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.3.1.2}Utilizing LogPAI}{11}{subsubsection.3.3.1.2}%
 \contentsline {subsection}{\numberline {3.3.2}Data filtering}{11}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Visualization of warnings}{11}{subsection.3.3.3}%
 \contentsline {section}{\numberline {3.4}Anomaly detection}{11}{section.3.4}%
