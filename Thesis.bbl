@@ -28,6 +28,25 @@ Sir Galton~Francis.
 \newblock New York, Macmillan and co, 1894.
 \newblock \url{https://www.biodiversitylibrary.org/bibliography/46339}.
 
+\bibitem[He~2016a]{Logparser_2}
+Pinjia He, Jieming Zhu, Shilin He, Jian Li and Michael~R. Lyu.
+\newblock {\em An Evaluation Study on Log Parsing and Its Use in Log Mining}.
+\newblock In 2016 46th Annual IEEE/IFIP International Conference on Dependable
+  Systems and Networks (DSN), pages 654--661, 2016.
+
+\bibitem[He~2016b]{Loglizer}
+Shilin He, Jieming Zhu, Pinjia He and Michael~R. Lyu.
+\newblock {\em Experience Report: System Log Analysis for Anomaly Detection}.
+\newblock In 27th {IEEE} International Symposium on Software Reliability
+  Engineering, {ISSRE} 2016, Ottawa, ON, Canada, October 23-27, 2016, pages
+  207--218. {IEEE} Computer Society, 2016.
+
+\bibitem[He~2017]{Drain}
+Pinjia He, Jieming Zhu, Zibin Zheng and Michael~R. Lyu.
+\newblock {\em Drain: An Online Log Parsing Approach with Fixed Depth Tree}.
+\newblock In 2017 IEEE International Conference on Web Services (ICWS), pages
+  33--40, 2017.
+
 \bibitem[Kendall~1938]{Kendall}
 M.~G. Kendall.
 \newblock {\em {A NEW MEASURE OF RANK CORRELATION}}.
@@ -50,6 +69,12 @@ J{\"{u}}rgen Schmidhuber.
 \newblock {\em Deep Learning in Neural Networks: An Overview}.
 \newblock CoRR, vol.~abs/1404.7828, 2014.
 
+\bibitem[Sparck~Jones~1972]{TF-IDF}
+Karen Sparck~Jones.
+\newblock {\em A statistical interpretation of term specificity and its
+  application in retrieval}.
+\newblock Journal of documentation, vol.~28, no.~1, pages 11--21, 1972.
+
 \bibitem[Tautz-Weinert~2017]{SCADA_NBM_Review}
 Jannis Tautz-Weinert and Simon Watson.
 \newblock {\em Using SCADA data for wind turbine condition monitoring - A
@@ -68,5 +93,11 @@ Xiaofeng Wang, Guoliang Lu and Peng Yan.
   monitoring of industrial rotating machinery using multi-sensors}.
 \newblock In 2019 Prognostics and System Health Management Conference
   (PHM-Qingdao), pages 1--5, 2019.
+
+\bibitem[Zhu~2018]{Logparser_1}
+Jieming Zhu, Shilin He, Jinyang Liu, Pinjia He, Qi~Xie, Zibin Zheng and
+  Michael~R. Lyu.
+\newblock {\em Tools and Benchmarks for Automated Log Parsing}.
+\newblock CoRR, vol.~abs/1811.03509, 2018.
 
 \end{thebibliography}

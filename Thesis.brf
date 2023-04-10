@@ -10,4 +10,9 @@
 \backcite {Kendall}{{8}{3.2.1}{figure.3.1}}
 \backcite {Linear_Regression_Example_1}{{8}{3.2.2}{subsection.3.2.2}}
 \backcite {Deep_Learning}{{8}{3.2.2}{subsection.3.2.2}}
-\backcite {LogPAI}{{11}{3.3.1.2}{subsubsection.3.3.1.2}}
+\backcite {LogPAI}{{12}{3.3.1.2}{subsubsection.3.3.1.2}}
+\backcite {Logparser_1}{{12}{3.3.1.2}{subsubsection.3.3.1.2}}
+\backcite {Logparser_2}{{12}{3.3.1.2}{subsubsection.3.3.1.2}}
+\backcite {Loglizer}{{12}{3.3.1.2}{subsubsection.3.3.1.2}}
+\backcite {Drain}{{12}{3.3.1.2}{subsubsection.3.3.1.2}}
+\backcite {TF-IDF}{{13}{3.3.1.2}{figure.3.5}}

@@ -9,7 +9,7 @@ The data was collected from the SCADA systems of five different Vestas wind turb
 and is made up of the following four subsets: \emph{Signals, Logs, Failures and Metmast}. We will, however, only describe three sets since \emph{Metmast} was not used in this work.
 \subsection{Signals}
  The \emph{Signals} dataset contains 10-min-averaged data collected from the wind turbines' sensors installed at the major components (e.g., gearbox, generator, transformer,..) 
- and power meters to measure temperatures, angles, wind and rotational speeds, power production,... 
+ and power meters to measure temperatures, angles, wind and rotational speeds, power production,\dots
  This dataset was the most crucial for this work since it provides information that reflects the status of the turbine operation which is needed to perform 
  automated condition monitoring and predictive maintenance.\\
  Table \ref{tab:signals} shows a sample of the 81 signals included in this dataset.
@@ -86,7 +86,7 @@ In this section, we will demonstrate the architecture of the machine learning mo
   \par The way the independent variables are chosen is usually done by measuring the correlation coefficients between available features in a
   dataset and the target feature and then selecting the features having a high correlation coefficient. Depending on the problem setting, other features can be also considered 
   based on domain knowledge, especially when dealing with a mechanical system as in the case of this work. A good example of this would be the incorporation of 
-  the ambient temperature measurement as an input feature---even if it does not highly correlate with the target feature---to make sure that your model generalizes, when 
+  the ambient temperature measurement as an input feature---even if it does not highly correlate with the target feature---to make sure that your model generalizes when 
   trying to predict a component's temperature throughout the year, by considering the effect of seasonality 
   (temperatures are expected to be higher in summer than in winter).\\
   In this work, we selected input features based on both domain knowledge and correlation coefficients. We used Kendall's method to measure the rank correlation \cite{Kendall}.
@@ -97,9 +97,9 @@ In this section, we will demonstrate the architecture of the machine learning mo
   Although multiple linear regression models are capable of fitting the data with high accuracy in many applications (e.g., \cite{Linear_Regression_Example_1}), they are,
   by definition, not capable of capturing more complex non-linear dependencies. In addition to that, linear regression may not be appropriate when there are a significant 
   number of independent variables. Deep learning may be a better approach in these situations.\\
-  After obtaining better results with it (see \ref{exp:I}), we decided to train the normal behavior models
+  After obtaining better results with it (see Experiment \ref{exp:I}), we decided to train the normal behavior models
   on a feed-forward neural network (for a comprehensive review of deep learning and neural networks, see \cite{Deep_Learning}) having the architecture shown 
-  in fig. \ref{fig:MLP}.
+  in Fig. \ref{fig:MLP}.
 
   \begin{figure}[!htbp]
     \begin{center}
@@ -109,6 +109,8 @@ In this section, we will demonstrate the architecture of the machine learning mo
     \emph{P.S.: The input layer shape will vary based on the experiment and the number of input features.}}
     \label{fig:MLP}
   \end{figure}
+
+  \clearpage
   
 \section{Log analysis}
 In this section, we will describe the different approaches we propose to utilize SCADA log messages and incorporate them into normal behavior models.
@@ -117,8 +119,8 @@ We will explain each approach in depth.
 
 \subsection{Extracting input features}
   Most machine-learning architectures can only work with vector-shaped numerical inputs. Given that there are limited resources in the research field on how to generate 
-  numerical vectors from wind turbine SCADA system logs (see \ref{chap:soa}), we came up with two methods that were proven capable of not only generating input features for 
-  machine-learning normal behavior models but also improving their accuracy (see \ref{chap:experiments}): 1. our Novel method based on domain knowledge and 
+  numerical vectors from wind turbine SCADA system logs (see chapter \ref{chap:soa}), we came up with two methods that were proven capable of not only generating input features for 
+  machine-learning normal behavior models but also improving their accuracy (see chapter \ref{chap:experiments}): 1. our Novel method based on domain knowledge and 
   2. Utilizing an open-source framework for analyzing log data called LogPAI. We will discuss each method in detail.
 
   \subsubsection{Novel method}
@@ -126,7 +128,7 @@ We will explain each approach in depth.
     We scanned through the different log messages available in the dataset looking for information that reflects the turbine state and might help the normal behavior model 
     fit the data more accurately. Since normal behavior models monitor the state of a component by monitoring its temperature, we narrowed the search down to operation and system logs
     that reflect events causing a change of temperature in major components. We, then, ended up with a category of logs that shows the states of internal or external ventilators
-    of some components (see \ref{tab:logs}). Being parts of the cooling systems of major components, fans or ventilators must affect the component's temperature.
+    of some components (see table \ref{tab:logs}). Being parts of the cooling systems of major components, fans or ventilators must affect the component's temperature.
     \begin{table}[H]
       \centering
       \begin{tabular}{|c|c|}
@@ -139,17 +141,17 @@ We will explain each approach in depth.
        Nac.vent.\_, nac/gear:\_\_\_/\_\_\_\degree C & Nac.vent.3, nac/gear:43/ 54\degree C \\
       \hline
     \end{tabular}
-    \caption{Logs}
+    \caption{Example log text templates with sample texts}
       \label{tab:logs}
     \end{table}
 
     Indeed, our analysis showed a clear relationship between the state of a ventilator and the temperature of its turbine component.
-    As shown in \ref{fig:vent}, at low temperatures of the generator bearings, the internal ventilator will switch off. The bearings will then heat up which, in turn, causes
+    As shown in Fig. \ref{fig:vent}, at low temperatures of the generator bearings, the internal ventilator will switch off. The bearings will then heat up which, in turn, causes
     the ventilator to turn on which cools the bearings down, and so on\dots
 
     \begin{figure}[!htbp]
       \begin{center}
-        \includegraphics[scale=0.6]{Methods/Vent_Signals.png}
+        \includegraphics[scale=0.5]{Methods/Vent_Signals.png}
       \end{center}
       \caption{Generator internal vent control signals and their effect on the generator bearings temperature}
       \label{fig:vent}
@@ -165,19 +167,54 @@ We will explain each approach in depth.
     Our method simply filters log messages containing the word "vent." and creates a new feature for every ventilator (1.) found in the data having its state (2.) as a value.\\
     In contrast to the signals data fixed rate of occurrence (10 min), the generated log feature has an inconsistent frequency (the SCADA system creates a new log entry only 
     when a ventilator changes states). We join both datasets by taking the value of the last occurrence in the log feature vector within a 10-min window relative to a signal reading. 
-    Gaps in the log feature columns in the resulting dataset are then filled by propagating the last valid observation forward to the next valid (a ventilator has the same state as long as it hasn't changed).
-    
+    Gaps in the log feature columns in the resulting dataset are then filled by propagating the last valid observation forward to the next valid (a ventilator has the same state as long as it hasn't changed).\\
+    Measuring the Kendall correlation factor between the generated log features and all the signals of the turbines, we found that for every temperature signal, there is at least 
+    one log feature that, on average, highly correlates ($Rank>0.5$) with it.
+
+    \begin{figure}[!htbp]
+      \begin{center}
+        \includegraphics[scale=0.376]{Methods/Log_Merge.png}
+      \end{center}
+      \caption{Demonstration of the join operation between the signals 10-min dataset and a log feature vector}
+      \label{fig:log-merge}
+    \end{figure}
     
 
   \subsubsection{Utilizing LogPAI}
     LogPAI (Log Analysis and Intelligence) is a study project and open-source platform for analyzing and managing log data \cite{LogPAI}. 
     Tsinghua University researchers started the project, which focuses on developing efficient algorithms and tools for log analysis, anomaly detection, and log data visualization.
     LogPAI includes a complete suite of log analysis and processing tools such as Logparser, Loglizer, and Logreduce. 
-    These applications can assist users in preprocessing and parsing raw log data, detecting anomalies and patterns, and summarising log data concisely and understandably.
+    These applications can assist users in preprocessing and parsing raw log data, detecting anomalies and patterns, and summarizing log data concisely and understandably.
+    We decided to utilize LogPAI's Logparser (\cite{Logparser_1}, \cite{Logparser_2}) and Loglizer (\cite{Loglizer}) to respectively parse and create numerical features from 
+    SCADA logs in a more generic and automated way.\\
+    \textbf{Preprocessing using Logparser:}\\
+    From the list of parsers available in the toolkit, we decided to use Drain \cite{Drain} given that it is an online parser, which means it can process the SCADA logs 
+    in real-time as they are generated. The Drain algorithm groups similar log messages together and extracts structured events from them using a 
+    clustering-based approach. The research demonstrates that Drain is very good at dealing with enormous amounts of log data and extracting meaningful events from 
+    noisy and diverse log data. Several phases are involved in the Drain algorithm, including log parsing, log message clustering, and event extraction. 
+    Drain employs a fixed-depth tree to parse log messages into a set of log keys and their related values during the log parsing stage. The log keys 
+    are unique identifiers for each type of log message, whereas the log values are the specific information connected with each log message. Drain uses a similarity measure 
+    to compare the log keys and values of each log message and allocates them to the best appropriate cluster based on their similarity scores during the log message 
+    clustering stage. Drain creates a template for each cluster that summarizes the relevant information contained in the log messages once the log messages have been clustered.
+    Overall, the Drain algorithm makes an important contribution to log data analysis and management by providing a scalable and effective approach for extracting structured 
+    events from unstructured log data.
+    Applying Drain on the SCADA log data in hand by specifying its log format "\emph{<TimeDetected>,<TimeReset>,<UnitTitle>,<Content>,<UnitTitleDestination>}", we get 
+    output structured log data (see Fig. \ref{fig:logparser} for an example) that the Loglizer can process to generate numerical features.
 
-    TODO:
-    1. Explain how the LogParser (Drain) works, what the format of the parsed log messages look like and why Drain -> Because online log parser. 
-    2. Explain how LogLizer creates a feature from parsed logs
+    \begin{figure}[!htbp]
+      \begin{center}
+        \includegraphics[scale=0.349]{Methods/Logparser.png}
+      \end{center}
+      \caption{Sample raw logs and their corresponding structured logs after being parsed by Drain}
+      \label{fig:logparser}
+    \end{figure}
+
+    \begin{flushleft}
+      \textbf{Creating numerical features using Loglizer}:\\
+      Loglizer's \emph{Feature Extraction} component supports various feature extraction techniques, such as Bag-of-Words, TF-IDF, and Word2Vec, 
+      to capture the essential information contained in log data. We utilized the Loglizer feature extractor, using TF-IDF \cite{TF-IDF} for term weighting, to generate numerical 
+      features from the parsed logs' \emph{Event IDs}. 
+    \end{flushleft}
 
 \subsection{Data filtering}
   TODO:
@@ -187,6 +224,8 @@ We will explain each approach in depth.
   TODO:
   Easy: look for any warning/alarm message (having the word "hot" or "high temperature") related to the target component (having the name of the component in the message) 
   and append to the anomaly on the operation dashboard
+
+  \clearpage
 
 \section{Anomaly detection}
   TODO:
