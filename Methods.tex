@@ -124,6 +124,7 @@ We will explain each approach in depth.
   2. Utilizing an open-source framework for analyzing log data called LogPAI. We will discuss each method in detail.
 
   \subsubsection{Novel method}
+    \label{subsub:novel_method}
     \textbf{Background:}\\
     We scanned through the different log messages available in the dataset looking for information that reflects the turbine state and might help the normal behavior model 
     fit the data more accurately. Since normal behavior models monitor the state of a component by monitoring its temperature, we narrowed the search down to operation and system logs
@@ -187,19 +188,22 @@ We will explain each approach in depth.
     These applications can assist users in preprocessing and parsing raw log data, detecting anomalies and patterns, and summarizing log data concisely and understandably.
     We decided to utilize LogPAI's Logparser (\cite{Logparser_1}, \cite{Logparser_2}) and Loglizer (\cite{Loglizer}) to respectively parse and create numerical features from 
     SCADA logs in a more generic and automated way.\\
-    \textbf{Preprocessing using Logparser:}\\
-    From the list of parsers available in the toolkit, we decided to use Drain \cite{Drain} given that it is an online parser, which means it can process the SCADA logs 
-    in real-time as they are generated. The Drain algorithm groups similar log messages together and extracts structured events from them using a 
-    clustering-based approach. The research demonstrates that Drain is very good at dealing with enormous amounts of log data and extracting meaningful events from 
-    noisy and diverse log data. Several phases are involved in the Drain algorithm, including log parsing, log message clustering, and event extraction. 
-    Drain employs a fixed-depth tree to parse log messages into a set of log keys and their related values during the log parsing stage. The log keys 
-    are unique identifiers for each type of log message, whereas the log values are the specific information connected with each log message. Drain uses a similarity measure 
-    to compare the log keys and values of each log message and allocates them to the best appropriate cluster based on their similarity scores during the log message 
-    clustering stage. Drain creates a template for each cluster that summarizes the relevant information contained in the log messages once the log messages have been clustered.
-    Overall, the Drain algorithm makes an important contribution to log data analysis and management by providing a scalable and effective approach for extracting structured 
-    events from unstructured log data.
-    Applying Drain on the SCADA log data in hand by specifying its log format "\emph{<TimeDetected>,<TimeReset>,<UnitTitle>,<Content>,<UnitTitleDestination>}", we get 
-    output structured log data (see Fig. \ref{fig:logparser} for an example) that the Loglizer can process to generate numerical features.
+
+    \begin{flushleft}
+      \textbf{Preprocessing using Logparser:}\\
+      From the list of parsers available in the toolkit, we decided to use Drain \cite{Drain} given that it is an online parser, which means it can process the SCADA logs 
+      in real-time as they are generated. The Drain algorithm groups similar log messages together and extracts structured events from them using a 
+      clustering-based approach. The research demonstrates that Drain is very good at dealing with enormous amounts of log data and extracting meaningful events from 
+      noisy and diverse log data. Several phases are involved in the Drain algorithm, including log parsing, log message clustering, and event extraction. 
+      Drain employs a fixed-depth tree to parse log messages into a set of log keys and their related values during the log parsing stage. The log keys 
+      are unique identifiers for each type of log message, whereas the log values are the specific information connected with each log message. Drain uses a similarity measure 
+      to compare the log keys and values of each log message and allocates them to the best appropriate cluster based on their similarity scores during the log message 
+      clustering stage. Drain creates a template for each cluster that summarizes the relevant information contained in the log messages once the log messages have been clustered.
+      Overall, the Drain algorithm makes an important contribution to log data analysis and management by providing a scalable and effective approach for extracting structured 
+      events from unstructured log data.
+      Applying Drain on the SCADA log data in hand by specifying its log format "\emph{<TimeDetected>,<TimeReset>,<UnitTitle>,<Content>,<UnitTitleDestination>}", we get 
+      output structured log data (see Fig. \ref{fig:logparser} for an example) that the Loglizer can process to generate numerical features.
+    \end{flushleft}
 
     \begin{figure}[!htbp]
       \begin{center}
@@ -216,27 +220,80 @@ We will explain each approach in depth.
       features from the parsed logs' \emph{Event IDs}. 
     \end{flushleft}
 
-\subsection{Data filtering}
-  TODO:
-  Stoppages (log as filter)
+\subsection{Data labeling and filtering}
+  In this approach, we developed a method to improve SCADA-data-driven wind turbine power curve models 
+  (for a comprehensive review of the various modeling techniques used to predict the power output of wind turbines and their applications in wind-based energy systems, 
+  see \cite{Power_curves}). We start by extracting the log messages that report the current state of operation; namely logs containing one of the following expressions:
+  \begin{bulletList}
+    \item \emph{"Run"},
+    \item \emph{"(Stop|Pause).*kW.*RPM"}, or
+    \item \emph{"new SERVICE state"}
+  \end{bulletList}
+  The SCADA signals are then merged with the extracted log messages, using the same join strategy described in \ref{subsub:novel_method}, and labeled based on the following logic:
+  \begin{bulletList}
+    \item Turbine's state of operation = \emph{"Run"}, if the log feature contains the expression \emph{"Run"} or \emph{"new SERVICE state: 1"}
+    \item Turbine's state of operation = \emph{"Stop"}, if the log feature contains the expression \emph{"(Stop|Pause).*kW.*RPM"} or \emph{"new SERVICE state: 0"}
+  \end{bulletList}
+
+  \begin{figure}[!htbp]
+    \begin{center}
+      \includegraphics[scale=0.45]{Methods/power_curve.png}
+    \end{center}
+    \caption{T01 power curve with log-feature-based labels}
+    \label{fig:power_curve}
+  \end{figure}
+
+  The log-based feature we introduced showed a clear improvement in the accuracy of power curve models (see experiment..TODO) when used to filter the data being input 
+  to the normal behavior model (using data points having \emph{"Run"} as the state of operation exclusively).
 
 \subsection{Visualization of warnings}
-  TODO:
-  Easy: look for any warning/alarm message (having the word "hot" or "high temperature") related to the target component (having the name of the component in the message) 
-  and append to the anomaly on the operation dashboard
+  Here, we introduced a straightforward yet effective way of visualizing (e.g., on an operation dashboard) messages from the Alarm and Warning logs that are relevant 
+  to faults detected or predicted by normal behavior models and that are worth being reported to the operators.\\
+  When the normal behavior model detects a fault in a certain turbine component, the SCADA logs are queried for messages reporting high temperatures in this component 
+  during the same time window (e.g., last hour, last 12 hours, current day,\dots). If found, these messages could be included in the system reports that get sent to the operators
+  to inform them of the detected failure. This gives more visibility and credibility to the detected/predicted failure by the system.\\
+  (TODO add graph showing an example)
 
   \clearpage
 
 \section{Anomaly detection}
-  TODO:
-  Define anomalies (what is an anomaly in general?).\\
-  Discuss anomaly detection methods used in other papers\\
-  Argue why there's no standard way of defining/measuring an anomaly\\
-  Describe the way our anomaly detection works.
+  \subsection{Background}
+    The main idea behind training and improving normal behavior models is to allow our models to detect anomalies more accurately.
+    An anomaly is defined as an occurrence or observation that differs from what is expected, usual, or typical. 
+    An anomaly is commonly referred to as an outlier or an uncommon trend in data in numerous domains such as statistics, data analysis, and security.
+    By comparing the observed data to a reference set, such as historical data or a pre-defined model, anomalies can be found.
+    Positive and negative anomalies are also possible. Depending on the context, positive anomalies could suggest that something is performing better than predicted and 
+    negative anomalies indicate that something is underperforming (e.g., in the context of a company's sales figures), or the other way around. In the context of wind
+    turbine condition monitoring and when mainly monitoring temperatures of the system, we focus on positive anomalies because a component that is 
+    overheating---due to wear and tear, oil leakage, faulty fan,\dots---is likely to fail. There is, however, no unified method in the research field to identify a data point 
+    as an anomaly. Brandao et al. (\cite{Brandao_1}, \cite{Brandao_2}) used a fixed value of the mean absolute error as an anomaly threshold in their 
+    gearbox and generator fault detection model, even though this number was particular and no longer valid following maintenance procedures. 
+    Schlechtingen and Santos \cite{Schlechtingen} used daily average prediction errors in generator bearings temperature to trigger alarms. 
+    Zhang and Wang \cite{Zhang_Wang} used a hard threshold of 1.5\degree C for the residual to identify anomalies in the main shaft rear bearing temperature.
+    Bangalore and Tjernberg (\cite{Bangalore_1}, \cite{Bangalore_2}, \cite{Bangalore_3}) used a Mahalanobis distance to compare residual and target distributions from 
+    the training period to find anomalies in gearbox bearings temperatures. The Mahalanobis distance was averaged over three days and compared to a training result-defined threshold.
 
-\subsection{Alarms}
-  TODO:
-  Discuss the difference between Anomaly and alarm and why we wanna limit the number of alarms being sent to operators (false alarms are costly!)
+  \subsection{Method}
+    As there is no standard way to identify anomalies in temperatures in the context of condition monitoring for wind turbines using normal behavior models, we experimented 
+    with several methods to do that and, finally, decided to set the anomaly threshold to the maximum prediction error seen in the training period. This way it is 
+    guaranteed that the normal behavior models will not label any data point in the training dataset as an anomaly (complying with the assumption that the turbine was operating 
+    in a healthy state during the training phase of the model) while having the threshold dynamically set based on the setup (e.g., 
+    input and output features, training period, condition of the turbine during the training phase,\dots) without having to incorporate any domain knowledge related to the 
+    specific component to-be-monitored. This also helped better compare different architectures of normal behavior models and the effect of incorporating the proposed log features, 
+    not only in terms of prediction accuracy but also in terms of the quality and frequency of anomalies identified (a model that better fits the training data will have a 
+    tighter anomaly threshold).
+
+  \subsection{Alarms}
+    In our approach, we differentiate between \emph{Anomalies} and \emph{Alarms}. An anomaly is a data point that deviates from "normal", whereas an alarm is a proactive 
+    way of communication that gets triggered when the operator's attention is urgently needed. The reason why we propose not to send an alarm every time an anomaly is 
+    found by the system is that we want our system to limit the number of false alarms as they are costly and counterproductive.\\
+    As opposed to anomalies, which are tracked on a 10-min basis, we base alarms on daily events. If the number of anomalies found from the start of a day up until a given 
+    point in time exceeds a certain threshold, an alarm is triggered. We set the \emph{alarm threshold} to the 99\textsuperscript{th} percentile of the distribution of the number of 
+    anomalies that occurred per day during the training period when using an \emph{anomaly threshold} set as the 99\textsuperscript{th} percentile of the distribution of the 
+    training prediction errors. To summarize, an alarm can be defined as an anomaly in the number of system anomalies found per day.\\
+    \\
+    (TODO: Maybe soma visualization is needed here?)
+
 
 \section{Summary}
 TODO:

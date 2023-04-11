@@ -1,0 +1,17 @@
+TY  - JOUR
+AU  - Zhang, Zhen-You
+AU  - Wang, Ke-Sheng
+PY  - 2014
+DA  - 2014/03/01
+TI  - Wind turbine fault detection based on SCADA data analysis using ANN
+JO  - Advances in Manufacturing
+SP  - 70
+EP  - 78
+VL  - 2
+IS  - 1
+AB  - Wind energy is one of the fast growing sources of power production currently, and there is a great demand to reduce the cost of operation and maintenance. Most wind farms have installed supervisory control and data acquisition (SCADA) systems for system control and logging data. However, the collected data are not used effectively. This paper proposes a fault detection method for main bearing wind turbine based on existing SCADA data using an artificial neural network (ANN). The ANN model for the normal behavior is established, and the difference between theoretical and actual values of the parameters is then calculated. Thus the early stage of main bearing fault can be identified to let the operator have sufficient time to make more informed decisions for maintenance.
+SN  - 2195-3597
+UR  - https://doi.org/10.1007/s40436-014-0061-6
+DO  - 10.1007/s40436-014-0061-6
+ID  - Zhang2014
+ER  - 

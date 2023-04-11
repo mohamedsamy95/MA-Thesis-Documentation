@@ -1,5 +1,34 @@
 \begin{thebibliography}{xxxx}
 
+\bibitem[Bangalore~2013a]{Bangalore_3}
+Pramod Bangalore and Lina Bertling~Tjernberg.
+\newblock {\em Self evolving neural network based algorithm for fault prognosis
+  in wind turbines: A case study}.
+\newblock pages 1--6, 06 2013.
+
+\bibitem[Bangalore~2013b]{Bangalore_2}
+Pramod Bangalore and Lina~Bertling Tjernberg.
+\newblock {\em An approach for self evolving neural network based algorithm for
+  fault prognosis in wind turbine}.
+\newblock 2013 IEEE Grenoble Conference, pages 1--6, 2013.
+
+\bibitem[Bangalore~2015]{Bangalore_1}
+Pramod Bangalore and Lina~Bertling Tjernberg.
+\newblock {\em An Artificial Neural Network Approach for Early Fault Detection
+  of Gearbox Bearings}.
+\newblock IEEE Transactions on Smart Grid, vol.~6, no.~2, pages 980--987, 2015.
+
+\bibitem[Brandao~2010]{Brandao_1}
+R.F.M. Brandao, Jos{\'e} Carvalho and Fernando Maciel-Barbosa.
+\newblock {\em Neural networks for condition monitoring of wind turbines}.
+\newblock volume~6, pages 1--4, 01 2010.
+
+\bibitem[Brandao~2015]{Brandao_2}
+R.F.M. Brandao, Jos{\'e} Carvalho and Fernando Maciel-Barbosa.
+\newblock {\em Intelligent System for Fault Detection in Wind Turbines
+  Gearbox}.
+\newblock 06 2015.
+
 \bibitem[EDP~2018]{EDP}
 EDP.
 \newblock {\em EDP Open Data}.
@@ -64,10 +93,23 @@ Michael~R. Lyu, Jieming Zhu, Pinjia He, Shilin He, Jinyang Liu, Zhuangbin Chen,
 \newblock {\em LogPAI}.
 \newblock \url{https://logpai.com/}, 2019.
 
+\bibitem[Schlechtingen~2011]{Schlechtingen}
+Meik Schlechtingen and Ilmar {Ferreira Santos}.
+\newblock {\em Comparative analysis of neural network and regression based
+  condition monitoring approaches for wind turbine fault detection}.
+\newblock Mechanical Systems and Signal Processing, vol.~25, no.~5, pages
+  1849--1875, 2011.
+
 \bibitem[Schmidhuber~2014]{Deep_Learning}
 J{\"{u}}rgen Schmidhuber.
 \newblock {\em Deep Learning in Neural Networks: An Overview}.
 \newblock CoRR, vol.~abs/1404.7828, 2014.
+
+\bibitem[Sohoni~2016]{Power_curves}
+Vaishali Sohoni, S.~Gupta and Rajesh Nema.
+\newblock {\em A Critical Review on Wind Turbine Power Curve Modelling
+  Techniques and Their Applications in Wind Based Energy Systems}.
+\newblock Journal of Energy, vol.~2016, pages 1--18, 01 2016.
 
 \bibitem[Sparck~Jones~1972]{TF-IDF}
 Karen Sparck~Jones.
@@ -93,6 +135,12 @@ Xiaofeng Wang, Guoliang Lu and Peng Yan.
   monitoring of industrial rotating machinery using multi-sensors}.
 \newblock In 2019 Prognostics and System Health Management Conference
   (PHM-Qingdao), pages 1--5, 2019.
+
+\bibitem[Zhang~2014]{Zhang_Wang}
+Zhen-You Zhang and Ke-Sheng Wang.
+\newblock {\em Wind turbine fault detection based on SCADA data analysis using
+  ANN}.
+\newblock Advances in Manufacturing, vol.~2, no.~1, pages 70--78, 2014.
 
 \bibitem[Zhu~2018]{Logparser_1}
 Jieming Zhu, Shilin He, Jinyang Liu, Pinjia He, Qi~Xie, Zibin Zheng and

@@ -11,46 +11,49 @@ A level-1 auxiliary file: Conclusions.aux
 A level-1 auxiliary file: Appendix1.aux
 The style file: ThesisStyle.bst
 Database file #1: Thesis.bib
+Warning--empty booktitle in Bangalore_3
+Warning--empty booktitle in Brandao_1
+Warning--empty booktitle in Brandao_2
 Warning--empty booktitle in Letzgus_Log
-You've used 16 entries,
+You've used 24 entries,
             2415 wiz_defined-function locations,
-            669 strings with 7456 characters,
-and the built_in function-call counts, 6260 in all, are:
-= -- 623
-> -- 254
-< -- 7
-+ -- 90
-- -- 86
-* -- 431
-:= -- 992
-add.period$ -- 54
-call.type$ -- 16
-change.case$ -- 92
-chr.to.int$ -- 14
-cite$ -- 17
-duplicate$ -- 277
-empty$ -- 481
-format.name$ -- 102
-if$ -- 1333
-int.to.chr$ -- 3
+            721 strings with 8909 characters,
+and the built_in function-call counts, 9709 in all, are:
+= -- 977
+> -- 373
+< -- 15
++ -- 132
+- -- 124
+* -- 677
+:= -- 1506
+add.period$ -- 78
+call.type$ -- 24
+change.case$ -- 135
+chr.to.int$ -- 21
+cite$ -- 28
+duplicate$ -- 445
+empty$ -- 741
+format.name$ -- 148
+if$ -- 2093
+int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 12
-newline$ -- 88
-num.names$ -- 32
-pop$ -- 125
+missing$ -- 20
+newline$ -- 128
+num.names$ -- 48
+pop$ -- 173
 preamble$ -- 1
-purify$ -- 123
+purify$ -- 182
 quote$ -- 0
-skip$ -- 232
+skip$ -- 382
 stack$ -- 0
-substring$ -- 278
-swap$ -- 78
-text.length$ -- 7
+substring$ -- 476
+swap$ -- 137
+text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 124
-warning$ -- 1
-while$ -- 48
-width$ -- 21
-write$ -- 218
-(There was 1 warning)
+type$ -- 188
+warning$ -- 4
+while$ -- 79
+width$ -- 29
+write$ -- 326
+(There were 4 warnings)
