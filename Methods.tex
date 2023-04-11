@@ -286,10 +286,10 @@ We will explain each approach in depth.
   \subsection{Alarms}
     In our approach, we differentiate between \emph{Anomalies} and \emph{Alarms}. An anomaly is a data point that deviates from "normal", whereas an alarm is a proactive 
     way of communication that gets triggered when the operator's attention is urgently needed. The reason why we propose not to send an alarm every time an anomaly is 
-    found by the system is that we want our system to limit the number of false alarms as they are costly and counterproductive.\\
+    detected by the system is that we want our system to limit the number of false alarms as they are costly and counterproductive.\\
     As opposed to anomalies, which are tracked on a 10-min basis, we base alarms on daily events. If the number of anomalies found from the start of a day up until a given 
     point in time exceeds a certain threshold, an alarm is triggered. We set the \emph{alarm threshold} to the 99\textsuperscript{th} percentile of the distribution of the number of 
-    anomalies that occurred per day during the training period when using an \emph{anomaly threshold} set as the 99\textsuperscript{th} percentile of the distribution of the 
+    anomalies that occurred per day during the training period when using an \emph{anomaly threshold} set to the 99\textsuperscript{th} percentile of the distribution of the 
     training prediction errors. To summarize, an alarm can be defined as an anomaly in the number of system anomalies found per day.\\
     \\
     (TODO: Maybe soma visualization is needed here?)
@@ -297,5 +297,5 @@ We will explain each approach in depth.
 
 \section{Summary}
 TODO:
-PUSH TO THE TOP//
+PUSH TO THE TOP\\
 Diagram of all methods put together: ML model + log feature + Anomaly detection + Alarms,...
