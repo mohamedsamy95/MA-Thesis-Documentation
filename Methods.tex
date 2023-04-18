@@ -1,33 +1,52 @@
 \chapter{Methods}
 \label{chap:methods}
-\minitoc
+Here, we extensively explain the methods we used and propose to utilize SCADA log messages in wind turbine normal behavior machine learning models.
+We start by introducing the dataset used to run the experiments.
+Then, we define the concept of normal behavior modeling and the machine learning models and their architecture used in this work.
+Finally, we introduce two different approaches to utilizing SCADA logs with ways of using them as input features in machine learning models, as s filter for the SCADA signals,
+or to visualize relevant warnings.
 
 \section{Dataset}
 In this section, we will describe the dataset used in this work to train, test and validate the models. 
-\par We used open-source data published on the \cite{EDP} \emph{OpenData} web platform and made available for research purposes. 
+\par We used open-source data published on the \emph{EDP OpenData} web platform \cite{EDP} and made available for research purposes. 
 The data was collected from the SCADA systems of five different Vestas wind turbines (Turbine 01, 06, 07, 09 and 11) in the same wind park between the years 2016 and 2017 
 and is made up of the following four subsets: \emph{Signals, Logs, Failures and Metmast}. We will, however, only describe three sets since \emph{Metmast} was not used in this work.
+
 \subsection{Signals}
- The \emph{Signals} dataset contains 10-min-averaged data collected from the wind turbines' sensors installed at the major components (e.g., gearbox, generator, transformer,..) 
- and power meters to measure temperatures, angles, wind and rotational speeds, power production,\dots
+ The \emph{Signals} dataset contains 10-min aggregated data (mean, standard deviation, minimum, and maximum values) collected from the wind turbines' power meters and
+ sensors installed at the major components such as gearbox, generator and transformer (see Figure \ref{fig:WTG_Diagram} for a 
+ demonstration of a turbine's hardware and the location of major components).These built-in sensors measure quantities such as temperatures, angles, wind and rotational speeds, 
+ power production,\dots
+
+ \begin{figure}[H]
+  \begin{center}
+    \includegraphics[scale=0.3]{Methods/Horizontal-axis-wind-turbine.png}
+  \end{center}
+  \caption{Diagram of a wind turbine side view with labeled main components. Figure adapted from \cite{WTG_Diagram}}
+  \label{fig:WTG_Diagram}
+\end{figure}
+
  This dataset was the most crucial for this work since it provides information that reflects the status of the turbine operation which is needed to perform 
- automated condition monitoring and predictive maintenance.\\
- Table \ref{tab:signals} shows a sample of the 81 signals included in this dataset.
- \begin{table}
+ SCADA-based automated condition monitoring and predictive maintenance.\\
+ Table \ref{tab:signals} shows some of the 81 signals included in this dataset.
+ \begin{table}[H]
         \centering
     \begin{tabular}{ | m{12em} | m{8cm} | }
     \hline
          \multicolumn{1}{|c|}{\textbf{Type of signal}} & \multicolumn{1}{c|}{\textbf{Signals}} \\
          \hline
-         Average temperature (\degree C) & Generator, Generator bearings, Hydraulic group oil, Gearbox oil, Gearbox bearing on the high-speed shaft, 
-         Nacelle, HV transformer, Ambient temperature,..  \\
+         Temperature (\degree C) & Generator, Generator bearings, Hydraulic group oil, Gearbox oil, Gearbox bearing on the high-speed shaft, 
+         Nacelle, High Voltage (HV) transformer, Ambient temperature,\dots  \\
          \hline
-         Average production value & Active power (Wh), Reactive power (VArh), Power according to grid (kW),.. \\
+         Production value & Active power in Wh, Reactive power in VArh, Power according to the grid in kW,\dots \\
+         \hline
+         Angle (\degree) & Blades pitch angle ($\theta$) \\
     \hline
     \end{tabular}
-    \caption{Sample signals found in the Signals dataset}
+    \caption{Example signals found in the Signals dataset}
         \label{tab:signals}
 \end{table}
+
  \subsection{Logs}
   In this dataset, events logged by the SCADA system are collected in non-fixed intervals. The events recorded by the system are divided into three categories: Alarm log, 
   Warning log and Operation and System log. According to the VestasOnline Enterprise user manual \cite{voe},  alarms are system notifications that alert operators to 
@@ -36,7 +55,7 @@ and is made up of the following four subsets: \emph{Signals, Logs, Failures and 
   from the controller unit of the turbine, Remote acknowledgment from VestasOnline®, or Automatic acknowledgment), 
   whereas warnings are system messages that indicate an irregularity that requires attention but does not cause the turbine 
   to immediately cease normal operation and exit the Run state.
-  \begin{table}
+  \begin{table}[H]
           \centering
       \begin{tabular}{|c|c|}
       \hline
@@ -61,65 +80,174 @@ and is made up of the following four subsets: \emph{Signals, Logs, Failures and 
   or event (e.g., "Generator replaced", "Oil leakage in Hub",..).\\ 
   This dataset was used in backtesting to validate the models' capability of detecting failures early.
 
+\clearpage
 
-\section{Machine learning models}
-In this section, we will demonstrate the architecture of the machine learning models used in our experiments.
+\section{Normal behavior modeling}
+According to Tautz-Weinert and Watson \cite{SCADA_NBM_Review}, Normal Behavior Modeling (NBM) detects anomalies in normal operation by empirically modeling an 
+observed parameter based on a training phase. Figure \ref{fig:NBM} depicts the concept of model-based monitoring.
+During operation, an anomaly is detected by deducting the value of the modeled signal ($\hat{y}$(t)) from the measured one (y(t))  and 
+comparing the residual (e(t)) with a predefined threshold. If the threshold is exceeded, this signal is labeled as an anomaly.
+There are two primary approaches for NBM: Full Signal ReConstruction (FSRC), in which only signals other than the target are utilized to predict the target, 
+and AutoRegressive with eXogenous Input Modeling (ARX), in which previous values of the target are also employed.\\
+Having defined NBM on an abstract level, we demonstrate next the machine learning models we used to generate modeled signals (y(t)) from input signals (x(t)) and 
+then explain the anomaly detection approach we used. Given that the structure of the available signals (e.g., the number of signals and their frequency) varies based 
+on the turbine's model, manufacturer and sensors installed, we defined the dataset used in this work in the previous section.
 
-\subsection{Linear regression}
-  Sir Francis Galton proposed the idea of linear regression in 1894 \cite{Natural_Inheritance}.
-  Linear regression is used for analyzing the linear relationship between one or more independent variables (X) and a dependent variable (Y).
-  The dependent variable Y must be continuous, whereas the independent variables can be continuous or categorical. \\
-  When the relationship between the dependent variable and the independent variables is assumed to be linear and there are a small number of independent variables, 
-  linear regression is usually used. Linear regression is easy to use and understand, and it can be used to make predictions or find relationships between variables.\\
-  In the example of normal behavior modeling for a wind turbine component, the dependent variable can be defined as the component's temperature 
-  and the independent variables as a set of weather and turbine conditions measures (e.g., wind speed, ambient temperature, production value, other components' temperatures,..) 
-  that have either a direct or indirect effect on the target component.
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[scale=0.35]{Methods/NBM.png}
+  \end{center}
+  \caption{NBM with the input signals from the SCADA system (x(t)), measured signal (y(t)), modeled signal ($\hat{y}$(t)) and resulting error (e(t))}
+  \label{fig:NBM}
+\end{figure}
 
-  \begin{figure}[!htbp]
+\subsection{Machine Learning in NBM}
+  From a wide range of machine learning model types, NBM focuses on regression models \cite{Regression}. Regression models are part of the supervised learning family, 
+  where the algorithm is trained on labeled data and the input features are mapped to corresponding output labels. 
+  As opposed to classification models, where the algorithm predicts \emph{classes}, a regression model predicts numerical \emph{values} (dependent variables) from the input 
+  features (independent variables).\\
+  According to Tautz-Weinert and Watson \cite{SCADA_NBM_Review}, there are mainly three types of NBM regression models used in the research field: \emph{Linear and polynomial models},
+  \emph{Artificial Neural Networks (ANNs)} and \emph{Fuzzy Systems}. Given their simplicity, we used linear models in the early phases of this work. Later on, we started using 
+  ANNs for their capability of capturing non-linear dependencies in the data. We define these two types of models in detail in the next subsections.
+  A fuzzy system \cite{Neuro_fuzzy} is an artificial intelligence system that employs fuzzy logic \cite{fuzzy_sets}. Fuzzy logic is a mathematical framework for 
+  dealing with uncertainty and imprecision.
+  The input and output variables in a fuzzy system are represented by fuzzy sets, which are collections of values with degrees of membership rather than tight boundaries. 
+  The associations between the input variables and the output variables are then specified using fuzzy rules. 
+  These rules are often represented as "if-then" statements, with the "if" section defining the input conditions and the "then" part defining the output actions.
+  Training fuzzy systems was not within the scope of this work. However, we propose testing our methods on them in the future works section (see \ref{sec:future_works}).
+
+  \subsubsection{Linear regression}
+    Sir Francis Galton proposed the idea of linear regression in 1894 \cite{Natural_Inheritance}.
+    Linear regression is used for analyzing the linear relationship between one or more independent variables and a dependent variable.
+    The dependent variable must be continuous, whereas the independent variables can be continuous or categorical. For a dependent variable $Y$ and a set of $n$ independent
+    variables $X_1$ through $X_n$, the linear regression equation is defined as follows:
+    \begin{equation}
+      Y = m_1X_1 + m_2X_2 + ... + m_nX_n + C
+    \end{equation}
+    where $m_1$ through $m_n$ and $C$ are constants. Figure \ref{fig:linear_regression} shows an example of linear regression for a single independent variable.
+
+    \begin{figure}[H]
       \begin{center}
         \includegraphics[scale=0.7]{Methods/Linear_regression.png}
       \end{center}
-      \caption{Example linear regression}
+      \caption{Example linear regression with one dependent variable: $Y = mX + b$, where m and b are constants}
       \label{fig:linear_regression}
   \end{figure}
 
-  \par The way the independent variables are chosen is usually done by measuring the correlation coefficients between available features in a
-  dataset and the target feature and then selecting the features having a high correlation coefficient. Depending on the problem setting, other features can be also considered 
-  based on domain knowledge, especially when dealing with a mechanical system as in the case of this work. A good example of this would be the incorporation of 
-  the ambient temperature measurement as an input feature---even if it does not highly correlate with the target feature---to make sure that your model generalizes when 
-  trying to predict a component's temperature throughout the year, by considering the effect of seasonality 
-  (temperatures are expected to be higher in summer than in winter).\\
-  In this work, we selected input features based on both domain knowledge and correlation coefficients. We used Kendall's method to measure the rank correlation \cite{Kendall}.
-  In contrast to Pearson's correlation coefficient, Kendall's rank correlation can capture both linear and non-linear dependency between two variables by 
-  measuring the monotonic relationship. In addition to that, variables don't have to be normally distributed when using Kendall's method.
+    When the relationship between the dependent variable and the independent variables is assumed to be linear, 
+    linear regression is usually used. Linear regression is easy to use and understand, and it can be used to make predictions or find relationships between variables.\\
+    In the example of normal behavior modeling for a wind turbine component, the dependent variable can be defined as the component's temperature 
+    and the independent variables as a set of weather and turbine conditions measures (e.g., wind speed, ambient temperature, production value, other components' temperatures,..) 
+    that have either a direct or indirect effect on the target component.
+    NBM in its most basic form is based on linear or polynomial models \cite{SCADA_NBM_Review}. 
+    Garlick et al. \cite{Garlick} employed a linear ARX model to detect generator bearings failures in bearing temperature measurements.
+    Schlechtingen and Santos \cite{Schlechtingen} developed an FSRC linear condition monitoring model for the generator bearings' temperature.\\
+    Although multiple linear regression models were also shown capable of fitting the data with high accuracy in many other applications (e.g., \cite{Linear_Regression_Example_1}), 
+    they are, by definition, not capable of capturing more complex non-linear dependencies. In addition to that, linear regression may not be appropriate when there are a significant 
+    number of independent variables. Artificial Neural Networks (ANNs) may be a better approach in these situations.
 
-\subsection{Deep learning}
-  Although multiple linear regression models are capable of fitting the data with high accuracy in many applications (e.g., \cite{Linear_Regression_Example_1}), they are,
-  by definition, not capable of capturing more complex non-linear dependencies. In addition to that, linear regression may not be appropriate when there are a significant 
-  number of independent variables. Deep learning may be a better approach in these situations.\\
-  After obtaining better results with it (see Experiment \ref{exp:I}), we decided to train the normal behavior models
-  on a feed-forward neural network (for a comprehensive review of deep learning and neural networks, see \cite{Deep_Learning}) having the architecture shown 
-  in Fig. \ref{fig:MLP}.
 
-  \begin{figure}[!htbp]
-    \begin{center}
-      \includegraphics[scale=0.4]{Methods/MLP_cropped.png}
-    \end{center}
-    \caption{Architecture of normal behavior neural network model used in this work. \\
-    \emph{P.S.: The input layer shape will vary based on the experiment and the number of input features.}}
-    \label{fig:MLP}
-  \end{figure}
+  \subsubsection{Artificial Neural Networks}
+    Artificial Neural Networks (ANNs) are computational models that are inspired by the structure and function of biological neural networks in the brain \cite{NN_foundation}.
+    They are made up of interconnected nodes (artificial neurons) that process and send data. 
+    Pattern recognition, computer vision, natural language processing, and robotics have all made extensive use of ANNs 
+    (for a comprehensive review of deep learning and neural networks, see \cite{Deep_learning_overview}, \cite{Goodfellow}).
+    An artificial neuron, also known as a perceptron, is the fundamental building unit of a neural network. It is a mathematical function that accepts one or more input values 
+    and outputs a single value \cite{Perceptron}.
+    The input values are weighted, and the neuron applies an activation function to the total of the weighted inputs. The output value is subsequently passed on to the network's 
+    other neurons. The activation function determines the neuron's output based on the input value(s) and weights.
+    For a set of inputs $X_1$ through $X_n$, weights $w_1$ through $w_n$ and activation function $f$, the output of a perceptron $Y$ is calculcated as follows:
+    \begin{equation}
+      Y = f(\sum_{i=1}^n w_iX_i)
+    \end{equation}
+    The sigmoid function, the rectified linear unit (ReLU) function, and the hyperbolic tangent function are examples of common activation functions.
+    Figure \ref{fig:Perceptron} shows a diagram of a perceptron.
 
-  \clearpage
+    \begin{figure}[H]
+      \begin{center}
+        \includegraphics[scale=0.4]{Methods/Perceptron.png}
+      \end{center}
+      \caption{Example perceptron with three inputs}
+      \label{fig:Perceptron}
+    \end{figure}
+
+    In the context of deep learning, an ANN consists of one input layer, one output layer and one or more \emph{hidden} layers.\\
+    A hidden layer is a layer of neurons that is not connected directly to either the input or output layers. 
+    It is referred to as "hidden" because its neurons are not visible to the outside world, implying that its calculations are not directly apparent from input or output.\\
+    Information goes from the input layer, through one or more hidden layers, and then to the output layer in a \emph{feedforward} neural network, which is a type of ANN. 
+    Each layer of neurons computes on the input data and sends the results to the next layer. The hidden layers extract and alter information from input data that can be 
+    utilized to make predictions or choices.\\
+    The number of hidden layers in an ANN is a hyperparameter that can be tuned during the training process.
+    The number of hidden layers and neurons in each layer is determined by the task's complexity, the amount of accessible data, and the required level of accuracy.\\
+    After obtaining better results with it compared to linear regression (see Experiment \ref{exp:I}), we decided to train the normal behavior models
+    on a feed-forward neural network having the architecture shown in Fig. \ref{fig:MLP} and ReLU (firstly introduced by Fukushima \cite{Fukushima}) as an activation function.
+
+    \begin{figure}[H]
+      \begin{center}
+        \includegraphics[scale=0.4]{Methods/MLP_cropped.png}
+      \end{center}
+      \caption{Architecture of normal behavior neural network model used in this work. \\
+      \emph{The input layer shape will vary based on the experiment and the number of input features.}}
+      \label{fig:MLP}
+    \end{figure}
+
+  \subsection{Anomaly detection}
+    The main idea behind training and improving normal behavior models is to allow our models to detect anomalies more accurately.
+    An anomaly is defined as an occurrence or observation that differs from what is expected, usual, or typical. 
+    An anomaly is commonly referred to as an outlier or an uncommon trend in data in numerous domains such as statistics, data analysis, and security.
+    By comparing the observed data to a reference set, such as historical data or a pre-defined model, anomalies can be found.
+    Positive and negative anomalies are also possible. Depending on the context, positive anomalies could suggest that something is performing better than predicted and 
+    negative anomalies indicate that something is underperforming (e.g., in the context of a company's sales figures), or the other way around. In the context of wind
+    turbine condition monitoring and when mainly monitoring temperatures of the system, we focus on positive anomalies because a component that is 
+    overheating---due to wear and tear, oil leakage, faulty fan,\dots---is likely to fail. There is, however, no unified method in the research field to identify a data point 
+    as an anomaly. Brandao et al. (\cite{Brandao_1}, \cite{Brandao_2}) used a fixed value of the mean absolute error as an anomaly threshold in their 
+    gearbox and generator fault detection model, even though this number was particular and no longer valid following maintenance procedures. 
+    Schlechtingen and Santos \cite{Schlechtingen} used daily average prediction errors in generator bearings temperature to trigger alarms. 
+    Zhang and Wang \cite{Zhang_Wang} used a hard threshold of 1.5\degree C for the residual to identify anomalies in the main shaft rear bearing temperature.
+    Bangalore and Tjernberg (\cite{Bangalore_1}, \cite{Bangalore_2}, \cite{Bangalore_3}) used a Mahalanobis distance to compare residual and target distributions from 
+    the training period to find anomalies in gearbox bearings temperatures. The Mahalanobis distance was averaged over three days and compared to a training result-defined threshold.\\
+
+    \par As there is no standard way to identify anomalies in temperatures in the context of condition monitoring for wind turbines using normal behavior models, we experimented 
+    with several methods to do that and, finally, decided to set the anomaly threshold to the maximum prediction error seen in the training period. This way it is 
+    guaranteed that the normal behavior models will not label any data point in the training dataset as an anomaly (complying with the assumption that the turbine was operating 
+    in a healthy state during the training phase of the model) while having the threshold dynamically set based on the setup (e.g., 
+    input and output features, training period, condition of the turbine during the training phase,\dots) without having to incorporate any domain knowledge related to the 
+    specific component to-be-monitored. This also helped better compare different architectures of normal behavior models and the effect of incorporating the proposed log features, 
+    not only in terms of prediction accuracy but also in terms of the quality and frequency of anomalies identified (a model that better fits the training data will have a 
+    tighter anomaly threshold).
+
+    \subsubsection{Anomaly vs Alarm}
+      In our approach, we differentiate between \emph{Anomalies} and \emph{Alarms}. An anomaly is a data point that deviates from "normal", whereas an alarm is a proactive 
+      way of communication that gets triggered when the operator's attention is urgently needed. The reason why we propose not to send an alarm every time an anomaly is 
+      detected by the system is that we want our system to limit the number of false alarms as they are costly and counterproductive.\\
+      As opposed to anomalies, which are tracked on a 10-min basis, we base alarms on daily events. If the number of anomalies found from the start of a day up until a given 
+      point in time exceeds a certain threshold, an alarm is triggered. We set the \emph{alarm threshold} to the 99\textsuperscript{th} percentile of the distribution of the number of 
+      anomalies that occurred per day during the training period when using an \emph{anomaly threshold} set to the 99\textsuperscript{th} percentile of the distribution of the 
+      training prediction errors. To summarize, an alarm can be defined as an anomaly in the number of system anomalies found per day.\\
+      (TODO: Maybe soma visualization is needed here?)
+  
+  \subsection{Feature selection}
+    The way the independent variables are chosen is usually done by measuring the correlation coefficients between available features in a
+    dataset and the target feature and then selecting the features having a high correlation coefficient. Depending on the problem setting, other features can be also considered 
+    based on domain knowledge, especially when dealing with a mechanical system as in the case of this work. A good example of this would be the incorporation of 
+    the ambient temperature measurement as an input feature---even if it does not highly correlate with the target feature---to make sure that your model generalizes when 
+    trying to predict a component's temperature throughout the year, by considering the effect of seasonality 
+    (temperatures are expected to be higher in summer than in winter).\\
+    In this work, we selected input features based on both domain knowledge and correlation coefficients. We used Kendall's method to measure the rank correlation \cite{Kendall}.
+    In contrast to Pearson's correlation coefficient, Kendall's rank correlation can capture both linear and non-linear dependency between two variables by 
+    measuring the monotonic relationship. In addition to that, variables don't have to be normally distributed when using Kendall's method.\\
+    (TODO: list features selected)
+
+\clearpage
   
 \section{Log analysis}
 In this section, we will describe the different approaches we propose to utilize SCADA log messages and incorporate them into normal behavior models.
 In summary, we introduce three different ways for utilizing SCADA log messages: Extracting input features for normal behavior models, Data filtering, and Visualization of warnings.
 We will explain each approach in depth.
 
-\subsection{Extracting input features}
+\subsection{Extracting log embeddings}
   Most machine-learning architectures can only work with vector-shaped numerical inputs. Given that there are limited resources in the research field on how to generate 
-  numerical vectors from wind turbine SCADA system logs (see chapter \ref{chap:soa}), we came up with two methods that were proven capable of not only generating input features for 
+  numerical vectors from wind turbine SCADA system logs (see chapter \ref{chap:soa}), we came up with two methods that were proven capable of not only generating embeddings for 
   machine-learning normal behavior models but also improving their accuracy (see chapter \ref{chap:experiments}): 1. our Novel method based on domain knowledge and 
   2. Utilizing an open-source framework for analyzing log data called LogPAI. We will discuss each method in detail.
 
@@ -148,7 +276,7 @@ We will explain each approach in depth.
 
     Indeed, our analysis showed a clear relationship between the state of a ventilator and the temperature of its turbine component.
     As shown in Fig. \ref{fig:vent}, at low temperatures of the generator bearings, the internal ventilator will switch off. The bearings will then heat up which, in turn, causes
-    the ventilator to turn on which cools the bearings down, and so on\dots
+    the ventilator to turn on which cools the bearings down, and so on.
 
     \begin{figure}[!htbp]
       \begin{center}
@@ -166,27 +294,27 @@ We will explain each approach in depth.
     \end{flushleft}
     Since the component temperature is regularly provided as a SCADA signal, we decided to focus on the other two parts of the log messages. 
     Our method simply filters log messages containing the word "vent." and creates a new feature for every ventilator (1.) found in the data having its state (2.) as a value.\\
-    In contrast to the signals data fixed rate of occurrence (10 min), the generated log feature has an inconsistent frequency (the SCADA system creates a new log entry only 
-    when a ventilator changes states). We join both datasets by taking the value of the last occurrence in the log feature vector within a 10-min window relative to a signal reading. 
+    In contrast to the signals data fixed rate of occurrence (10 min), the generated log embeddings have an inconsistent frequency (the SCADA system creates a new log entry only 
+    when a ventilator changes states). We join both datasets by taking the value of the last occurrence in the log embeddings vector within a 10-min window relative to a signal reading. 
     Gaps in the log feature columns in the resulting dataset are then filled by propagating the last valid observation forward to the next valid (a ventilator has the same state as long as it hasn't changed).\\
-    Measuring the Kendall correlation factor between the generated log features and all the signals of the turbines, we found that for every temperature signal, there is at least 
-    one log feature that, on average, highly correlates ($Rank>0.5$) with it.
+    Measuring the Kendall correlation factor between the generated log embeddings and all the signals of the turbines, we found that for every temperature signal, there is at least 
+    one log embeddings feature that, on average, highly correlates ($Rank>0.5$) with it.
 
     \begin{figure}[!htbp]
       \begin{center}
         \includegraphics[scale=0.376]{Methods/Log_Merge.png}
       \end{center}
-      \caption{Demonstration of the join operation between the signals 10-min dataset and a log feature vector}
+      \caption{Demonstration of the join operation between the signals 10-min dataset and a log embeddings vector}
       \label{fig:log-merge}
     \end{figure}
     
 
   \subsubsection{Utilizing LogPAI}
-    LogPAI (Log Analysis and Intelligence) is a study project and open-source platform for analyzing and managing log data \cite{LogPAI}. 
+    LogPAI (Log Analytics Powered by AI) is a study project and open-source platform for analyzing and managing log data \cite{LogPAI}. 
     Tsinghua University researchers started the project, which focuses on developing efficient algorithms and tools for log analysis, anomaly detection, and log data visualization.
     LogPAI includes a complete suite of log analysis and processing tools such as Logparser, Loglizer, and Logreduce. 
     These applications can assist users in preprocessing and parsing raw log data, detecting anomalies and patterns, and summarizing log data concisely and understandably.
-    We decided to utilize LogPAI's Logparser (\cite{Logparser_1}, \cite{Logparser_2}) and Loglizer (\cite{Loglizer}) to respectively parse and create numerical features from 
+    We decided to utilize LogPAI's Logparser (\cite{Logparser_1}, \cite{Logparser_2}) and Loglizer \cite{Loglizer} to respectively parse and create numerical features from 
     SCADA logs in a more generic and automated way.\\
 
     \begin{flushleft}
@@ -201,7 +329,7 @@ We will explain each approach in depth.
       clustering stage. Drain creates a template for each cluster that summarizes the relevant information contained in the log messages once the log messages have been clustered.
       Overall, the Drain algorithm makes an important contribution to log data analysis and management by providing a scalable and effective approach for extracting structured 
       events from unstructured log data.
-      Applying Drain on the SCADA log data in hand by specifying its log format "\emph{<TimeDetected>,<TimeReset>,<UnitTitle>,<Content>,<UnitTitleDestination>}", we get 
+      Applying Drain on the SCADA log data at hand by specifying its log format "\emph{<TimeDetected>,<TimeReset>,<UnitTitle>,<Content>,<UnitTitleDestination>}", we get 
       output structured log data (see Fig. \ref{fig:logparser} for an example) that the Loglizer can process to generate numerical features.
     \end{flushleft}
 
@@ -254,46 +382,7 @@ We will explain each approach in depth.
   to inform them of the detected failure. This gives more visibility and credibility to the detected/predicted failure by the system.\\
   (TODO add graph showing an example)
 
-  \clearpage
-
-\section{Anomaly detection}
-  \subsection{Background}
-    The main idea behind training and improving normal behavior models is to allow our models to detect anomalies more accurately.
-    An anomaly is defined as an occurrence or observation that differs from what is expected, usual, or typical. 
-    An anomaly is commonly referred to as an outlier or an uncommon trend in data in numerous domains such as statistics, data analysis, and security.
-    By comparing the observed data to a reference set, such as historical data or a pre-defined model, anomalies can be found.
-    Positive and negative anomalies are also possible. Depending on the context, positive anomalies could suggest that something is performing better than predicted and 
-    negative anomalies indicate that something is underperforming (e.g., in the context of a company's sales figures), or the other way around. In the context of wind
-    turbine condition monitoring and when mainly monitoring temperatures of the system, we focus on positive anomalies because a component that is 
-    overheating---due to wear and tear, oil leakage, faulty fan,\dots---is likely to fail. There is, however, no unified method in the research field to identify a data point 
-    as an anomaly. Brandao et al. (\cite{Brandao_1}, \cite{Brandao_2}) used a fixed value of the mean absolute error as an anomaly threshold in their 
-    gearbox and generator fault detection model, even though this number was particular and no longer valid following maintenance procedures. 
-    Schlechtingen and Santos \cite{Schlechtingen} used daily average prediction errors in generator bearings temperature to trigger alarms. 
-    Zhang and Wang \cite{Zhang_Wang} used a hard threshold of 1.5\degree C for the residual to identify anomalies in the main shaft rear bearing temperature.
-    Bangalore and Tjernberg (\cite{Bangalore_1}, \cite{Bangalore_2}, \cite{Bangalore_3}) used a Mahalanobis distance to compare residual and target distributions from 
-    the training period to find anomalies in gearbox bearings temperatures. The Mahalanobis distance was averaged over three days and compared to a training result-defined threshold.
-
-  \subsection{Method}
-    As there is no standard way to identify anomalies in temperatures in the context of condition monitoring for wind turbines using normal behavior models, we experimented 
-    with several methods to do that and, finally, decided to set the anomaly threshold to the maximum prediction error seen in the training period. This way it is 
-    guaranteed that the normal behavior models will not label any data point in the training dataset as an anomaly (complying with the assumption that the turbine was operating 
-    in a healthy state during the training phase of the model) while having the threshold dynamically set based on the setup (e.g., 
-    input and output features, training period, condition of the turbine during the training phase,\dots) without having to incorporate any domain knowledge related to the 
-    specific component to-be-monitored. This also helped better compare different architectures of normal behavior models and the effect of incorporating the proposed log features, 
-    not only in terms of prediction accuracy but also in terms of the quality and frequency of anomalies identified (a model that better fits the training data will have a 
-    tighter anomaly threshold).
-
-  \subsection{Alarms}
-    In our approach, we differentiate between \emph{Anomalies} and \emph{Alarms}. An anomaly is a data point that deviates from "normal", whereas an alarm is a proactive 
-    way of communication that gets triggered when the operator's attention is urgently needed. The reason why we propose not to send an alarm every time an anomaly is 
-    detected by the system is that we want our system to limit the number of false alarms as they are costly and counterproductive.\\
-    As opposed to anomalies, which are tracked on a 10-min basis, we base alarms on daily events. If the number of anomalies found from the start of a day up until a given 
-    point in time exceeds a certain threshold, an alarm is triggered. We set the \emph{alarm threshold} to the 99\textsuperscript{th} percentile of the distribution of the number of 
-    anomalies that occurred per day during the training period when using an \emph{anomaly threshold} set to the 99\textsuperscript{th} percentile of the distribution of the 
-    training prediction errors. To summarize, an alarm can be defined as an anomaly in the number of system anomalies found per day.\\
-    \\
-    (TODO: Maybe soma visualization is needed here?)
-
+\clearpage
 
 \section{Summary}
 TODO:

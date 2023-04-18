@@ -18,6 +18,13 @@ Pramod Bangalore and Lina~Bertling Tjernberg.
   of Gearbox Bearings}.
 \newblock IEEE Transactions on Smart Grid, vol.~6, no.~2, pages 980--987, 2015.
 
+\bibitem[Boersma~2017]{WTG_Diagram}
+Sjoerd Boersma, Bart Doekemeijer, Pieter Gebraad, Paul Fleming, Jennifer
+  Annoni, Andrew Scholbrock, Joeri Frederik and J.~W. Wingerden.
+\newblock {\em A tutorial on control-oriented modeling and control of wind
+  farms}.
+\newblock pages 1--18, 05 2017.
+
 \bibitem[Brandao~2010]{Brandao_1}
 R.F.M. Brandao, Jos{\'e} Carvalho and Fernando Maciel-Barbosa.
 \newblock {\em Neural networks for condition monitoring of wind turbines}.
@@ -51,11 +58,39 @@ EDP.
   2023.
 \newblock Accessed: 2023-03-26.
 
+\bibitem[Fahrmeir~2021]{Regression}
+Ludwig Fahrmeir, Thomas Kneib, Stefan Lang and Brian~D. Marx.
+\newblock Regression models, pages 23--84.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2021.
+
+\bibitem[Fukushima~1980]{Fukushima}
+Kunihiko Fukushima.
+\newblock {\em Neocognitron: {A} self-organizing neural network model for a
+  mechanism of pattern recognition unaffected by shift in position}.
+\newblock Biological Cybernetics, vol.~36, no.~4, pages 193--202, April 1980.
+
 \bibitem[Galton~1894]{Natural_Inheritance}
 Sir Galton~Francis.
 \newblock Natural inheritance.
 \newblock New York, Macmillan and co, 1894.
 \newblock \url{https://www.biodiversitylibrary.org/bibliography/46339}.
+
+\bibitem[Garlick~2009]{Garlick}
+William Garlick, Roger Dixon and Simon Watson.
+\newblock {\em A model-based approach to wind turbine condition monitoring
+  using SCADA data}.
+\newblock 01 2009.
+
+\bibitem[Goodfellow~2016]{Goodfellow}
+Ian Goodfellow, Yoshua Bengio and Aaron Courville.
+\newblock Deep learning.
+\newblock MIT Press, 2016.
+\newblock \url{http://www.deeplearningbook.org}.
+
+\bibitem[Haykin~1999]{NN_foundation}
+S.~Haykin and S.S. Haykin.
+\newblock Neural networks: A comprehensive foundation.
+\newblock International edition. Prentice Hall, 1999.
 
 \bibitem[He~2016a]{Logparser_2}
 Pinjia He, Jieming Zhu, Shilin He, Jian Li and Michael~R. Lyu.
@@ -76,6 +111,12 @@ Pinjia He, Jieming Zhu, Zibin Zheng and Michael~R. Lyu.
 \newblock In 2017 IEEE International Conference on Web Services (ICWS), pages
   33--40, 2017.
 
+\bibitem[Jang~1997]{Neuro_fuzzy}
+J.S.R. Jang, C.T. Sun and E.~Mizutani.
+\newblock Neuro-fuzzy and soft computing: A computational approach to learning
+  and machine intelligence.
+\newblock MATLAB curriculum series. Prentice Hall, 1997.
+
 \bibitem[Kendall~1938]{Kendall}
 M.~G. Kendall.
 \newblock {\em {A NEW MEASURE OF RANK CORRELATION}}.
@@ -93,6 +134,12 @@ Michael~R. Lyu, Jieming Zhu, Pinjia He, Shilin He, Jinyang Liu, Zhuangbin Chen,
 \newblock {\em LogPAI}.
 \newblock \url{https://logpai.com/}, 2019.
 
+\bibitem[Rosenblatt~1958]{Perceptron}
+F.~Rosenblatt.
+\newblock {\em {The perceptron: A probabilistic model for information storage
+  and organization in the brain.}}
+\newblock Psychological Review, vol.~65, no.~6, pages 386--408, 1958.
+
 \bibitem[Schlechtingen~2011]{Schlechtingen}
 Meik Schlechtingen and Ilmar {Ferreira Santos}.
 \newblock {\em Comparative analysis of neural network and regression based
@@ -100,10 +147,10 @@ Meik Schlechtingen and Ilmar {Ferreira Santos}.
 \newblock Mechanical Systems and Signal Processing, vol.~25, no.~5, pages
   1849--1875, 2011.
 
-\bibitem[Schmidhuber~2014]{Deep_Learning}
-J{\"{u}}rgen Schmidhuber.
-\newblock {\em Deep Learning in Neural Networks: An Overview}.
-\newblock CoRR, vol.~abs/1404.7828, 2014.
+\bibitem[Schmidhuber~2015]{Deep_learning_overview}
+J{\"u}rgen Schmidhuber.
+\newblock {\em Deep learning in neural networks: An overview}.
+\newblock Neural Networks, vol.~61, pages 85--117, 2015.
 
 \bibitem[Sohoni~2016]{Power_curves}
 Vaishali Sohoni, S.~Gupta and Rajesh Nema.
@@ -135,6 +182,11 @@ Xiaofeng Wang, Guoliang Lu and Peng Yan.
   monitoring of industrial rotating machinery using multi-sensors}.
 \newblock In 2019 Prognostics and System Health Management Conference
   (PHM-Qingdao), pages 1--5, 2019.
+
+\bibitem[Zadeh~1965]{fuzzy_sets}
+L.A. Zadeh.
+\newblock {\em Fuzzy sets}.
+\newblock Information and Control, vol.~8, no.~3, pages 338--353, 1965.
 
 \bibitem[Zhang~2014]{Zhang_Wang}
 Zhen-You Zhang and Ke-Sheng Wang.
