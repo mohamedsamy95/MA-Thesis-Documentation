@@ -36,11 +36,25 @@ R.F.M. Brandao, Jos{\'e} Carvalho and Fernando Maciel-Barbosa.
   Gearbox}.
 \newblock 06 2015.
 
+\bibitem[Das~2021]{tf-idf_review}
+Mamata Das, Selvakumar Kamalanathan and Pja Alphonse.
+\newblock {\em A Comparative Study on TF-IDF Feature Weighting Method and Its
+  Analysis Using Unstructured Dataset}.
+\newblock In International Conference on Computational Linguistics and
+  Intelligent Systems, 2021.
+
 \bibitem[EDP~2018]{EDP}
 EDP.
 \newblock {\em EDP Open Data}.
 \newblock \url{https://opendata.edp.com/opendata/en/data.html}, July 2018.
 \newblock Accessed: 2023-01-29.
+
+\bibitem[El-Hashash~2022]{corr_comp}
+Essam El-Hashash and Raga Hassan.
+\newblock {\em A Comparison of the Pearson, Spearman Rank and Kendall Tau
+  Correlation Coefficients Using Quantitative Variables}.
+\newblock Asian Journal of Probability and Statistics, vol.~20, pages 36--48,
+  10 2022.
 
 \bibitem[{European Commission}~2023a]{Renewable_energy_statistics}
 {European Commission}.
@@ -134,6 +148,13 @@ Michael~R. Lyu, Jieming Zhu, Pinjia He, Shilin He, Jinyang Liu, Zhuangbin Chen,
 \newblock {\em LogPAI}.
 \newblock \url{https://logpai.com/}, 2019.
 
+\bibitem[Nagappan~2010]{LFA}
+Meiyappan Nagappan and Mladen~A. Vouk.
+\newblock {\em Abstracting log lines to log event types for mining software
+  system logs}.
+\newblock In 2010 7th IEEE Working Conference on Mining Software Repositories
+  (MSR 2010), pages 114--117, 2010.
+
 \bibitem[Rosenblatt~1958]{Perceptron}
 F.~Rosenblatt.
 \newblock {\em {The perceptron: A probabilistic model for information storage
@@ -152,6 +173,12 @@ J{\"u}rgen Schmidhuber.
 \newblock {\em Deep learning in neural networks: An overview}.
 \newblock Neural Networks, vol.~61, pages 85--117, 2015.
 
+\bibitem[Shima~2016]{LenMa}
+Keiichi Shima.
+\newblock {\em Length Matters: Clustering System Log Messages using Length of
+  Words}.
+\newblock 11 2016.
+
 \bibitem[Sohoni~2016]{Power_curves}
 Vaishali Sohoni, S.~Gupta and Rajesh Nema.
 \newblock {\em A Critical Review on Wind Turbine Power Curve Modelling
@@ -163,6 +190,11 @@ Karen Sparck~Jones.
 \newblock {\em A statistical interpretation of term specificity and its
   application in retrieval}.
 \newblock Journal of documentation, vol.~28, no.~1, pages 11--21, 1972.
+
+\bibitem[Tang~2011]{LogSig}
+Liang Tang, Tao Li and Chang-Shing Perng.
+\newblock {\em LogSig: Generating system events from raw textual logs}.
+\newblock pages 785--794, 10 2011.
 
 \bibitem[Tautz-Weinert~2017]{SCADA_NBM_Review}
 Jannis Tautz-Weinert and Simon Watson.
