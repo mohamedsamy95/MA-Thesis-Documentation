@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.8)  21 MAY 2023 23:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.8)  21 MAY 2023 23:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -866,20 +866,18 @@ File: images//Methods/Logparser.png Graphic file (type png)
 <use images//Methods/Logparser.png>
 Package pdftex.def Info: images//Methods/Logparser.png  used on input line 547.
 (pdftex.def)             Requested size: 384.61185pt x 99.30971pt.
-[25] [26 <./images//Methods/Logparser.png>] [27] [28
-
-])
+[25] [26 <./images//Methods/Logparser.png>] [27])
 \openout2 = `Experiments.aux'.
 
- (./Experiments.tex
-Chapter 3.
-[29
+ (./Experiments.tex [28
 
 
 
 
 
 ]
+Chapter 3.
+[29]
 Underfull \hbox (badness 10000) in paragraph at lines 89--89
 []|\T1/cmr/m/n/10.95 Generator ex-ter-nal
  []
@@ -1103,21 +1101,30 @@ Package minitoc(hints) Info: I0053
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 0385DC092294343F248637FDB63684EA;5575.
+
+Package rerunfilecheck Warning: File `Thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Thesis.out':
+(rerunfilecheck)             Before: 0385DC092294343F248637FDB63684EA;5575
+(rerunfilecheck)             After:  F091B775B5922E36114EA3E59ACEDA33;5486.
 Package rerunfilecheck Info: File `Thesis.brf' has not changed.
 (rerunfilecheck)             Checksum: DC25EB68291066A5B6A575D125838403;2948.
  ) 
 Here is how much of TeX's memory you used:
- 17236 strings out of 478268
- 276296 string characters out of 5846348
+ 17237 strings out of 478268
+ 276324 string characters out of 5846348
  625403 words of memory out of 5000000
- 34677 multiletter control sequences out of 15000+600000
+ 34678 multiletter control sequences out of 15000+600000
  493110 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  115i,17n,111p,738b,533s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{section.2.4} has been referenced but does not exist, replaced by a fixed one
+
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on Thesis.pdf (59 pages, 6583917 bytes).
+Output written on Thesis.pdf (59 pages, 6583381 bytes).
 PDF statistics:
  919 PDF objects out of 1000 (max. 8388607)
  764 compressed objects within 8 object streams
