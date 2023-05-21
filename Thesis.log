@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.8)  1 MAY 2023 04:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.8)  21 MAY 2023 23:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -38,20 +38,31 @@ Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
 \ar@cellbox=\box51
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/was/gensymb.sty
 Package: gensymb 2003/07/02 v1.0 (WaS)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/soul/soul.sty
+Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
+\SOUL@word=\toks17
+\SOUL@lasttoken=\toks18
+\SOUL@cmds=\toks19
+\SOUL@buffer=\toks20
+\SOUL@token=\toks21
+\SOUL@spaceskip=\skip51
+\SOUL@ttwidth=\dimen141
+\SOUL@uldp=\dimen142
+\SOUL@ulht=\dimen143
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2021/10/15 v2.17l AMS math features
-\@mathmargin=\skip51
+\@mathmargin=\skip52
 
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
  (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks17
-\ex@=\dimen141
+\@emptytoks=\toks22
+\ex@=\dimen144
 )) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen142
+\pmbraise@=\dimen145
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2021/08/26 v2.02 operator names
 )
@@ -67,7 +78,7 @@ LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
 \Mathstrutbox@=\box52
 \strutbox@=\box53
-\big@size=\dimen143
+\big@size=\dimen146
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \macc@depth=\count199
@@ -75,21 +86,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \dotsspace@=\muskip16
 \c@parentequation=\count267
 \dspbrk@lvl=\count268
-\tag@help=\toks18
+\tag@help=\toks23
 \row@=\count269
 \column@=\count270
 \maxfields@=\count271
-\andhelp@=\toks19
-\eqnshift@=\dimen144
-\alignsep@=\dimen145
-\tagshift@=\dimen146
-\tagwidth@=\dimen147
-\totwidth@=\dimen148
-\lineht@=\dimen149
-\@envbody=\toks20
-\multlinegap=\skip52
-\multlinetaggap=\skip53
-\mathdisplay@stack=\toks21
+\andhelp@=\toks24
+\eqnshift@=\dimen147
+\alignsep@=\dimen148
+\tagshift@=\dimen149
+\tagwidth@=\dimen150
+\totwidth@=\dimen151
+\lineht@=\dimen152
+\@envbody=\toks25
+\multlinegap=\skip53
+\multlinetaggap=\skip54
+\mathdisplay@stack=\toks26
 LaTeX Info: Redefining \[ on input line 2938.
 LaTeX Info: Redefining \] on input line 2939.
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amssymb.sty
@@ -105,12 +116,12 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks22
-\inpenc@posthook=\toks23
+\inpenc@prehook=\toks27
+\inpenc@posthook=\toks28
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2022/02/26 3.73 The Babel package
 \babel@savecnt=\count272
-\U@D=\dimen150
+\U@D=\dimen153
 \l@unhyphenated=\language87
  (/usr/local/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
@@ -127,7 +138,7 @@ Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks24
+\KV@toks@=\toks29
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
  (/usr/local/texlive/2022/texmf-dist/tex/generic/iftex/iftex.sty
@@ -136,36 +147,36 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@cnth=\count274
 \Gm@cntv=\count275
 \c@Gm@tempcnt=\count276
-\Gm@bindingoffset=\dimen151
-\Gm@wd@mp=\dimen152
-\Gm@odd@mp=\dimen153
-\Gm@even@mp=\dimen154
-\Gm@layoutwidth=\dimen155
-\Gm@layoutheight=\dimen156
-\Gm@layouthoffset=\dimen157
-\Gm@layoutvoffset=\dimen158
-\Gm@dimlist=\toks25
+\Gm@bindingoffset=\dimen154
+\Gm@wd@mp=\dimen155
+\Gm@odd@mp=\dimen156
+\Gm@even@mp=\dimen157
+\Gm@layoutwidth=\dimen158
+\Gm@layoutheight=\dimen159
+\Gm@layouthoffset=\dimen160
+\Gm@layoutvoffset=\dimen161
+\Gm@dimlist=\toks30
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/silence/silence.sty
 Package: silence 2012/07/02 v1.5b Selective filtering of warnings and error messages
 \sl@Save=\count277
 \sl@StateNumber=\count278
 \sl@MessageCount=\count279
 \sl@Casualties=\count280
-\sl@Filter=\toks26
-\sl@Message=\toks27
-\sl@UnexpandedMessage=\toks28
-\sl@Mess@ge=\toks29
+\sl@Filter=\toks31
+\sl@Message=\toks32
+\sl@UnexpandedMessage=\toks33
+\sl@Mess@ge=\toks34
 \sl@WarningCount=\count281
 \sl@WarningNumber=\count282
 \sl@WarningCasualties=\count283
-\sl@TempBOW=\toks30
-\sl@BankOfWarnings=\toks31
+\sl@TempBOW=\toks35
+\sl@BankOfWarnings=\toks36
 LaTeX Info: Redefining \GenericWarning on input line 433.
 \sl@ErrorCount=\count284
 \sl@ErrorNumber=\count285
 \sl@ErrorCasualties=\count286
-\sl@TempBOE=\toks32
-\sl@BankOfErrors=\toks33
+\sl@TempBOE=\toks37
+\sl@BankOfErrors=\toks38
 LaTeX Info: Redefining \GenericError on input line 601.
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/ae/aecompl.sty
 Package: aecompl 1998/07/23 0.9 T1 Complements for AE fonts (D. Roegel)
@@ -182,7 +193,7 @@ Package: suffix 2006/07/15 1.5a Variant command support
 )
 Package: xstring 2021/07/21 v1.84 String manipulations (CT)
 )
-\AC@clearlist=\toks34
+\AC@clearlist=\toks39
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/iftex/ifpdf.sty
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
@@ -198,8 +209,8 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen159
-\Gin@req@width=\dimen160
+\Gin@req@height=\dimen162
+\Gin@req@width=\dimen163
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2021/12/07 v1.3c Standard LaTeX Color (DPC)
  (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -221,15 +232,15 @@ Package: mtcmess 2006/03/14
 Package minitoc Info: I0001
 (minitoc)             *** minitoc package, version 62 ***.
 \tf@mtc=\write3
-\mtcindent=\skip54
-\mtcskipamount=\skip55
+\mtcindent=\skip55
+\mtcskipamount=\skip56
 Package minitoc Info: I0005
 (minitoc)             compatible with hyperref.
 Package minitoc Info: I0023
 (minitoc)             part level macros available.
 Package minitoc Info: I0003
 (minitoc)             chapter level macros available.
-\mtc@toks=\toks35
+\mtc@toks=\toks40
 \mtc@strutbox=\box54
 \mtc@hstrutbox=\box55
 Package minitoc Info: I0002
@@ -252,7 +263,7 @@ Package minitoc Info: I0031
 \c@minitocdepth=\count290
 \c@ptc=\count291
 \c@parttocdepth=\count292
-\ptcindent=\skip56
+\ptcindent=\skip57
 Package minitoc Info: I0010
 (minitoc)             The english language is selected.
 (minitoc)              on input line 4910.
@@ -266,25 +277,25 @@ Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
 Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \c@r@tfl@t=\count293
-\rotFPtop=\skip57
-\rotFPbot=\skip58
+\rotFPtop=\skip58
+\rotFPbot=\skip59
 \rot@float@box=\box56
-\rot@mess@toks=\toks36
+\rot@mess@toks=\toks41
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and footers
-\f@nch@headwidth=\skip59
-\f@nch@O@elh=\skip60
-\f@nch@O@erh=\skip61
-\f@nch@O@olh=\skip62
-\f@nch@O@orh=\skip63
-\f@nch@O@elf=\skip64
-\f@nch@O@erf=\skip65
-\f@nch@O@olf=\skip66
-\f@nch@O@orf=\skip67
+\f@nch@headwidth=\skip60
+\f@nch@O@elh=\skip61
+\f@nch@O@erh=\skip62
+\f@nch@O@olh=\skip63
+\f@nch@O@orh=\skip64
+\f@nch@O@elf=\skip65
+\f@nch@O@erf=\skip66
+\f@nch@O@olf=\skip67
+\f@nch@O@orf=\skip68
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
-\everycr=\toks37
-\minrowclearance=\skip68
+\everycr=\toks42
+\minrowclearance=\skip69
 ) (./algorithm.sty
 Package: algorithm 
 
@@ -292,12 +303,12 @@ Document Style `algorithm' - floating environment
 (/usr/local/texlive/2022/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count294
-\float@exts=\toks38
+\float@exts=\toks43
 \float@box=\box57
-\@float@everytoks=\toks39
+\@float@everytoks=\toks44
 \@floatcapt=\box58
 )
-\@float@every@algorithm=\toks40
+\@float@every@algorithm=\toks45
 \c@algorithm=\count295
 ) (./algorithmic.sty
 Package: algorithmic 
@@ -307,18 +318,18 @@ Document Style `algorithmic' - environment
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count296
 \calc@Bcount=\count297
-\calc@Adimen=\dimen161
-\calc@Bdimen=\dimen162
-\calc@Askip=\skip69
-\calc@Bskip=\skip70
+\calc@Adimen=\dimen164
+\calc@Bdimen=\dimen165
+\calc@Askip=\skip70
+\calc@Bskip=\skip71
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count298
-\calc@Cskip=\skip71
+\calc@Cskip=\skip72
 )
 \c@ALC@line=\count299
 \c@ALC@rem=\count300
-\ALC@tlm=\skip72
+\ALC@tlm=\skip73
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/koma-script/scrextend.sty
 Package: scrextend 2021/11/13 v3.35 KOMA-Script package (extend other classes with features of KOMA-Script classes)
  (/usr/local/texlive/2022/texmf-dist/tex/latex/koma-script/scrkbase.sty
@@ -336,12 +347,12 @@ Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
 Already applied: [0000/00/00] Usage of raw or classic option list on input line 368.
 ))) (/usr/local/texlive/2022/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
-\subfigtopskip=\skip73
-\subfigcapskip=\skip74
-\subfigcaptopadj=\dimen163
-\subfigbottomskip=\skip75
-\subfigcapmargin=\dimen164
-\subfiglabelskip=\skip76
+\subfigtopskip=\skip74
+\subfigcapskip=\skip75
+\subfigcaptopadj=\dimen166
+\subfigbottomskip=\skip76
+\subfigcapmargin=\dimen167
+\subfiglabelskip=\skip77
 \c@subfigure=\count301
 \c@lofdepth=\count302
 \c@subtable=\count303
@@ -351,14 +362,14 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 * Local config file subfigure.cfg used *
 ****************************************
 (/usr/local/texlive/2022/texmf-dist/tex/latex/subfigure/subfigure.cfg)
-\subfig@top=\skip77
-\subfig@bottom=\skip78
+\subfig@top=\skip78
+\subfig@bottom=\skip79
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip79
+\multirow@colwidth=\skip80
 \multirow@cntb=\count305
-\multirow@dima=\skip80
-\bigstrutjot=\dimen165
+\multirow@dima=\skip81
+\bigstrutjot=\dimen168
 )
 \c@definition=\count306
  (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -388,7 +399,7 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
-\@linkdim=\dimen166
+\@linkdim=\dimen169
 \Hy@linkcounter=\count307
 \Hy@pagecounter=\count308
  (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/pd1enc.def
@@ -430,13 +441,13 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 ))
 \c@Hy@tempcnt=\count310
 LaTeX Info: Redefining \url on input line 4749.
-\XeTeXLinkMargin=\dimen167
+\XeTeXLinkMargin=\dimen170
  (/usr/local/texlive/2022/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 )
 \Fld@menulength=\count311
-\Field@Width=\dimen168
-\Fld@charsize=\dimen169
+\Field@Width=\dimen171
+\Fld@charsize=\dimen172
 Package hyperref Info: Hyper figures OFF on input line 6027.
 Package hyperref Info: Link nesting OFF on input line 6032.
 Package hyperref Info: Hyper index ON on input line 6035.
@@ -459,17 +470,17 @@ Package hyperref Info: Driver (autodetected): hpdftex.
 File: hpdftex.def 2022-02-21 v7.00n Hyperref driver for pdfTeX
 \Fld@listcount=\count315
 \c@bookmark@seq@number=\count316
-\Hy@SectionHShift=\skip81
+\Hy@SectionHShift=\skip82
 )
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 215.
-Package hyperref Info: Option `pdfmenubar' set `true' on input line 215.
-Package hyperref Info: Option `colorlinks' set `true' on input line 215.
-Package hyperref Info: Option `pdffitwindow' set `true' on input line 215.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 216.
+Package hyperref Info: Option `pdfmenubar' set `true' on input line 216.
+Package hyperref Info: Option `colorlinks' set `true' on input line 216.
+Package hyperref Info: Option `pdffitwindow' set `true' on input line 216.
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count317
 \l__pdf_internal_box=\box59
-) (./Thesis.aux (./TitlePage.aux) (./DeclAuthorship.aux) (./Introduction.aux) (./StateOfTheArt.aux) (./Methods.aux) (./Experiments.aux) (./Conclusions.aux) (./Appendix1.aux) (./Appendix2.aux))
+) (./Thesis.aux (./TitlePage.aux) (./DeclAuthorship.aux) (./Introduction.aux) (./Methods.aux) (./Experiments.aux) (./Conclusions.aux) (./Appendix1.aux) (./Appendix2.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -538,16 +549,16 @@ Package gensymb Warning: Not defining \micro.
 (/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count318
-\scratchdimen=\dimen170
+\scratchdimen=\dimen173
 \scratchbox=\box60
 \nofMPsegments=\count319
 \nofMParguments=\count320
-\everyMPshowfont=\toks41
+\everyMPshowfont=\toks46
 \MPscratchCnt=\count321
-\MPscratchDim=\dimen171
+\MPscratchDim=\dimen174
 \MPnumerator=\count322
 \makeMPintoPDFobject=\count323
-\everyMPtoPDFconversion=\toks42
+\everyMPtoPDFconversion=\toks47
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -661,23 +672,21 @@ Package minitoc Info: I0033
 (minitoc)             Writing Thesis.mtc7.
 \openout3 = `Thesis.mtc7'.
 
-Package minitoc Info: I0033
-(minitoc)             Writing Thesis.mtc8.
-\openout3 = `Thesis.mtc8'.
-
  [1
 
 
 
 ] [2
 
-] (./Thesis.toc [3
-
-])
+] (./Thesis.toc)
 \tf@toc=\write5
 \openout5 = `Thesis.toc'.
 
- [4]
+ [3
+
+] [4
+
+]
 \openout2 = `Introduction.aux'.
 
  (./Introduction.tex
@@ -690,31 +699,16 @@ Chapter 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.31 
+l.30 
       [1
 
 
-
-])
+]
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.42 \include{Introduction}
-                            [2]
-\openout2 = `StateOfTheArt.aux'.
-
- (./StateOfTheArt.tex
-Chapter 2.
-\openout3 = `Thesis.mtc'.
-
-\openout3 = `Thesis.mtc'.
-
-(./Thesis.mtc2)) [3
-
-
-
-
-]
+l.61 \par
+          In one of his recent publications, Letzgus \cite{Letzgus_Log} pres... [2]) [3]
 \openout2 = `Methods.aux'.
 
  (./Methods.tex [4
@@ -723,8 +717,8 @@ Chapter 2.
 
 
 ]
-Chapter 3.
-<images//Methods/Horizontal-axis-wind-turbine.png, id=247, 717.68124pt x 851.18pt>
+Chapter 2.
+<images//Methods/Horizontal-axis-wind-turbine.png, id=268, 717.68124pt x 851.18pt>
 File: images//Methods/Horizontal-axis-wind-turbine.png Graphic file (type png)
 <use images//Methods/Horizontal-axis-wind-turbine.png>
 Package pdftex.def Info: images//Methods/Horizontal-axis-wind-turbine.png  used on input line 24.
@@ -733,7 +727,7 @@ Package pdftex.def Info: images//Methods/Horizontal-axis-wind-turbine.png  used 
 Underfull \vbox (badness 6348) has occurred while \output is active []
 
  [5]
-<images//Methods/Sample_Signals.png, id=261, 1549.79pt x 634.37pt>
+<images//Methods/Sample_Signals.png, id=281, 1549.79pt x 634.37pt>
 File: images//Methods/Sample_Signals.png Graphic file (type png)
 <use images//Methods/Sample_Signals.png>
 Package pdftex.def Info: images//Methods/Sample_Signals.png  used on input line 54.
@@ -745,7 +739,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7 <./images//Methods/Sample_Signals.png>]
-<images//Methods/Log_sample.png, id=285, 3015.265pt x 1266.7325pt>
+<images//Methods/Log_sample.png, id=305, 3015.265pt x 1266.7325pt>
 File: images//Methods/Log_sample.png Graphic file (type png)
 <use images//Methods/Log_sample.png>
 Package pdftex.def Info: images//Methods/Log_sample.png  used on input line 128.
@@ -754,7 +748,7 @@ Package pdftex.def Info: images//Methods/Log_sample.png  used on input line 128.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
-<images//Methods/Warning_sample.png, id=294, 3015.265pt x 1286.8075pt>
+<images//Methods/Warning_sample.png, id=314, 3015.265pt x 1286.8075pt>
 File: images//Methods/Warning_sample.png Graphic file (type png)
 <use images//Methods/Warning_sample.png>
 Package pdftex.def Info: images//Methods/Warning_sample.png  used on input line 159.
@@ -763,7 +757,7 @@ Package pdftex.def Info: images//Methods/Warning_sample.png  used on input line 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9 <./images//Methods/Log_sample.png>] [10 <./images//Methods/Warning_sample.png>]
-<images//Methods/NBM.png, id=312, 1128.215pt x 443.6575pt>
+<images//Methods/NBM.png, id=333, 1128.215pt x 443.6575pt>
 File: images//Methods/NBM.png Graphic file (type png)
 <use images//Methods/NBM.png>
 Package pdftex.def Info: images//Methods/NBM.png  used on input line 189.
@@ -771,13 +765,13 @@ Package pdftex.def Info: images//Methods/NBM.png  used on input line 189.
  [11
 
  <./images//Methods/NBM.png>]
-<images//Methods/Linear_regression.png, id=330, 296.307pt x 209.583pt>
+<images//Methods/Linear_regression.png, id=350, 296.307pt x 209.583pt>
 File: images//Methods/Linear_regression.png Graphic file (type png)
 <use images//Methods/Linear_regression.png>
 Package pdftex.def Info: images//Methods/Linear_regression.png  used on input line 222.
 (pdftex.def)             Requested size: 207.41348pt x 146.70708pt.
  [12 <./images//Methods/Linear_regression.png>]
-<images//Methods/Perceptron.png, id=353, 453.695pt x 224.84pt>
+<images//Methods/Perceptron.png, id=373, 453.695pt x 224.84pt>
 File: images//Methods/Perceptron.png Graphic file (type png)
 <use images//Methods/Perceptron.png>
 Package pdftex.def Info: images//Methods/Perceptron.png  used on input line 259.
@@ -786,7 +780,7 @@ Package pdftex.def Info: images//Methods/Perceptron.png  used on input line 259.
 Underfull \vbox (badness 2401) has occurred while \output is active []
 
  [13]
-<images//Methods/MLP_cropped.png, id=372, 605.26125pt x 569.12625pt>
+<images//Methods/MLP_cropped.png, id=392, 605.26125pt x 569.12625pt>
 File: images//Methods/MLP_cropped.png Graphic file (type png)
 <use images//Methods/MLP_cropped.png>
 Package pdftex.def Info: images//Methods/MLP_cropped.png  used on input line 280.
@@ -805,7 +799,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 312--319
  []
 
 [16] [17]
-<images//Methods/Vent_Signals.png, id=421, 607.7907pt x 446.6286pt>
+
+LaTeX Warning: Reference `chap:soa' on page 18 undefined on input line 350.
+
+<images//Methods/Vent_Signals.png, id=437, 607.7907pt x 446.6286pt>
 File: images//Methods/Vent_Signals.png Graphic file (type png)
 <use images//Methods/Vent_Signals.png>
 Package pdftex.def Info: images//Methods/Vent_Signals.png  used on input line 385.
@@ -816,7 +813,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [18
 
 ] [19 <./images//Methods/Vent_Signals.png>]
-<images//Methods/Log_Merge.png, id=435, 1035.87pt x 1186.4325pt>
+<images//Methods/Log_Merge.png, id=451, 1035.87pt x 1186.4325pt>
 File: images//Methods/Log_Merge.png Graphic file (type png)
 <use images//Methods/Log_Merge.png>
 Package pdftex.def Info: images//Methods/Log_Merge.png  used on input line 424.
@@ -824,82 +821,91 @@ Package pdftex.def Info: images//Methods/Log_Merge.png  used on input line 424.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20] [21 <./images//Methods/Log_Merge.png>]
-<images//Methods/power_curve.png, id=453, 844.8363pt x 435.0654pt>
-File: images//Methods/power_curve.png Graphic file (type png)
-<use images//Methods/power_curve.png>
-Package pdftex.def Info: images//Methods/power_curve.png  used on input line 448.
-(pdftex.def)             Requested size: 380.17282pt x 195.7776pt.
- [22 <./images//Methods/power_curve.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 467--475
+ [20]
+Underfull \hbox (badness 10000) in paragraph at lines 432--444
 
  []
 
-[23]
-Underfull \hbox (badness 10000) in paragraph at lines 504--506
+[21 <./images//Methods/Log_Merge.png>]
+<images//Methods/power_curve.png, id=475, 1180.8918pt x 479.1501pt>
+File: images//Methods/power_curve.png Graphic file (type png)
+<use images//Methods/power_curve.png>
+Package pdftex.def Info: images//Methods/power_curve.png  used on input line 468.
+(pdftex.def)             Requested size: 395.60571pt x 160.5181pt.
+ [22]
+<images//Methods/Dashboard.png, id=484, 4039.09pt x 4665.43pt>
+File: images//Methods/Dashboard.png Graphic file (type png)
+<use images//Methods/Dashboard.png>
+Package pdftex.def Info: images//Methods/Dashboard.png  used on input line 496.
+(pdftex.def)             Requested size: 323.1338pt x 373.24203pt.
+
+Underfull \vbox (badness 1418) has occurred while \output is active []
+
+ [23 <./images//Methods/power_curve.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 505--513
+
+ []
+
+[24 <./images//Methods/Dashboard.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 542--544
 []\T1/cmr/m/n/10.95 Applying Drain on the SCADA log data at
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 504--506
+Underfull \hbox (badness 10000) in paragraph at lines 542--544
 \T1/cmr/m/n/10.95 hand by spec-i-fy-ing its log for-mat "\T1/cmr/m/it/10.95 <TimeDe-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 504--506
+Underfull \hbox (badness 10000) in paragraph at lines 542--544
 \T1/cmr/m/it/10.95 tected>,<TimeReset>,<UnitTitle>,<Content>,<UnitTitleDestination>\T1/cmr/m/n/10.95 ", we
  []
 
-<images//Methods/Logparser.png, id=487, 2262.4525pt x 584.1825pt>
+<images//Methods/Logparser.png, id=513, 2262.4525pt x 584.1825pt>
 File: images//Methods/Logparser.png Graphic file (type png)
 <use images//Methods/Logparser.png>
-Package pdftex.def Info: images//Methods/Logparser.png  used on input line 509.
+Package pdftex.def Info: images//Methods/Logparser.png  used on input line 547.
 (pdftex.def)             Requested size: 384.61185pt x 99.30971pt.
-[24 <./images//Methods/Logparser.png>] [25] [26
+[25] [26 <./images//Methods/Logparser.png>] [27] [28
 
 ])
 \openout2 = `Experiments.aux'.
 
  (./Experiments.tex
-Chapter 4.
-[27
+Chapter 3.
+[29
 
 
 
 
 
-] [28]
-Underfull \hbox (badness 2846) in paragraph at lines 71--72
-\T1/cmr/m/n/10.95 con-tain the key-words "Gen" and "Temp": 'Gen_Bear_Temp_Avg',
+]
+Underfull \hbox (badness 10000) in paragraph at lines 89--89
+[]|\T1/cmr/m/n/10.95 Generator ex-ter-nal
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--72
-\T1/cmr/m/n/10.95 'Gen_Phase1_Temp_Avg', 'Gen_Phase2_Temp_Avg',
+Underfull \hbox (badness 10000) in paragraph at lines 89--89
+[]|\T1/cmr/m/n/10.95 Generator in-ter-nal
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--72
-\T1/cmr/m/n/10.95 'Gen_Phase3_Temp_Avg', 'Gen_SlipRing_Temp_Avg',
+Underfull \hbox (badness 5954) in paragraph at lines 89--89
+[]|\T1/cmr/m/n/10.95 High-voltage trans-
  []
 
 
-Underfull \hbox (badness 3068) in paragraph at lines 81--81
-[]|\T1/cmr/bx/n/10.95 Measure for lin-ear
+Underfull \hbox (badness 1400) in paragraph at lines 89--89
+[]\T1/cmr/m/n/10.95 Table 3.2: []Measures of Kendall's
  []
 
 
-Underfull \hbox (badness 7379) in paragraph at lines 81--82
-[]|\T1/cmr/bx/n/10.95 Measure for feed-
+Underfull \hbox (badness 10000) in paragraph at lines 89--89
+\T1/cmr/m/n/10.95 cor-re-la-tion be-tween the do-main
  []
 
-
-Underfull \hbox (badness 4328) in paragraph at lines 87--87
-[]|\T1/cmr/m/n/10.95 Number of anoma-lies
- []
-
-
-Underfull \vbox (badness 1968) has occurred while \output is active []
+[30]
+Underfull \vbox (badness 5147) has occurred while \output is active []
 
 
 
@@ -909,30 +915,134 @@ Package fancyhdr Warning: \headheight is too small (13.6pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-11.6367pt}.
 
-[29]) [30]
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 160--168
+
+ []
+
+[32]
+<images//Experiments/Boxplot_T09.png, id=585, 917.829pt x 713.3049pt>
+File: images//Experiments/Boxplot_T09.png Graphic file (type png)
+<use images//Experiments/Boxplot_T09.png>
+Package pdftex.def Info: images//Experiments/Boxplot_T09.png  used on input line 198.
+(pdftex.def)             Requested size: 394.65877pt x 306.71513pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (13.6pt): 
+(fancyhdr)                Make it at least 25.23671pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.23671pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-11.6367pt}.
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
+[]|\T1/cmr/m/n/10.95 Generator ex-ter-nal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
+[]|\T1/cmr/m/n/10.95 Generator in-ter-nal
+ []
+
+
+Underfull \hbox (badness 5954) in paragraph at lines 226--226
+[]|\T1/cmr/m/n/10.95 High-voltage trans-
+ []
+
+
+Underfull \hbox (badness 1400) in paragraph at lines 226--226
+[]\T1/cmr/m/n/10.95 Table 3.5: []Measures of Kendall's
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
+\T1/cmr/m/n/10.95 cor-re-la-tion be-tween the do-main
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34 <./images//Experiments/Boxplot_T09.png>]
+
+Package fancyhdr Warning: \headheight is too small (13.6pt): 
+(fancyhdr)                Make it at least 25.23671pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.23671pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-11.6367pt}.
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 344--353
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36]
+<images//Experiments/labels.png, id=620, 844.8363pt x 435.0654pt>
+File: images//Experiments/labels.png Graphic file (type png)
+<use images//Experiments/labels.png>
+Package pdftex.def Info: images//Experiments/labels.png  used on input line 363.
+(pdftex.def)             Requested size: 380.17282pt x 195.7776pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (13.6pt): 
+(fancyhdr)                Make it at least 25.23671pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.23671pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-11.6367pt}.
+
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 370--374
+
+ []
+
+<images//Experiments/3pcs.png, id=628, 508.7808pt x 1063.0917pt>
+File: images//Experiments/3pcs.png Graphic file (type png)
+<use images//Experiments/3pcs.png>
+Package pdftex.def Info: images//Experiments/3pcs.png  used on input line 399.
+(pdftex.def)             Requested size: 254.38977pt x 531.54456pt.
+
+Underfull \vbox (badness 7576) has occurred while \output is active []
+
+ [38 <./images//Experiments/labels.png>])
+
+Package fancyhdr Warning: \headheight is too small (13.6pt): 
+(fancyhdr)                Make it at least 25.23671pt, for example:
+(fancyhdr)                \setlength{\headheight}{25.23671pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-11.6367pt}.
+
+[39 <./images//Experiments/3pcs.png>]
 \openout2 = `Conclusions.aux'.
 
- (./Conclusions.tex
-Chapter 5.
-) [31
+ (./Conclusions.tex [40
 
 
 
 
 ]
+Chapter 4.
+) [41]
 \openout2 = `Appendix1.aux'.
 
- (./Appendix1.tex [32
+ (./Appendix1.tex [42
 
 
 
 
 ]
 Appendix A.
-) [33]
+) [43]
 \openout2 = `Appendix2.aux'.
 
- (./Appendix2.tex [34
+ (./Appendix2.tex [44
 
 
 
@@ -947,38 +1057,38 @@ Overfull \hbox (85.7446pt too wide) in paragraph at lines 9--50
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [35] [36] (./Thesis.bbl (./Thesis.brf)
+ [45] [46] (./Thesis.bbl (./Thesis.brf)
 \tf@brf=\write6
 \openout6 = `Thesis.brf'.
 
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 51.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 66.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-Underfull \hbox (badness 1509) in paragraph at lines 66--66
+) [47
+
+
+
+]
+Underfull \hbox (badness 1509) in paragraph at lines 81--81
 \T1/cmr/m/it/10.95 tics\T1/cmr/m/n/10.95 .  [][]$\T1/cmtt/m/n/10.95 https : / / ec . europa . eu / eurostat / statistics-[]explained / index .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--74
+Underfull \hbox (badness 10000) in paragraph at lines 89--89
 []\T1/cmr/m/n/10.95 European Com-mis-sion.  \T1/cmr/m/it/10.95 Re-new-able
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--74
+Underfull \hbox (badness 10000) in paragraph at lines 89--89
 \T1/cmr/m/it/10.95 en-ergy tar-gets\T1/cmr/m/n/10.95 .  [][]$\T1/cmtt/m/n/10.95 https : / / energy . ec . europa . eu / topics /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--74
+Underfull \hbox (badness 10000) in paragraph at lines 89--89
 \T1/cmtt/m/n/10.95 renewable-[]energy / renewable-[]energy-[]directive-[]targets-[]and-[]rules /
  []
 
-[37
-
-
-
-] [38] [39])
+[48] [49] [50])
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the Thesis.maf file.
@@ -989,25 +1099,28 @@ Package minitoc(hints) Info: I0053
 (minitoc(hints))             please be aware that the minitoc package 
 (minitoc(hints))             facilities can not be used for new types 
 (minitoc(hints))             of floats defined by the float package.
- [40] (./Thesis.aux (./TitlePage.aux) (./DeclAuthorship.aux) (./Introduction.aux) (./StateOfTheArt.aux) (./Methods.aux) (./Experiments.aux) (./Conclusions.aux) (./Appendix1.aux) (./Appendix2.aux))
+ [51] (./Thesis.aux (./TitlePage.aux) (./DeclAuthorship.aux) (./Introduction.aux) (./Methods.aux) (./Experiments.aux) (./Conclusions.aux) (./Appendix1.aux) (./Appendix2.aux))
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: BADDE46FD826C4FA443D02A9435936F9;6556.
+(rerunfilecheck)             Checksum: 0385DC092294343F248637FDB63684EA;5575.
 Package rerunfilecheck Info: File `Thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 5C47EA16836F4A7ECC59853A1653146A;2622.
+(rerunfilecheck)             Checksum: DC25EB68291066A5B6A575D125838403;2948.
  ) 
 Here is how much of TeX's memory you used:
- 16945 strings out of 478268
- 272321 string characters out of 5846348
- 621080 words of memory out of 5000000
- 34428 multiletter control sequences out of 15000+600000
- 489786 words of font info for 78 fonts, out of 8000000 for 9000
+ 17236 strings out of 478268
+ 276296 string characters out of 5846348
+ 625403 words of memory out of 5000000
+ 34677 multiletter control sequences out of 15000+600000
+ 493110 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 115i,13n,111p,738b,567s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on Thesis.pdf (48 pages, 2673716 bytes).
+ 115i,17n,111p,738b,533s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb>
+Output written on Thesis.pdf (59 pages, 6583917 bytes).
 PDF statistics:
- 772 PDF objects out of 1000 (max. 8388607)
- 643 compressed objects within 7 object streams
- 155 named destinations out of 1000 (max. 500000)
- 325 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 919 PDF objects out of 1000 (max. 8388607)
+ 764 compressed objects within 8 object streams
+ 193 named destinations out of 1000 (max. 500000)
+ 345 words of extra memory for PDF output out of 10000 (max. 10000000)
 

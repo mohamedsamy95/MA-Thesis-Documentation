@@ -431,7 +431,18 @@ utilizing an open-source framework for analyzing log data called LogPAI. We will
     \label{subsub:PC}
       In this approach, we developed a method to improve SCADA-data-driven wind turbine power curve models 
       (for a comprehensive review of the various modeling techniques used to predict the power output of wind turbines and their applications in wind-based energy systems, 
-      see \cite{Power_curves}). We start by extracting the log messages that report the current state of operation; namely, logs containing one of the following regular expressions:
+      see \cite{Power_curves}). As shown in Figure \ref{fig:power_curve}.a, there are times when 
+      the wind speed is above the turbine's cut-in speed\footnote{A turbine's cut-in speed is the wind speed at which the turbine's blades will start spinning, 
+      as provided by the manufacturer in the turbine's datasheet} (4 m/s in this case), though the turbine's blades won't spin or will spin at lower rates than 
+      normal. This could happen due to several reasons, including grid curtailment\footnote{Grid curtailment refers to the intentional reduction or restriction of power 
+      generation from renewable energy sources due to limitations in the capacity of the electricity grid to accommodate the generated electricity.}, 
+      the turbine being in a service state and/or manually stopped by the operator, or the turbine is simply underproducing due to technical failures.
+      From a condition monitoring perspective, being informed that the turbine is underperforming when in an operating state is crucial as it's a sign 
+      of a potential failure in one or more of the turbine's components. That is why, we introduce this method that focuses on isolating the data points collected 
+      from the turbine's SCADA system when it's in operative mode. Handling the effect of grid curtailment on the turbine's performance is beyond
+      the scope of this work, it's, however, discussed further in (TODO reference future works).\\
+      
+      We start by extracting the log messages that report the current state of operation; namely, logs containing one of the following regular expressions:
       \begin{bulletList}
         \item \emph{"Run"},
         \item \emph{"(Stop|Pause).*kW.*RPM"}, or
@@ -439,28 +450,55 @@ utilizing an open-source framework for analyzing log data called LogPAI. We will
       \end{bulletList}
       The SCADA signals are then merged with the extracted log messages, using the same join strategy described in \ref{fig:log-merge}, and booleanly labeled based on the following logic:
       \begin{bulletList}
-        \item Turbine's state of operation = \emph{"Run"}, if the log message contains the expression \emph{"Run"} or \emph{"new SERVICE state: 1"}
-        \item Turbine's state of operation = \emph{"Stop"}, if the log message contains the expression \emph{"(Stop|Pause).*kW.*RPM"} or \emph{"new SERVICE state: 0"}
+        \item Turbine's state of operation = \emph{"Run"}, if the log message contains the expression \emph{"Run"} or \emph{"new SERVICE state: 0"}
+        \item Turbine's state of operation = \emph{"Stop"}, if the log message contains the expression \emph{"(Stop|Pause).*kW.*RPM"} or \emph{"new SERVICE state: 1"}
       \end{bulletList}
 
+      Figure \ref{fig:power_curve}.b shows a sample power curve after labeling the data points based on the proposed method. 
+      As shown, most of the time when the turbine isn't spinning, while the wind speed exceeds the cut-in speed, the data points are labeled 
+      in red and would be filtered out. In addition to that, some periods when the turbine is in a transition phase from a running to a stopping state 
+      will be filtered out. Those are also times when the turbine isn't necessarily underperforming but is gradually slowing down until it comes to a complete stop.
+      One could argue that this proposed method could be simply replaced by filtering the data based on the turbine's rotor rotational speed 
+      (if speed equals zero, then the turbine is not in operative mode). However, doing so wouldn't cover the transitional phases of the turbine, but simply 
+      filter out the data at times when the turbine wasn't spinning regardless of the reason. This includes times when the turbine isn't spinning 
+      due to a technical failure while in operation or due to low wind speeds.
+      
       \begin{figure}[H]
         \begin{center}
-          \includegraphics[scale=0.45]{Methods/power_curve.png}
+          \includegraphics[scale=0.335]{Methods/power_curve.png}
         \end{center}
         \caption{Turbine 01 power curve with log-feature-based labels}
         \label{fig:power_curve}
       \end{figure}
 
-      The log-based feature we introduced showed a clear improvement in the accuracy of power curve models (see experiment..TODO) when used to filter the data being input 
-      to the normal behavior model (using data points having \emph{"Run"} as the state of operation exclusively).
+      The log-based feature we introduced showed a clear improvement in the accuracy of power curve models (see experiment \ref{sec:Experiment IV}) when used to filter the data being input 
+      to the normal behavior model (using data points having \emph{"Run"} as the state of operation exclusively). It also led to better results compared to 
+      simply filtering by the rotor speed.
+     
 
     \subsubsection{Visualization of warnings}
+    \label{subsub:vis_warnings}
       Here, we introduced a straightforward yet effective way of visualizing (e.g., on an operation dashboard) messages from the Alarm and Warning logs that are relevant 
       to faults detected or predicted by normal behavior models and that are worth being reported to the operators.\\
       When the normal behavior model detects a fault in a certain turbine component, the SCADA logs are queried for messages reporting high temperatures in this component 
       during the same time window (e.g., last hour, last 12 hours, current day,\dots). If found, these messages could be included in the system reports that get sent to the operators
       to inform them of the detected failure. This gives more visibility and credibility to the detected/predicted failure by the system.\\
-      (TODO add graph showing an example)
+      Here, we use the following regular expression to filter relevant warnings and alarms in the SCADA log:
+      \begin{equation}
+        ((?=.*\text{Hot})(?=.*\{\}))|((?=.*\text{High temp})(?=.*\{\}))
+      \end{equation}
+      where the placeholder (\{\}) holds the abbreviation of the target major component as found in the signals dataset 
+      (e.g., "Gen" for Generator and "Gear" for Gearbox). Figure \ref{fig:dashboard} shows an example of how these messages could be displayed 
+      on a simple operation dashboard.
+
+      \begin{figure}[H]
+        \begin{center}
+          \includegraphics[scale=0.08]{Methods/Dashboard.png}
+        \end{center}
+        \caption{Example dashboard showing actual temperatures of the generator bearings (measured signal) against simulated signals 
+        by a condition monitoring model (simulation). Anomalous data points are marked in red and relevant logs found are displayed at the bottom}
+        \label{fig:dashboard}
+      \end{figure}
     
 
   \subsection{Utilizing LogPAI}
@@ -512,7 +550,13 @@ utilizing an open-source framework for analyzing log data called LogPAI. We will
         \label{fig:logparser}
       \end{figure}
 
+        P.S. We filter out all log messages having the template \emph{} \emph{"External power ref.:\_\_\_kW"} before passing the logs to the Logparser
+        as they weren't found to provide relevant information regarding the state of the turbine in the application of condition monitoring 
+        of its generator (bearings). In addition to that, given their high volume and frequency, they were found to worsen the quality of 
+        log embeddings generated by Loglizer when applied to our models.
+
       \subsubsection{Creating log embeddings using Loglizer}
+        \label{subsub:Loglizer}
         Loglizer is a machine learning-based technique to log analysis created by Tsinghua University academics \cite{Loglizer}. 
         Several critical components comprise the technique, including feature extraction, feature selection, and anomaly detection.
         Loglizer collects numerous features from log messages in the first stage, such as token frequencies, Term Frequency-Inverse Document Frequency (TF-IDF) scores, 

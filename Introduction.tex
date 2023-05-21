@@ -3,32 +3,87 @@
 \minitoc
 
 \section{Background}
-In 2020, renewable energy represented 22.1\% of energy consumed in the EU \cite{Renewable_energy_statistics}. This
-percentage is expected to increase drastically in the upcoming years with the target, set by
+In 2020, renewable energy represented 22.1\% of energy consumed in the EU \cite{Renewable_energy_statistics}. This percentage is 
+expected to increase drastically in the upcoming years with the target, set by
 the European Commission, of at least 32\% by the year 2030 \cite{Renewable_energy_targets}. With the increasing number
 of renewable energy assets being deployed every year, automated condition monitoring
-solutions are needed for operators to be able to scale up. This need gets more relevant in the
-case of operating offshore wind farms, where the cost of maintenance relative to the levelized
-cost of energy (LCOE) is significantly higher compared with onshore \cite{SCADA_NBM_Review}.
-Several approaches for condition monitoring were developed in the recent years that use
-SCADA1 data given its low cost (normally requiring no additional sensors).
-One of the methods used for condition monitoring using SCADA data is Normal Behavior
-Modelling (NBM). NBM uses the idea of detecting anomalies from normal operation by
-empirically modelling a measured parameter, used to reflect the condition of a specific part of
+solutions are needed for operators to be able to scale up their portfolio of assets.
+Monitoring wind turbine health and performance is critical for early fault detection, maintenance planning, and 
+optimizing wind farm operations. 
+\par Several manufacturers have created so-called condition monitoring systems (CMS). 
+These monitor a variety of essential metrics such as drive train vibration, oil quality, and temperatures in some of 
+the main components. Such devices are typically deployed as an addition to the regular wind turbine design.
+Even though the financial value of CMS's early defect detection has been demonstrated \cite{CMS}, 
+their high prices \cite{CMS_Costs} have discouraged operators from implementing them.
+Most of the utility-scale wind turbines come, however, with a Supervisory Control and Data Acquisition (SCADA) system by default.
+SCADA systems provide significant insights into wind turbine operational behavior. 
+They record various types of data related to 
+the operation and performance of the turbine which can be divided into two main categories: SCADA \emph{signals} and SCADA \emph{logs}.
+The SCADA signals provide real-time readings collected from various sensors installed in the turbine that reflect the current state of operation 
+in terms of power production, wind speed, rotor speed, component temperatures,\dots The frequency and the number of signals provided by the SCADA system 
+vary based on the turbine's manufacturer, model and technology. The SCADA logs, on the other hand, capture alarms and events recorded by the SCADA 
+system in the form of text in a non-fixed frequency.
+Some approaches utilize both CMS and SCADA data to perform condition monitoring tasks (e.g., \cite{CMSSCADA}), however, 
+several other approaches for condition monitoring were developed in recent years that rely solely on the
+SCADA data, given its low cost as it normally doesn't require additional hardware installation. For a comprehensive review 
+of different methods for wind turbine condition monitoring using SCADA data, see \cite{SCADA_NBM_Review}.
+
+\par One of the methods used for condition monitoring using SCADA data is Normal Behavior
+Modeling (NBM). NBM uses the idea of detecting anomalies from normal operation by
+empirically modeling a measured parameter, used to reflect the condition of a specific part of
 the turbine, based on a training phase (usually during a healthy state of the turbine). During
-operation, the difference between the measured and the modelled/predicted signal is used as
+operation, the difference between the measured and the modeled/predicted signal is used as an
 indicator for a possible fault. A difference of 0, with some tolerance, reflects normal conditions,
-whereas a difference greater or less than 0 reflects changed conditions or failures \cite{SCADA_NBM_Review}.
+whereas a difference greater or less than 0 reflects changed conditions or failures. Utilizing the signals provided 
+by the SCADA systems in normal behavior models were proven capable of (early) detecting failures in wind turbines.
+For instance, both Zhang et al. \cite{Zhang_Wang} and Bangalore et al. \cite{Bangalore_1} applied machine learning techniques to SCADA signals data to develop anomaly detection models 
+for fault diagnosis and prediction of the gearbox bearings of wind turbines. 
+The results demonstrate that their condition-monitoring approaches are capable of indicating damage in the components being monitored in advance.
 
-\section{Motivation}
-While NBMs using SCADA data were proven capable of predicting failures \cite{SCADA_NBM_Review}, they are
-treated as black box by the operators since they don’t provide any insights regarding the root
-cause of the failure. Incorporating SCADA log data2 to NBM could help tackle this problem by
-providing some insights to an anomaly detected by the model in case a relevant warning or failure message was logged by the SCADA system around the same time.
-It was also shown that incorporating SCADA logs containing information about operation
-conditions or control events could help improve the accuracy of the model in case of events
-unexplainable by the input signals \cite{Letzgus_Log}.//
+\par Other methods focus on utilizing logs to detect anomalies in the underlying system. Some of these approaches are general-purpose 
+and can be applied to any computer system. For example, Brown et al. \cite{RNN} developed recurrent neural network (RNN) language models augmented with attention 
+for anomaly detection in system logs that are generally applicable to any computer system and logging source. 
+Similarly, Lyu et al. \cite{LogPAI} developed an open-source framework with a set of tools that can be used for automated log parsing, 
+anomaly detection and impactful problem identification using machine learning.
+Other approaches specifically focus on leveraging the SCADA logs, especially alarms, to detect anomalies in wind turbines.
+Rahman et al. \cite{sequence} use rare sequential pattern mining\footnote{Rare sequential pattern mining is a data mining technique used to discover infrequent patterns in sequential data.} 
+to find anomalies in SCADA networks. 
+They suggest that because anomalous events occur rarely in a system and the architecture and actions of SCADA systems do not change frequently, 
+some anomalies can be found via uncommon sequential pattern mining. This anomaly detection might be useful for detecting intrusions or erroneous system behaviors.
+Andrade et al. \cite{Cluster} proposed methods that utilize unsupervised machine-learning clustering techniques to profile alarm patterns, identify abnormal events, and improve the detection of anomalies in 
+industrial processes in the context of network operators and grid outages.
 
-Logs were "Never" treated as input feature in NBMs
+
+\section{Motivation \& Objectives}
+While both SCADA signals and logs are leveraged in both areas of study, both approaches are performed in isolation, which leaves 
+operators with only two options: Either use one condition monitoring system or have to rely on multiple sources of information 
+to make informed operational decisions.
+\par In one of his recent publications, Letzgus \cite{Letzgus_Log} presented methods from the Natural Language Processing (NLP) domain 
+that help to find meaningful representations of SCADA log messages and sequences. 
+His methods encode messages from the SCADA log into vector representation by creating one-hot vectors or applying the 
+Correlated Occurrence Analogue to Lexical Semantic with temporal information (COALS-t) algorithm. 
+This permits and facilitates the successful implementation of machine-learning-based condition monitoring models.
+\par Additionally, Leahy et al. \cite{Leahy} demonstrated a method to label the SCADA signals by identifying stoppages that occurred in the turbines 
+and that are recorded as alarms in the SCADA log. This data was then used to perform fault detection using classification techniques.
+
+% Given that, we developed methods that refine the normal behavior models, 
+% trained on SCADA signals, by leveraging the wealth of information within the SCADA log data.\\
+\par Inspired by the work done in the literature, the primary objective of this thesis is to bring both "worlds" of SCADA signals- and log-based anomaly detection together 
+by incorporating SCADA log data into wind turbine condition monitoring models. 
+By mining SCADA log data, we aim to identify subtle patterns, correlations, and dependencies that may contain information about operation conditions or 
+control events which could help improve the accuracy and robustness of normal behavior models in case of events unexplainable by the SCADA signals. 
+Furthermore, the utilization of advanced machine learning algorithms, such as deep learning and anomaly detection techniques, will enhance the detection and prediction capabilities for abnormal behaviors and potential faults.
+We present different methods to utilize the SCADA logs and incorporate them into machine-learning normal behavior models by generating SCADA log-based vectors that can be used 
+as input features and labels that can be used to filter the SCADA signals being fed into the models. In addition to that, we propose a simple-yet-effective method to visualize 
+relevant alarms and warnings found in the SCADA logs which encourages operators to deal with one system only to monitor the state of the turbines.
+
+\par The findings of this research are expected to contribute to the field of wind turbine condition monitoring by providing enhanced techniques for normal behavior modeling. 
+The developed models can serve as a basis for effective fault detection, condition assessment, and predictive maintenance strategies, ultimately leading to increased reliability, reduced downtime, and improved operational efficiency of wind turbines.
+
+\par Chapter 2 will provide an overview of the methodology employed, along with the relevant literature, on wind turbine condition monitoring, SCADA-log data analysis, and machine learning techniques 
+(including data preprocessing and feature extraction) applied to wind turbine condition monitoring. 
+Chapter 4 will showcase the experimental results and discuss the performance of the proposed models. 
+Finally, Chapter 5 will summarize the findings, draw conclusions, and provide recommendations for future research.
+
 
 

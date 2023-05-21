@@ -1,8 +1,2 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.1}Benchmark NBM architecture}{\reset@font\mtcSfont 28}{section.4.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.2}Effect of incorporating log embeddings into NBM for condition monitoring when applied on a healthy turbine (T01)}{\reset@font\mtcSfont 28}{section.4.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.1}Research question}{\reset@font\mtcSSfont 28}{subsection.4.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.2}Setup}{\reset@font\mtcSSfont 29}{subsection.4.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.3}Results}{\reset@font\mtcSSfont 29}{subsection.4.2.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}Effect of incorporating log embeddings into NBM for condition monitoring when applied on a faulty turbine (T09)}{\reset@font\mtcSfont 30}{section.4.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Effect of incorporating log embeddings into NBM for condition monitoring when applied on a faulty turbine (T06)}{\reset@font\mtcSfont 30}{section.4.4}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.5}Effect of log-based data filtering on NBM for power curve modeling when applied on T01}{\reset@font\mtcSfont 30}{section.4.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.1}Conclusions}{\reset@font\mtcSfont 41}{section.4.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.2}Future Works}{\reset@font\mtcSfont 41}{section.4.2}}

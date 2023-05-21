@@ -1,5 +1,12 @@
 \begin{thebibliography}{xxxx}
 
+\bibitem[Andrade~2022]{Cluster}
+J.~R. Andrade, C.~Rocha, R.~Silva, J.~P. Viana, Ricardo~J. Bessa, C.~Gouveia,
+  B.~Almeida, R.~J. Santos, M.~Louro, P.~M. Santos and A.~F. Ribeiro.
+\newblock {\em Data-Driven Anomaly Detection and Event Log Profiling of SCADA
+  Alarms}.
+\newblock IEEE Access, vol.~10, pages 73758--73773, 2022.
+
 \bibitem[Bangalore~2013a]{Bangalore_3}
 Pramod Bangalore and Lina Bertling~Tjernberg.
 \newblock {\em Self evolving neural network based algorithm for fault prognosis
@@ -35,6 +42,14 @@ R.F.M. Brandao, Jos{\'e} Carvalho and Fernando Maciel-Barbosa.
 \newblock {\em Intelligent System for Fault Detection in Wind Turbines
   Gearbox}.
 \newblock 06 2015.
+
+\bibitem[Brown~2018]{RNN}
+Andy Brown, Aaron Tuor, Brian Hutchinson and Nicole Nichols.
+\newblock {\em Recurrent Neural Network Attention Mechanisms for Interpretable
+  System Log Anomaly Detection}.
+\newblock In Proceedings of the First Workshop on Machine Learning for
+  Computing Systems, MLCS'18, New York, NY, USA, 2018. Association for
+  Computing Machinery.
 
 \bibitem[Das~2021]{tf-idf_review}
 Mamata Das, Selvakumar Kamalanathan and Pja Alphonse.
@@ -76,6 +91,12 @@ Essam El-Hashash and Raga Hassan.
 Ludwig Fahrmeir, Thomas Kneib, Stefan Lang and Brian~D. Marx.
 \newblock Regression models, pages 23--84.
 \newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2021.
+
+\bibitem[Feng~2011]{CMSSCADA}
+Yanhui Feng, Yingning Qiu, Christopher Crabtree, Hui Long and P.J. Tavner.
+\newblock {\em Use of SCADA and CMS signals for failure detection \& diagnosis
+  of a wind turbine gearbox}.
+\newblock European Wind Energy Association Conference EWEA 2011, 01 2011.
 
 \bibitem[Fukushima~1980]{Fukushima}
 Kunihiko Fukushima.
@@ -136,6 +157,13 @@ M.~G. Kendall.
 \newblock {\em {A NEW MEASURE OF RANK CORRELATION}}.
 \newblock Biometrika, vol.~30, no.~1-2, pages 81--93, 06 1938.
 
+\bibitem[Leahy~2017]{Leahy}
+Kevin Leahy, Colm Gallagher, Ken Bruton, Peter O'Donovan and Dominic
+  O'~Sullivan.
+\newblock {\em Automatically Identifying and Predicting Unplanned Wind Turbine
+  Stoppages Using SCADA and Alarms System Data: Case Study and Results}.
+\newblock volume 926, page 012011, 11 2017.
+
 \bibitem[Letzgus~2020]{Letzgus_Log}
 Simon Letzgus.
 \newblock {\em Finding meaningful representations of SCADA-log information for
@@ -154,6 +182,14 @@ Meiyappan Nagappan and Mladen~A. Vouk.
   system logs}.
 \newblock In 2010 7th IEEE Working Conference on Mining Software Repositories
   (MSR 2010), pages 114--117, 2010.
+
+\bibitem[Rahman~2016]{sequence}
+Anisur Rahman, Yue Xu, Kenneth Radke and Ernest Foo.
+\newblock {\em Finding Anomalies in SCADA Logs Using Rare Sequential Pattern
+  Mining}.
+\newblock In Jiageng Chen, Vincenzo Piuri, Chunhua Su and Moti Yung, editeurs,
+  Network and System Security, pages 499--506, Cham, 2016. Springer
+  International Publishing.
 
 \bibitem[Rosenblatt~1958]{Perceptron}
 F.~Rosenblatt.
@@ -214,6 +250,18 @@ Xiaofeng Wang, Guoliang Lu and Peng Yan.
   monitoring of industrial rotating machinery using multi-sensors}.
 \newblock In 2019 Prognostics and System Health Management Conference
   (PHM-Qingdao), pages 1--5, 2019.
+
+\bibitem[Yang~2013]{CMS_Costs}
+Wenxian Yang, Richard Court and Jiesheng Jiang.
+\newblock {\em Wind turbine condition monitoring by the approach of SCADA data
+  analysis}.
+\newblock Renewable Energy, vol.~53, pages 365--376, 2013.
+
+\bibitem[Yang~2014]{CMS}
+Wenxian Yang, Peter~J. Tavner, Christopher~J. Crabtree, Y.~Feng and Y.~Qiu.
+\newblock {\em Wind turbine condition monitoring: technical and commercial
+  challenges}.
+\newblock Wind Energy, vol.~17, no.~5, pages 673--693, 2014.
 
 \bibitem[Zadeh~1965]{fuzzy_sets}
 L.A. Zadeh.
