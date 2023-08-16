@@ -48,7 +48,7 @@ As shown in Table \ref{tab:Experiment I results}, the feed-forward network outpe
          Testing RMSE & 5.80 & 5.78 \\
     \hline
     \end{tabular}
-    \caption{Experiment I results: RMSEs measured and used to compare between the benchmark models}
+    \caption{Experiment I results: RMSEs measured and used to compare the benchmark models}
         \label{tab:Experiment I results}
 \end{table}
 
@@ -60,7 +60,7 @@ This experiment aims to quantitatively and qualitatively measure
 the effect of incorporating SCADA-log-based embeddings into the baseline normal behavior model when applied to a healthy turbine.
 (see method \ref{sub:dk_method} and \ref{subsub:Loglizer})\\
 We ran this experiment three times: one time using the baseline normal behavior model (i.e., using only SCADA signals as input features), 
-repeated once after adding the log embeddings generated based on domain knowledge as input features (denoted as \emph{Model-DK}) and 
+repeated once after adding the log embeddings generated based on domain knowledge as input features (denoted as \emph{Model-DK}), and 
 another time after incorporating LogPAI-generated log embeddings (denoted as \emph{Model-PAI}).
 The models were trained on data collected between 01/09/2016 and 30/08/2017 and tested on data collected between
 01/09/2017 and 31/12/2017.\\
@@ -152,13 +152,14 @@ were indeed capable of retrieving valuable information from the SCADA logs.
      Testing RMSE & 5.784 & 5.195 & 5.607\\
 \hline
 \end{tabular}
-\caption{Experiment results: RMSEs measured and used to compare between the \emph{Baseline} model, \emph{Model-DK} and \emph{Model-PAI} when applied to Turbine 01}
+\caption{Experiment results: RMSEs measured and used to compare between the \emph{Baseline} model, \emph{Model-DK}, and \emph{Model-PAI} when applied to Turbine 01}
     \label{tab:Experiment II results}
 \end{table}
 
 \subsubsection{Anomaly detection}
-Applying the models to the testing dataset, 12, 15 and 8 data points were labeled anomalous by the \emph{Baseline} model,
-\emph{Model-DK} and \emph{Model-PAI}, respectively. Whether to consider these data points as false positives or not is 
+Applying the models to the testing dataset, 12, 15, and 8 data points were labeled anomalous by the \emph{Baseline} model,
+\emph{Model-DK}, and \emph{Model-PAI}, respectively. Those anomalous data points were spread over 4 days for all three models. 
+Whether to consider these data points as false positives or not is 
 arguable. One could consider them as false positives based on the premise that the turbine was operating in a healthy state.
 In this case, \emph{Model-PAI} would be ranked highest in terms of anomaly detection. However, these data points could indeed
 be anomalous and be signaling a fault that might happen in the future. Here, \emph{Model-DK} would show a higher sensitivity 
@@ -168,6 +169,32 @@ we weren't able to test the different possibilities and will leave the interpret
 
 No alarms were reported in all three models. This result shows that none of the anomalies detected was considered 
 critical enough for the operator to be notified, which aligns with the assumption that the turbine is healthy.
+A summary of the discussed results is shown in Table \ref{tab:summary_expII}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+            \textbf{Metric} & \textbf{\emph{Baseline}} & \textbf{\emph{Model-DK}} & \textbf{\emph{Model-PAI}}\\
+            \hline
+            \#Anomalous data points & 12 & 15 & 8\\
+            \hline
+            ..firstly detected on & 04/12/2017 & 15/11/2017 & 04/12/2017\\
+            \hline
+            ..lastly detected on & 27/12/2017 & 27/12/2017 & 27/12/2017\\
+            \hline
+            \#Anomalous days & 4 & 4 & 4\\
+            \hline
+            ..of which warning logs were found & 0 & 0 & 0\\
+            \hline
+            \#Alarms sent & 0 & 0 & 0\\
+        \hline
+    \end{tabular}
+    \caption{Summary of experiment results}
+    \label{tab:summary_expII}
+\end{table}
+
+
 
 
 
@@ -178,13 +205,13 @@ critical enough for the operator to be notified, which aligns with the assumptio
 \subsection{Setup}
 This experiment aims to quantitatively and qualitatively measure 
 the effect of incorporating SCADA-log-based embeddings into the baseline normal behavior model when applied to a faulty turbine 
-(see method \ref{sub:dk_method}, \ref{subsub:vis_warnings} and \ref{subsub:Loglizer}).\\
+(see method \ref{sub:dk_method}, \ref{subsub:vis_warnings}, and \ref{subsub:Loglizer}).\\
 For this turbine (T09), several failures relating to the generator bearings were reported starting on 07/06/2016 and ending on 17/10/2016
 by replacing the generator bearings (see Table \ref{tab:failures}). In this case, not only do we want to measure the performance of our models fitting the data 
 during the presumably healthy (training) period, but also we want to test their capability of detecting the recorded failures early and notifying the operator 
 in cases of major anomalies in the operation of the turbine's component.\\
 We ran this experiment three times: one time using the baseline normal behavior model (i.e., using only SCADA signals as input features), 
-repeated once after adding the log embeddings generated based on domain knowledge as input features (denoted as \emph{Model-DK}) and 
+repeated once after adding the log embeddings generated based on domain knowledge as input features (denoted as \emph{Model-DK}), and 
 another time after incorporating LogPAI-generated log embeddings (denoted as \emph{Model-PAI}).
 The models were trained on data collected between 01/01/2016 and 15/02/2016 and tested on data collected between
 16/02/2016 and 18/10/2016. Due to the limits of the dataset at hand, only two and a half months of data could be used to train the models since, 
@@ -193,7 +220,7 @@ Due to the shortage in the training dataset, some features in the testing datase
 This fact made the interpretation of the results a bit more challenging, it, however, helped test the robustness of the 
 different models' architectures.
 
-\begin{figure}[H]
+\begin{figure}[h]
     \begin{center}
       \includegraphics[scale=0.43]{Experiments/Boxplot_T09.png}
     \end{center}
@@ -203,9 +230,9 @@ different models' architectures.
 
 As shown in Table \ref{tab:expIII:domain-knowledge-feats}, all log embeddings generated based on domain knowledge highly correlate with the target feature 
 and were hence used as input features in \emph{Model-DK} in addition to the selected SCADA signals.
-As for the log embeddings generated using LogPAI, only a few features were found to relatively highly correlate (correlation factor greater than 0.3 or less than -0.3) 
+As for the log embeddings generated using LogPAI, only two features were found to relatively highly correlate (correlation factor greater than 0.3 or less than -0.3) 
 with the target feature (see Table \ref{tab:expIII:logpai-feats}) and were selected, in addition to the selected SCADA signals, as input features in \emph{Model-PAI}.
-\begin{table}[H]
+\begin{table}[h]
     \parbox{.45\linewidth}{
     \centering
     \begin{tabular}{|c|c|}
@@ -276,7 +303,7 @@ and the yielded alarms.
 
 \subsection{Results}
 \subsubsection{Performance}
-Again, it was shown that the incorporated log embeddings, both in \emph{Model-DK} and \emph{Model-PAI}, improved the RMSE scores of the models (see Table \ref{tab:Experiment III results}). 
+Again, it was shown that the incorporated log embeddings, both in \emph{Model-DK}, and \emph{Model-PAI}, improved the RMSE scores of the models (see Table \ref{tab:Experiment III results}). 
 
 \begin{table}[H]
     \centering
@@ -289,14 +316,14 @@ Again, it was shown that the incorporated log embeddings, both in \emph{Model-DK
      Testing RMSE & 9.084 & 8.936 & 9.029\\
 \hline
 \end{tabular}
-\caption{Experiment results: RMSEs measured and used to compare between the \emph{Baseline} model, \emph{Model-DK} and \emph{Model-PAI} when applied to Turbine 09}
+\caption{Experiment results: RMSEs measured and used to compare between the \emph{Baseline} model, \emph{Model-DK}, and \emph{Model-PAI} when applied to Turbine 09}
     \label{tab:Experiment III results}
 \end{table}
 
 \subsubsection{Anomaly \& Early fault detection}
-In total, 48, 217 and 236 anomalies were reported by the \emph{Baseline} model, \emph{Model-DK} and \emph{Model-PAI}, respectively.
-Those anomalous data points were spread over 29 days for the \emph{Baseline} model, 42 days for \emph{Model-DK} and 53 days for \emph{Model-PAI}.
-From these anomalous days, relevant alarm and warning logs were found (see \ref{subsub:vis_warnings} on how these logs are retrieved) on 18 days for both \emph{Model-DK} and \emph{Model-PAI} and only on 14 days for \emph{Baseline} model.
+In total, 48, 217, and 236 anomalies were reported by the \emph{Baseline} model, \emph{Model-DK}, and \emph{Model-PAI}, respectively.
+Those anomalous data points were spread over 29 days for the \emph{Baseline} model, 42 days for \emph{Model-DK}, and 53 days for \emph{Model-PAI}.
+From these anomalous days, relevant alarm and warning logs were found (see \ref{subsub:vis_warnings} on how these logs are retrieved) on 18 days for both \emph{Model-DK} and \emph{Model-PAI} and only 14 days for the \emph{Baseline} model.
 In addition to that, both \emph{Model-DK} and \emph{Model-PAI} detected the first anomaly one day earlier than the \emph{Baseline} model (16/02/2016 versus 17/02/2016).
 
 This result only shows the major effect of the log embeddings---whether the ones generated by applying domain knowledge or using LogPAI---on the behavior of 
@@ -304,11 +331,11 @@ the model during unhealthy conditions of the turbine. The way we interpret this 
 found in the SCADA log, the model could provide a better simulation of the turbine in healthy conditions and, hence, detect abnormalities more easily
 during unhealthy states of operation.\\
 Using the method described in \ref{subsub:anvsal}, only \emph{Model-DK} sent alarms with a total of six alarms starting on 19/02/2016 and ending on 23/08/2016.
-This is due to the fact that the peak number of anomalies detected per day was significantly high for \emph{Model-DK} (between 13 and 28) 
+This is due to the fact that the peak number of anomalies detected per day was significantly higher for \emph{Model-DK} (between 13 and 28) 
 compared to \emph{Model-PAI} (12) and the \emph{Baseline} model (3 only). 
 On one hand, we believe this result is due to the limited sample size used to train the model. 
 However, on the other hand, it shows the higher robustness of \emph{Model-DK}: the limited training dataset was enough for the model 
-to report higher numbers of anomalies detected per day during the validation period, high enough for it to trigger an alarm.\\
+to report higher numbers of anomalies detected per day during the validation period, high enough for it to trigger several alarms.\\
 A summary of the discussed results is shown in Table \ref{tab:summary_expIII}.
 
 \begin{table}[H]
@@ -334,16 +361,16 @@ A summary of the discussed results is shown in Table \ref{tab:summary_expIII}.
             ..lastly on & \- & 23/08/2016 & \-\\
         \hline
     \end{tabular}
-    \caption{Anomaly and early fault detection: Summary of experiment results}
+    \caption{Summary of experiment results: Anomaly and early detection of faulty generator bearings which were replaced on 17/10/2016}
     \label{tab:summary_expIII}
 \end{table}
 
 \section{Effect of log-based data filtering on NBM for power curve modeling}
     \label{sec:Experiment IV}
     \subsection{Setup}
-    The main goal of this experiment is to test the effectiveness of the method \ref{subsub:PC} in improving normal behavior models 
+    The main goal of this experiment is to test the effectiveness of method \ref{subsub:PC} in improving normal behavior models 
     having power production as the target, also known as power curve models. To do so, we trained a normal behavior model on 
-    data collected from Turbine 01 sensors between September 2016 and August 2017 and tested on data collected between September 2017 
+    data collected from Turbine 01 sensors between September 2016 and August 2017 and tested it on data collected between September 2017 
     and December 2017. We used only the ambient wind speed (m/s) and ambient temperature (\degree C) signals as input features 
     and the average power production according to the grid (kW) as the target feature.\\
     We trained three different models having the same architecture but using different datasets: 
@@ -379,7 +406,7 @@ A summary of the discussed results is shown in Table \ref{tab:summary_expIII}.
       Figure \ref{fig:3pcs} also shows the better power curve fit both \emph{Model-Spin} and \emph{Model-Run} have compared to the \emph{Baseline} model 
       when applied to the testing dataset.
 
-      \begin{table}[H]
+      \begin{table}[h]
         \centering
     \begin{tabular}{|c|c|c|c|}
     \hline
@@ -394,11 +421,11 @@ A summary of the discussed results is shown in Table \ref{tab:summary_expIII}.
         \label{tab:Experiment IV results}
     \end{table}
 
-    \begin{figure}[H]
+    \begin{figure}[h]
         \begin{center}
           \includegraphics[scale=0.5]{Experiments/3pcs.png}
         \end{center}
-        \caption{True versus predicted power curves of the \emph{Baseline} model, \emph{Model-Spin} and \emph{Model-Run}, respectively, 
+        \caption{True versus predicted power curves of the \emph{Baseline} model, \emph{Model-Spin}, and \emph{Model-Run}, respectively, 
         when applied to the testing dataset of Turbine 01}
         \label{fig:3pcs}
       \end{figure}

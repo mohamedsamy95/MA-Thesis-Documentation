@@ -6,22 +6,22 @@
 \contentsline {section}{\numberline {2.1}Dataset}{5}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Signals}{5}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Logs}{7}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Failures}{10}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.3}Failures}{9}{subsection.2.1.3}%
 \contentsline {section}{\numberline {2.2}Normal behavior modeling}{11}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Machine Learning in NBM}{11}{subsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.1.1}Linear regression}{12}{subsubsection.2.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.2.1.2}Artificial Neural Networks}{13}{subsubsection.2.2.1.2}%
-\contentsline {subsection}{\numberline {2.2.2}Reconstruction-based Anomaly detection}{15}{subsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.2.1}Anomaly vs Alarm}{16}{subsubsection.2.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.3}Feature selection}{16}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Log analysis}{18}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Domain-knowledge-based method}{18}{subsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.1.1}Creating log embeddings}{18}{subsubsection.2.3.1.1}%
-\contentsline {subsubsection}{\numberline {2.3.1.2}Data labeling and filtering}{21}{subsubsection.2.3.1.2}%
-\contentsline {subsubsection}{\numberline {2.3.1.3}Visualization of warnings}{23}{subsubsection.2.3.1.3}%
-\contentsline {subsection}{\numberline {2.3.2}Utilizing LogPAI}{24}{subsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.2.1}Preprocessing of logs using Logparser}{25}{subsubsection.2.3.2.1}%
-\contentsline {subsubsection}{\numberline {2.3.2.2}Creating log embeddings using Loglizer}{26}{subsubsection.2.3.2.2}%
+\contentsline {subsection}{\numberline {2.2.2}Reconstruction-based Anomaly Detection}{16}{subsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.2.1}Anomaly vs Alarm}{17}{subsubsection.2.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.3}Feature selection}{17}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Log analysis}{19}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Domain-knowledge-based method}{19}{subsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.1.1}Creating log embeddings}{19}{subsubsection.2.3.1.1}%
+\contentsline {subsubsection}{\numberline {2.3.1.2}Data labeling and filtering}{22}{subsubsection.2.3.1.2}%
+\contentsline {subsubsection}{\numberline {2.3.1.3}Visualization of warnings}{24}{subsubsection.2.3.1.3}%
+\contentsline {subsection}{\numberline {2.3.2}Utilizing LogPAI}{26}{subsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.2.1}Preprocessing of logs using Logparser}{26}{subsubsection.2.3.2.1}%
+\contentsline {subsubsection}{\numberline {2.3.2.2}Creating log embeddings using Loglizer}{27}{subsubsection.2.3.2.2}%
 \contentsline {chapter}{\numberline {3}Experiments}{29}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Benchmark NBM architecture}{30}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Effect of incorporating log embeddings into NBM for condition monitoring when applied to a healthy turbine (T01)}{30}{section.3.2}%
@@ -29,17 +29,23 @@
 \contentsline {subsection}{\numberline {3.2.2}Results}{32}{subsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.2.1}Performance}{32}{subsubsection.3.2.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2.2}Anomaly detection}{32}{subsubsection.3.2.2.2}%
-\contentsline {section}{\numberline {3.3}Effect of incorporating log embeddings into NBM for condition monitoring when applied to a faulty turbine (T09)}{32}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Setup}{32}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Results}{35}{subsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.2.1}Performance}{35}{subsubsection.3.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.3.2.2}Anomaly \& Early fault detection}{36}{subsubsection.3.3.2.2}%
-\contentsline {section}{\numberline {3.4}Effect of log-based data filtering on NBM for power curve modeling}{37}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Setup}{37}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Results}{38}{subsection.3.4.2}%
-\contentsline {chapter}{\numberline {4}Conclusions and Future Works}{41}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Conclusions}{41}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Future Works}{41}{section.4.2}%
-\contentsline {chapter}{\numberline {A}Wind Turbine Characteristics}{43}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Recorded Failures}{45}{appendix.B}%
-\contentsline {chapter}{Bibliography}{47}{appendix*.4}%
+\contentsline {section}{\numberline {3.3}Effect of incorporating log embeddings into NBM for condition monitoring when applied to a faulty turbine (T09)}{33}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Setup}{33}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Results}{34}{subsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.2.1}Performance}{34}{subsubsection.3.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.3.2.2}Anomaly \& Early fault detection}{34}{subsubsection.3.3.2.2}%
+\contentsline {section}{\numberline {3.4}Effect of log-based data filtering on NBM for power curve modeling}{36}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Setup}{36}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Results}{37}{subsection.3.4.2}%
+\contentsline {chapter}{\numberline {4}Conclusions and Future Works}{39}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Conclusions}{39}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Future Works}{40}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Expanding Dataset Size for Enhanced Model Training and Generalization}{40}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Unveiling Deeper Insights through Domain-Knowledge-Based Analysis of SCADA-Log Data}{41}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Incorporating Grid Curtailment Information to Enhance Labeling and Filtering in Power Curve Models}{41}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Extending Methodology to Monitor Other Wind Turbine Components}{42}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Potential Application of Fuzzy Systems as Normal Behavior Models}{42}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}Applicability of Methods to Other SCADA-Enabled Systems}{43}{subsection.4.2.6}%
+\contentsline {chapter}{\numberline {A}Wind Turbine Characteristics}{45}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Recorded Failures}{47}{appendix.B}%
+\contentsline {chapter}{Bibliography}{49}{appendix*.4}%

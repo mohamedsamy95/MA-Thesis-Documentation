@@ -30,9 +30,9 @@
 \newlabel{fig:sample_logs}{{2.3}{9}{Sample messages found in the Operation and System Log of Turbine T09 from event class I and II, respectively}{figure.2.3}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {2.4}{\ignorespaces Measured frequencies of selected classes of log messages found in the Alarm and Warning log of Turbine 09}}{9}{table.2.4}\protected@file@percent }
 \newlabel{tab:AlrmWarnLogsT09}{{2.4}{9}{Measured frequencies of selected classes of log messages found in the Alarm and Warning log of Turbine 09}{table.2.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}Failures}{9}{subsection.2.1.3}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Sample messages found in the Alarm and Warning Log of Turbine T09 from event class III and IV, respectively}}{10}{figure.2.4}\protected@file@percent }
 \newlabel{fig:sample_warnings}{{2.4}{10}{Sample messages found in the Alarm and Warning Log of Turbine T09 from event class III and IV, respectively}{figure.2.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}Failures}{10}{subsection.2.1.3}\protected@file@percent }
 \citation{SCADA_NBM_Review}
 \citation{Regression}
 \citation{SCADA_NBM_Review}
@@ -40,8 +40,8 @@
 \citation{fuzzy_sets}
 \@writefile{toc}{\contentsline {section}{\numberline {2.2}Normal behavior modeling}{11}{section.2.2}\protected@file@percent }
 \@writefile{brf}{\backcite{SCADA_NBM_Review}{{11}{2.2}{section.2.2}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces NBM with the input signals from the SCADA system (x(t)), measured signal (y(t)), modeled signal ($\hat  {y}$(t)) and resulting error (e(t))}}{11}{figure.2.5}\protected@file@percent }
-\newlabel{fig:NBM}{{2.5}{11}{NBM with the input signals from the SCADA system (x(t)), measured signal (y(t)), modeled signal ($\hat {y}$(t)) and resulting error (e(t))}{figure.2.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces NBM with the input signals from the SCADA system (x(t)), measured signal (y(t)), modeled signal ($\hat  {y}$(t)), and resulting error (e(t))}}{11}{figure.2.5}\protected@file@percent }
+\newlabel{fig:NBM}{{2.5}{11}{NBM with the input signals from the SCADA system (x(t)), measured signal (y(t)), modeled signal ($\hat {y}$(t)), and resulting error (e(t))}{figure.2.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Machine Learning in NBM}{11}{subsection.2.2.1}\protected@file@percent }
 \@writefile{brf}{\backcite{Regression}{{11}{2.2.1}{subsection.2.2.1}}}
 \@writefile{brf}{\backcite{SCADA_NBM_Review}{{11}{2.2.1}{subsection.2.2.1}}}
@@ -50,6 +50,7 @@
 \citation{Garlick}
 \citation{Schlechtingen}
 \citation{Linear_Regression_Example_1}
+\citation{LNR_vs_ANN}
 \@writefile{brf}{\backcite{Neuro_fuzzy}{{12}{2.2.1}{subsection.2.2.1}}}
 \@writefile{brf}{\backcite{fuzzy_sets}{{12}{2.2.1}{subsection.2.2.1}}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1.1}Linear regression}{12}{subsubsection.2.2.1.1}\protected@file@percent }
@@ -60,19 +61,23 @@
 \citation{Deep_learning_overview}
 \citation{Goodfellow}
 \citation{Perceptron}
+\citation{Fukushima}
 \@writefile{brf}{\backcite{SCADA_NBM_Review}{{13}{2.2.1.1}{figure.2.6}}}
 \@writefile{brf}{\backcite{Garlick}{{13}{2.2.1.1}{figure.2.6}}}
 \@writefile{brf}{\backcite{Schlechtingen}{{13}{2.2.1.1}{figure.2.6}}}
 \@writefile{brf}{\backcite{Linear_Regression_Example_1}{{13}{2.2.1.1}{figure.2.6}}}
+\@writefile{brf}{\backcite{LNR_vs_ANN}{{13}{2.2.1.1}{figure.2.6}}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1.2}Artificial Neural Networks}{13}{subsubsection.2.2.1.2}\protected@file@percent }
 \@writefile{brf}{\backcite{NN_foundation}{{13}{2.2.1.2}{subsubsection.2.2.1.2}}}
 \@writefile{brf}{\backcite{Deep_learning_overview}{{13}{2.2.1.2}{subsubsection.2.2.1.2}}}
 \@writefile{brf}{\backcite{Goodfellow}{{13}{2.2.1.2}{subsubsection.2.2.1.2}}}
 \@writefile{brf}{\backcite{Perceptron}{{13}{2.2.1.2}{subsubsection.2.2.1.2}}}
-\citation{Fukushima}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Example perceptron with three inputs}}{14}{figure.2.7}\protected@file@percent }
 \newlabel{fig:Perceptron}{{2.7}{14}{Example perceptron with three inputs}{figure.2.7}{}}
 \@writefile{brf}{\backcite{Fukushima}{{14}{2.2.1.2}{figure.2.7}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Architecture of normal behavior neural network model used in this work. \\ \emph  {The input layer shape will vary based on the experiment and the number of input features.}}}{15}{figure.2.8}\protected@file@percent }
+\newlabel{fig:MLP}{{2.8}{15}{Architecture of normal behavior neural network model used in this work. \\ \emph {The input layer shape will vary based on the experiment and the number of input features.}}{figure.2.8}{}}
+\citation{Anomaly_Detection}
 \citation{Brandao_1}
 \citation{Brandao_2}
 \citation{Schlechtingen}
@@ -80,79 +85,78 @@
 \citation{Bangalore_1}
 \citation{Bangalore_2}
 \citation{Bangalore_3}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Architecture of normal behavior neural network model used in this work. \\ \emph  {The input layer shape will vary based on the experiment and the number of input features.}}}{15}{figure.2.8}\protected@file@percent }
-\newlabel{fig:MLP}{{2.8}{15}{Architecture of normal behavior neural network model used in this work. \\ \emph {The input layer shape will vary based on the experiment and the number of input features.}}{figure.2.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Reconstruction-based Anomaly detection}{15}{subsection.2.2.2}\protected@file@percent }
-\@writefile{brf}{\backcite{Brandao_1}{{15}{2.2.2}{subsection.2.2.2}}}
-\@writefile{brf}{\backcite{Brandao_2}{{15}{2.2.2}{subsection.2.2.2}}}
-\@writefile{brf}{\backcite{Schlechtingen}{{15}{2.2.2}{subsection.2.2.2}}}
-\@writefile{brf}{\backcite{Zhang_Wang}{{15}{2.2.2}{subsection.2.2.2}}}
-\@writefile{brf}{\backcite{Bangalore_1}{{15}{2.2.2}{subsection.2.2.2}}}
-\@writefile{brf}{\backcite{Bangalore_2}{{15}{2.2.2}{subsection.2.2.2}}}
-\@writefile{brf}{\backcite{Bangalore_3}{{15}{2.2.2}{subsection.2.2.2}}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Reconstruction-based Anomaly Detection}{16}{subsection.2.2.2}\protected@file@percent }
+\@writefile{brf}{\backcite{Anomaly_Detection}{{16}{2.2.2}{subsection.2.2.2}}}
+\@writefile{brf}{\backcite{Brandao_1}{{16}{2.2.2}{subsection.2.2.2}}}
+\@writefile{brf}{\backcite{Brandao_2}{{16}{2.2.2}{subsection.2.2.2}}}
+\@writefile{brf}{\backcite{Schlechtingen}{{16}{2.2.2}{subsection.2.2.2}}}
+\@writefile{brf}{\backcite{Zhang_Wang}{{16}{2.2.2}{subsection.2.2.2}}}
+\@writefile{brf}{\backcite{Bangalore_1}{{16}{2.2.2}{subsection.2.2.2}}}
+\@writefile{brf}{\backcite{Bangalore_2}{{16}{2.2.2}{subsection.2.2.2}}}
+\@writefile{brf}{\backcite{Bangalore_3}{{16}{2.2.2}{subsection.2.2.2}}}
 \citation{Kendall}
 \citation{corr_comp}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2.1}Anomaly vs Alarm}{16}{subsubsection.2.2.2.1}\protected@file@percent }
-\newlabel{subsub:anvsal}{{2.2.2.1}{16}{Anomaly vs Alarm}{subsubsection.2.2.2.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Feature selection}{16}{subsection.2.2.3}\protected@file@percent }
-\newlabel{sub:featselect}{{2.2.3}{16}{Feature selection}{subsection.2.2.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2.1}Anomaly vs Alarm}{17}{subsubsection.2.2.2.1}\protected@file@percent }
+\newlabel{subsub:anvsal}{{2.2.2.1}{17}{Anomaly vs Alarm}{subsubsection.2.2.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Feature selection}{17}{subsection.2.2.3}\protected@file@percent }
+\newlabel{sub:featselect}{{2.2.3}{17}{Feature selection}{subsection.2.2.3}{}}
 \@writefile{brf}{\backcite{Kendall}{{17}{2.2.3}{subsection.2.2.3}}}
 \@writefile{brf}{\backcite{corr_comp}{{17}{2.2.3}{subsection.2.2.3}}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Log analysis}{18}{section.2.3}\protected@file@percent }
-\newlabel{sec:LA}{{2.3}{18}{Log analysis}{section.2.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Domain-knowledge-based method}{18}{subsection.2.3.1}\protected@file@percent }
-\newlabel{sub:dk_method}{{2.3.1}{18}{Domain-knowledge-based method}{subsection.2.3.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1.1}Creating log embeddings}{18}{subsubsection.2.3.1.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2.5}{\ignorespaces Example log text templates with sample texts}}{18}{table.2.5}\protected@file@percent }
-\newlabel{tab:logs}{{2.5}{18}{Example log text templates with sample texts}{table.2.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Generator internal vent control signals and their effect on the generator bearings temperature}}{19}{figure.2.9}\protected@file@percent }
-\newlabel{fig:vent}{{2.9}{19}{Generator internal vent control signals and their effect on the generator bearings temperature}{figure.2.9}{}}
-\citation{Power_curves}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Log analysis}{19}{section.2.3}\protected@file@percent }
+\newlabel{sec:LA}{{2.3}{19}{Log analysis}{section.2.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Domain-knowledge-based method}{19}{subsection.2.3.1}\protected@file@percent }
+\newlabel{sub:dk_method}{{2.3.1}{19}{Domain-knowledge-based method}{subsection.2.3.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1.1}Creating log embeddings}{19}{subsubsection.2.3.1.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.5}{\ignorespaces Example log text templates with sample texts}}{19}{table.2.5}\protected@file@percent }
+\newlabel{tab:logs}{{2.5}{19}{Example log text templates with sample texts}{table.2.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Generator internal vent control signals and their effect on the generator bearings' temperature}}{20}{figure.2.9}\protected@file@percent }
+\newlabel{fig:vent}{{2.9}{20}{Generator internal vent control signals and their effect on the generator bearings' temperature}{figure.2.9}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Demonstration of the join operation between the signals 10-min dataset and a log embeddings vector}}{21}{figure.2.10}\protected@file@percent }
 \newlabel{fig:log-merge}{{2.10}{21}{Demonstration of the join operation between the signals 10-min dataset and a log embeddings vector}{figure.2.10}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1.2}Data labeling and filtering}{21}{subsubsection.2.3.1.2}\protected@file@percent }
-\newlabel{subsub:PC}{{2.3.1.2}{21}{Data labeling and filtering}{subsubsection.2.3.1.2}{}}
-\@writefile{brf}{\backcite{Power_curves}{{21}{2.3.1.2}{subsubsection.2.3.1.2}}}
+\citation{Power_curves}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1.2}Data labeling and filtering}{22}{subsubsection.2.3.1.2}\protected@file@percent }
+\newlabel{subsub:PC}{{2.3.1.2}{22}{Data labeling and filtering}{subsubsection.2.3.1.2}{}}
+\@writefile{brf}{\backcite{Power_curves}{{22}{2.3.1.2}{subsubsection.2.3.1.2}}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces Turbine 01 power curve with log-feature-based labels}}{23}{figure.2.11}\protected@file@percent }
 \newlabel{fig:power_curve}{{2.11}{23}{Turbine 01 power curve with log-feature-based labels}{figure.2.11}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1.3}Visualization of warnings}{23}{subsubsection.2.3.1.3}\protected@file@percent }
-\newlabel{subsub:vis_warnings}{{2.3.1.3}{23}{Visualization of warnings}{subsubsection.2.3.1.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1.3}Visualization of warnings}{24}{subsubsection.2.3.1.3}\protected@file@percent }
+\newlabel{subsub:vis_warnings}{{2.3.1.3}{24}{Visualization of warnings}{subsubsection.2.3.1.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.12}{\ignorespaces Example dashboard showing actual temperatures of the generator bearings (measured signal) against simulated signals by a condition monitoring model (simulation). Anomalous data points are marked in red and relevant logs found are displayed at the bottom}}{25}{figure.2.12}\protected@file@percent }
+\newlabel{fig:dashboard}{{2.12}{25}{Example dashboard showing actual temperatures of the generator bearings (measured signal) against simulated signals by a condition monitoring model (simulation). Anomalous data points are marked in red and relevant logs found are displayed at the bottom}{figure.2.12}{}}
 \citation{LogPAI}
 \citation{Logparser_1}
 \citation{Logparser_2}
 \citation{Loglizer}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.12}{\ignorespaces Example dashboard showing actual temperatures of the generator bearings (measured signal) against simulated signals by a condition monitoring model (simulation). Anomalous data points are marked in red and relevant logs found are displayed at the bottom}}{24}{figure.2.12}\protected@file@percent }
-\newlabel{fig:dashboard}{{2.12}{24}{Example dashboard showing actual temperatures of the generator bearings (measured signal) against simulated signals by a condition monitoring model (simulation). Anomalous data points are marked in red and relevant logs found are displayed at the bottom}{figure.2.12}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Utilizing LogPAI}{24}{subsection.2.3.2}\protected@file@percent }
-\@writefile{brf}{\backcite{LogPAI}{{24}{2.3.2}{subsection.2.3.2}}}
-\@writefile{brf}{\backcite{Logparser_1}{{24}{2.3.2}{subsection.2.3.2}}}
-\@writefile{brf}{\backcite{Logparser_2}{{24}{2.3.2}{subsection.2.3.2}}}
-\@writefile{brf}{\backcite{Loglizer}{{24}{2.3.2}{subsection.2.3.2}}}
 \citation{Logparser_1}
 \citation{Logparser_2}
 \citation{LenMa}
 \citation{LFA}
 \citation{LogSig}
 \citation{Drain}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2.1}Preprocessing of logs using Logparser}{25}{subsubsection.2.3.2.1}\protected@file@percent }
-\@writefile{brf}{\backcite{Logparser_1}{{25}{2.3.2.1}{subsubsection.2.3.2.1}}}
-\@writefile{brf}{\backcite{Logparser_2}{{25}{2.3.2.1}{subsubsection.2.3.2.1}}}
-\@writefile{brf}{\backcite{LenMa}{{25}{2.3.2.1}{subsubsection.2.3.2.1}}}
-\@writefile{brf}{\backcite{LFA}{{25}{2.3.2.1}{subsubsection.2.3.2.1}}}
-\@writefile{brf}{\backcite{LogSig}{{25}{2.3.2.1}{subsubsection.2.3.2.1}}}
-\@writefile{brf}{\backcite{Drain}{{25}{2.3.2.1}{subsubsection.2.3.2.1}}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Utilizing LogPAI}{26}{subsection.2.3.2}\protected@file@percent }
+\@writefile{brf}{\backcite{LogPAI}{{26}{2.3.2}{subsection.2.3.2}}}
+\@writefile{brf}{\backcite{Logparser_1}{{26}{2.3.2}{subsection.2.3.2}}}
+\@writefile{brf}{\backcite{Logparser_2}{{26}{2.3.2}{subsection.2.3.2}}}
+\@writefile{brf}{\backcite{Loglizer}{{26}{2.3.2}{subsection.2.3.2}}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2.1}Preprocessing of logs using Logparser}{26}{subsubsection.2.3.2.1}\protected@file@percent }
+\@writefile{brf}{\backcite{Logparser_1}{{26}{2.3.2.1}{subsubsection.2.3.2.1}}}
+\@writefile{brf}{\backcite{Logparser_2}{{26}{2.3.2.1}{subsubsection.2.3.2.1}}}
+\@writefile{brf}{\backcite{LenMa}{{26}{2.3.2.1}{subsubsection.2.3.2.1}}}
+\@writefile{brf}{\backcite{LFA}{{26}{2.3.2.1}{subsubsection.2.3.2.1}}}
+\@writefile{brf}{\backcite{LogSig}{{26}{2.3.2.1}{subsubsection.2.3.2.1}}}
+\@writefile{brf}{\backcite{Drain}{{26}{2.3.2.1}{subsubsection.2.3.2.1}}}
 \citation{Loglizer}
 \citation{TF-IDF}
 \citation{tf-idf_review}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.13}{\ignorespaces Sample raw logs and their corresponding structured logs after being parsed by Logparser (Drain)}}{26}{figure.2.13}\protected@file@percent }
-\newlabel{fig:logparser}{{2.13}{26}{Sample raw logs and their corresponding structured logs after being parsed by Logparser (Drain)}{figure.2.13}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2.2}Creating log embeddings using Loglizer}{26}{subsubsection.2.3.2.2}\protected@file@percent }
-\newlabel{subsub:Loglizer}{{2.3.2.2}{26}{Creating log embeddings using Loglizer}{subsubsection.2.3.2.2}{}}
-\@writefile{brf}{\backcite{Loglizer}{{26}{2.3.2.2}{subsubsection.2.3.2.2}}}
-\@writefile{brf}{\backcite{TF-IDF}{{26}{2.3.2.2}{subsubsection.2.3.2.2}}}
-\@writefile{brf}{\backcite{tf-idf_review}{{26}{2.3.2.2}{subsubsection.2.3.2.2}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.13}{\ignorespaces Sample raw logs and their corresponding structured logs after being parsed by Logparser (Drain)}}{27}{figure.2.13}\protected@file@percent }
+\newlabel{fig:logparser}{{2.13}{27}{Sample raw logs and their corresponding structured logs after being parsed by Logparser (Drain)}{figure.2.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2.2}Creating log embeddings using Loglizer}{27}{subsubsection.2.3.2.2}\protected@file@percent }
+\newlabel{subsub:Loglizer}{{2.3.2.2}{27}{Creating log embeddings using Loglizer}{subsubsection.2.3.2.2}{}}
+\@writefile{brf}{\backcite{Loglizer}{{27}{2.3.2.2}{subsubsection.2.3.2.2}}}
+\@writefile{brf}{\backcite{TF-IDF}{{28}{2.3.2.2}{subsubsection.2.3.2.2}}}
+\@writefile{brf}{\backcite{tf-idf_review}{{28}{2.3.2.2}{subsubsection.2.3.2.2}}}
 \@setckpt{Methods}{
-\setcounter{page}{28}
+\setcounter{page}{29}
 \setcounter{equation}{8}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}

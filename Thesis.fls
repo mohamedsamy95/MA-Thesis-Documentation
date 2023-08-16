@@ -1650,6 +1650,11 @@ INPUT ./Appendix1.tex
 INPUT Appendix1.tex
 INPUT ./Appendix1.tex
 INPUT Appendix1.tex
+INPUT ./images//Appendix1/Power_curve.png
+INPUT ./images//Appendix1/Power_curve.png
+INPUT images//Appendix1/Power_curve.png
+INPUT ./images//Appendix1/Power_curve.png
+INPUT ./images//Appendix1/Power_curve.png
 INPUT ./Appendix2.tex
 INPUT ./Appendix2.tex
 INPUT ./Appendix2.tex

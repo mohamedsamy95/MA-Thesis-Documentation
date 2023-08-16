@@ -21,7 +21,7 @@ They record various types of data related to
 the operation and performance of the turbine which can be divided into two main categories: SCADA \emph{signals} and SCADA \emph{logs}.
 The SCADA signals provide real-time readings collected from various sensors installed in the turbine that reflect the current state of operation 
 in terms of power production, wind speed, rotor speed, component temperatures,\dots The frequency and the number of signals provided by the SCADA system 
-vary based on the turbine's manufacturer, model and technology. The SCADA logs, on the other hand, capture alarms and events recorded by the SCADA 
+vary based on the turbine's manufacturer, model, and technology. The SCADA logs, on the other hand, capture alarms and events recorded by the SCADA 
 system in the form of text in a non-fixed frequency.
 Some approaches utilize both CMS and SCADA data to perform condition monitoring tasks (e.g., \cite{CMSSCADA}), however, 
 several other approaches for condition monitoring were developed in recent years that rely solely on the
@@ -34,7 +34,7 @@ empirically modeling a measured parameter, used to reflect the condition of a sp
 the turbine, based on a training phase (usually during a healthy state of the turbine). During
 operation, the difference between the measured and the modeled/predicted signal is used as an
 indicator for a possible fault. A difference of 0, with some tolerance, reflects normal conditions,
-whereas a difference greater or less than 0 reflects changed conditions or failures. Utilizing the signals provided 
+whereas a difference greater or less than a defined threshold reflects changed conditions or failures. Utilizing the signals provided 
 by the SCADA systems in normal behavior models were proven capable of (early) detecting failures in wind turbines.
 For instance, both Zhang et al. \cite{Zhang_Wang} and Bangalore et al. \cite{Bangalore_1} applied machine learning techniques to SCADA signals data to develop anomaly detection models 
 for fault diagnosis and prediction of the gearbox bearings of wind turbines. 
@@ -44,7 +44,7 @@ The results demonstrate that their condition-monitoring approaches are capable o
 and can be applied to any computer system. For example, Brown et al. \cite{RNN} developed recurrent neural network (RNN) language models augmented with attention 
 for anomaly detection in system logs that are generally applicable to any computer system and logging source. 
 Similarly, Lyu et al. \cite{LogPAI} developed an open-source framework with a set of tools that can be used for automated log parsing, 
-anomaly detection and impactful problem identification using machine learning.
+anomaly detection, and impactful problem identification using machine learning.
 Other approaches specifically focus on leveraging the SCADA logs, especially alarms, to detect anomalies in wind turbines.
 Rahman et al. \cite{sequence} use rare sequential pattern mining\footnote{Rare sequential pattern mining is a data mining technique used to discover infrequent patterns in sequential data.} 
 to find anomalies in SCADA networks. 
@@ -82,8 +82,8 @@ The developed models can serve as a basis for effective fault detection, conditi
 
 \par Chapter 2 will provide an overview of the methodology employed, along with the relevant literature, on wind turbine condition monitoring, SCADA-log data analysis, and machine learning techniques 
 (including data preprocessing and feature extraction) applied to wind turbine condition monitoring. 
-Chapter 4 will showcase the experimental results and discuss the performance of the proposed models. 
-Finally, Chapter 5 will summarize the findings, draw conclusions, and provide recommendations for future research.
+Chapter 3 will showcase the experimental results and discuss the performance of the proposed models. 
+Finally, Chapter 4 will summarize the findings, draw conclusions, and provide recommendations for future research.
 
 
 

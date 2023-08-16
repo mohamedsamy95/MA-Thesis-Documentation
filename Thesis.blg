@@ -20,45 +20,45 @@ Warning--empty booktitle in Leahy
 Warning--empty booktitle in Letzgus_Log
 Warning--empty journal in LenMa
 Warning--empty booktitle in LogSig
-You've used 45 entries,
+You've used 47 entries,
             2415 wiz_defined-function locations,
-            859 strings with 13005 characters,
-and the built_in function-call counts, 19472 in all, are:
-= -- 1954
-> -- 816
-< -- 30
-+ -- 288
-- -- 276
-* -- 1394
-:= -- 3007
-add.period$ -- 146
-call.type$ -- 45
-change.case$ -- 276
-chr.to.int$ -- 42
-cite$ -- 54
-duplicate$ -- 885
-empty$ -- 1427
-format.name$ -- 321
-if$ -- 4200
+            872 strings with 13539 characters,
+and the built_in function-call counts, 20718 in all, are:
+= -- 2074
+> -- 897
+< -- 32
++ -- 319
+- -- 306
+* -- 1503
+:= -- 3205
+add.period$ -- 152
+call.type$ -- 47
+change.case$ -- 297
+chr.to.int$ -- 44
+cite$ -- 56
+duplicate$ -- 929
+empty$ -- 1493
+format.name$ -- 353
+if$ -- 4459
 int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 45
-newline$ -- 234
-num.names$ -- 92
-pop$ -- 337
+missing$ -- 47
+newline$ -- 244
+num.names$ -- 96
+pop$ -- 356
 preamble$ -- 1
-purify$ -- 361
+purify$ -- 386
 quote$ -- 0
-skip$ -- 766
+skip$ -- 807
 stack$ -- 0
-substring$ -- 997
-swap$ -- 284
-text.length$ -- 30
+substring$ -- 1063
+swap$ -- 302
+text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 340
+type$ -- 356
 warning$ -- 9
-while$ -- 152
-width$ -- 50
-write$ -- 609
+while$ -- 160
+width$ -- 52
+write$ -- 637
 (There were 9 warnings)

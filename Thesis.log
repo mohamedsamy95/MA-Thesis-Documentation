@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.8)  21 MAY 2023 23:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.8)  4 JUN 2023 22:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -672,21 +672,39 @@ Package minitoc Info: I0033
 (minitoc)             Writing Thesis.mtc7.
 \openout3 = `Thesis.mtc7'.
 
- [1
+
+Underfull \hbox (badness 1406) in paragraph at lines 20--27
+\T1/cmr/m/n/10.95 di-tion mon-i-tor-ing so-lu-tions are cru-cial for scal-ing up wind tur-bine port-fo-
+ []
+
+
+Underfull \hbox (badness 1377) in paragraph at lines 20--27
+\T1/cmr/m/n/10.95 bust-ness of the mod-els. Ad-vanced ma-chine learn-ing al-go-rithms, in-clud-ing
+ []
+
+
+Underfull \hbox (badness 1173) in paragraph at lines 20--27
+\T1/cmr/m/n/10.95 fault de-tec-tion, con-di-tion as-sess-ment, and pre-dic-tive main-te-nance strate-gies,
+ []
+
+
+Underfull \hbox (badness 1642) in paragraph at lines 20--27
+\T1/cmr/m/n/10.95 lead-ing to en-hanced op-er-a-tional ef-fi-ciency and re-li-a-bil-ity of wind tur-bines.
+ []
+
+[1
 
 
 
 ] [2
 
-] (./Thesis.toc)
+] (./Thesis.toc [3
+
+])
 \tf@toc=\write5
 \openout5 = `Thesis.toc'.
 
- [3
-
-] [4
-
-]
+ [4]
 \openout2 = `Introduction.aux'.
 
  (./Introduction.tex
@@ -701,6 +719,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
                    \relax 
 l.30 
       [1
+
 
 
 ]
@@ -718,7 +737,7 @@ l.61 \par
 
 ]
 Chapter 2.
-<images//Methods/Horizontal-axis-wind-turbine.png, id=268, 717.68124pt x 851.18pt>
+<images//Methods/Horizontal-axis-wind-turbine.png, id=298, 717.68124pt x 851.18pt>
 File: images//Methods/Horizontal-axis-wind-turbine.png Graphic file (type png)
 <use images//Methods/Horizontal-axis-wind-turbine.png>
 Package pdftex.def Info: images//Methods/Horizontal-axis-wind-turbine.png  used on input line 24.
@@ -727,7 +746,7 @@ Package pdftex.def Info: images//Methods/Horizontal-axis-wind-turbine.png  used 
 Underfull \vbox (badness 6348) has occurred while \output is active []
 
  [5]
-<images//Methods/Sample_Signals.png, id=281, 1549.79pt x 634.37pt>
+<images//Methods/Sample_Signals.png, id=311, 1549.79pt x 634.37pt>
 File: images//Methods/Sample_Signals.png Graphic file (type png)
 <use images//Methods/Sample_Signals.png>
 Package pdftex.def Info: images//Methods/Sample_Signals.png  used on input line 54.
@@ -739,7 +758,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7 <./images//Methods/Sample_Signals.png>]
-<images//Methods/Log_sample.png, id=305, 3015.265pt x 1266.7325pt>
+<images//Methods/Log_sample.png, id=336, 3015.265pt x 1266.7325pt>
 File: images//Methods/Log_sample.png Graphic file (type png)
 <use images//Methods/Log_sample.png>
 Package pdftex.def Info: images//Methods/Log_sample.png  used on input line 128.
@@ -748,16 +767,17 @@ Package pdftex.def Info: images//Methods/Log_sample.png  used on input line 128.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
-<images//Methods/Warning_sample.png, id=314, 3015.265pt x 1286.8075pt>
+<images//Methods/Warning_sample.png, id=345, 3015.265pt x 1286.8075pt>
 File: images//Methods/Warning_sample.png Graphic file (type png)
 <use images//Methods/Warning_sample.png>
 Package pdftex.def Info: images//Methods/Warning_sample.png  used on input line 159.
 (pdftex.def)             Requested size: 394.98882pt x 168.56712pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9 <./images//Methods/Log_sample.png>] [10 <./images//Methods/Warning_sample.png>]
-<images//Methods/NBM.png, id=333, 1128.215pt x 443.6575pt>
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9 <./images//Methods/Log_sample.png>] [10 <./images//Methods/Warning_sample.png>]
+<images//Methods/NBM.png, id=363, 1128.215pt x 443.6575pt>
 File: images//Methods/NBM.png Graphic file (type png)
 <use images//Methods/NBM.png>
 Package pdftex.def Info: images//Methods/NBM.png  used on input line 189.
@@ -765,119 +785,137 @@ Package pdftex.def Info: images//Methods/NBM.png  used on input line 189.
  [11
 
  <./images//Methods/NBM.png>]
-<images//Methods/Linear_regression.png, id=350, 296.307pt x 209.583pt>
+<images//Methods/Linear_regression.png, id=380, 296.307pt x 209.583pt>
 File: images//Methods/Linear_regression.png Graphic file (type png)
 <use images//Methods/Linear_regression.png>
 Package pdftex.def Info: images//Methods/Linear_regression.png  used on input line 222.
-(pdftex.def)             Requested size: 207.41348pt x 146.70708pt.
+(pdftex.def)             Requested size: 148.15314pt x 104.79123pt.
  [12 <./images//Methods/Linear_regression.png>]
-<images//Methods/Perceptron.png, id=373, 453.695pt x 224.84pt>
+<images//Methods/Perceptron.png, id=404, 453.695pt x 224.84pt>
 File: images//Methods/Perceptron.png Graphic file (type png)
 <use images//Methods/Perceptron.png>
-Package pdftex.def Info: images//Methods/Perceptron.png  used on input line 259.
-(pdftex.def)             Requested size: 181.47478pt x 89.9344pt.
+Package pdftex.def Info: images//Methods/Perceptron.png  used on input line 260.
+(pdftex.def)             Requested size: 136.10954pt x 67.45251pt.
 
-Underfull \vbox (badness 2401) has occurred while \output is active []
 
- [13]
-<images//Methods/MLP_cropped.png, id=392, 605.26125pt x 569.12625pt>
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13]
+<images//Methods/MLP_cropped.png, id=424, 605.26125pt x 569.12625pt>
 File: images//Methods/MLP_cropped.png Graphic file (type png)
 <use images//Methods/MLP_cropped.png>
-Package pdftex.def Info: images//Methods/MLP_cropped.png  used on input line 280.
+Package pdftex.def Info: images//Methods/MLP_cropped.png  used on input line 282.
 (pdftex.def)             Requested size: 242.1002pt x 227.64647pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14 <./images//Methods/Perceptron.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 288--300
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[14 <./images//Methods/Perceptron.png>] [15 <./images//Methods/MLP_cropped.png>]
+Underfull \hbox (badness 1931) in paragraph at lines 292--310
+\T1/cmr/m/n/10.95 ([[]][], [[]][], [[]][]) used a Ma-ha-lanobis
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--310
 
  []
 
-[15 <./images//Methods/MLP_cropped.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 312--319
+
+Underfull \vbox (badness 1515) has occurred while \output is active []
+
+ [16
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 322--329
 
  []
 
-[16] [17]
-
-LaTeX Warning: Reference `chap:soa' on page 18 undefined on input line 350.
-
-<images//Methods/Vent_Signals.png, id=437, 607.7907pt x 446.6286pt>
+[17] [18]
+<images//Methods/Vent_Signals.png, id=475, 607.7907pt x 446.6286pt>
 File: images//Methods/Vent_Signals.png Graphic file (type png)
 <use images//Methods/Vent_Signals.png>
-Package pdftex.def Info: images//Methods/Vent_Signals.png  used on input line 385.
+Package pdftex.def Info: images//Methods/Vent_Signals.png  used on input line 395.
 (pdftex.def)             Requested size: 395.05927pt x 290.30515pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 6758) has occurred while \output is active []
 
- [18
+ [19
 
-] [19 <./images//Methods/Vent_Signals.png>]
-<images//Methods/Log_Merge.png, id=451, 1035.87pt x 1186.4325pt>
+]
+<images//Methods/Log_Merge.png, id=484, 1035.87pt x 1186.4325pt>
 File: images//Methods/Log_Merge.png Graphic file (type png)
 <use images//Methods/Log_Merge.png>
-Package pdftex.def Info: images//Methods/Log_Merge.png  used on input line 424.
+Package pdftex.def Info: images//Methods/Log_Merge.png  used on input line 413.
 (pdftex.def)             Requested size: 362.55992pt x 415.2576pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20]
-Underfull \hbox (badness 10000) in paragraph at lines 432--444
+ [20 <./images//Methods/Vent_Signals.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21 <./images//Methods/Log_Merge.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 446--458
 
  []
 
-[21 <./images//Methods/Log_Merge.png>]
-<images//Methods/power_curve.png, id=475, 1180.8918pt x 479.1501pt>
+[22]
+<images//Methods/power_curve.png, id=516, 1180.8918pt x 479.1501pt>
 File: images//Methods/power_curve.png Graphic file (type png)
 <use images//Methods/power_curve.png>
-Package pdftex.def Info: images//Methods/power_curve.png  used on input line 468.
+Package pdftex.def Info: images//Methods/power_curve.png  used on input line 482.
 (pdftex.def)             Requested size: 395.60571pt x 160.5181pt.
- [22]
-<images//Methods/Dashboard.png, id=484, 4039.09pt x 4665.43pt>
+ [23 <./images//Methods/power_curve.png>]
+<images//Methods/Dashboard.png, id=525, 4039.09pt x 4665.43pt>
 File: images//Methods/Dashboard.png Graphic file (type png)
 <use images//Methods/Dashboard.png>
-Package pdftex.def Info: images//Methods/Dashboard.png  used on input line 496.
+Package pdftex.def Info: images//Methods/Dashboard.png  used on input line 510.
 (pdftex.def)             Requested size: 323.1338pt x 373.24203pt.
 
-Underfull \vbox (badness 1418) has occurred while \output is active []
 
- [23 <./images//Methods/power_curve.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 505--513
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[24] [25 <./images//Methods/Dashboard.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 520--528
 
  []
 
-[24 <./images//Methods/Dashboard.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 542--544
+
+Underfull \vbox (badness 2409) has occurred while \output is active []
+
+ [26
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 557--559
 []\T1/cmr/m/n/10.95 Applying Drain on the SCADA log data at
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 542--544
+Underfull \hbox (badness 10000) in paragraph at lines 557--559
 \T1/cmr/m/n/10.95 hand by spec-i-fy-ing its log for-mat "\T1/cmr/m/it/10.95 <TimeDe-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 542--544
+Underfull \hbox (badness 10000) in paragraph at lines 557--559
 \T1/cmr/m/it/10.95 tected>,<TimeReset>,<UnitTitle>,<Content>,<UnitTitleDestination>\T1/cmr/m/n/10.95 ", we
  []
 
-<images//Methods/Logparser.png, id=513, 2262.4525pt x 584.1825pt>
+<images//Methods/Logparser.png, id=561, 2262.4525pt x 584.1825pt>
 File: images//Methods/Logparser.png Graphic file (type png)
 <use images//Methods/Logparser.png>
-Package pdftex.def Info: images//Methods/Logparser.png  used on input line 547.
+Package pdftex.def Info: images//Methods/Logparser.png  used on input line 562.
 (pdftex.def)             Requested size: 384.61185pt x 99.30971pt.
-[25] [26 <./images//Methods/Logparser.png>] [27])
+[27 <./images//Methods/Logparser.png>] [28])
 \openout2 = `Experiments.aux'.
 
- (./Experiments.tex [28
+ (./Experiments.tex
+Chapter 3.
+[29
 
 
 
 
 
 ]
-Chapter 3.
-[29]
 Underfull \hbox (badness 10000) in paragraph at lines 89--89
 []|\T1/cmr/m/n/10.95 Generator ex-ter-nal
  []
@@ -914,16 +952,48 @@ Package fancyhdr Warning: \headheight is too small (13.6pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.6367pt}.
 
 [31]
-Underfull \hbox (badness 10000) in paragraph at lines 160--168
+Underfull \hbox (badness 10000) in paragraph at lines 160--169
 
  []
 
 [32]
-<images//Experiments/Boxplot_T09.png, id=585, 917.829pt x 713.3049pt>
+<images//Experiments/Boxplot_T09.png, id=623, 917.829pt x 713.3049pt>
 File: images//Experiments/Boxplot_T09.png Graphic file (type png)
 <use images//Experiments/Boxplot_T09.png>
-Package pdftex.def Info: images//Experiments/Boxplot_T09.png  used on input line 198.
+Package pdftex.def Info: images//Experiments/Boxplot_T09.png  used on input line 225.
 (pdftex.def)             Requested size: 394.65877pt x 306.71513pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--253
+[]|\T1/cmr/m/n/10.95 Generator ex-ter-nal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--253
+[]|\T1/cmr/m/n/10.95 Generator in-ter-nal
+ []
+
+
+Underfull \hbox (badness 5954) in paragraph at lines 253--253
+[]|\T1/cmr/m/n/10.95 High-voltage trans-
+ []
+
+
+Underfull \hbox (badness 1400) in paragraph at lines 253--253
+[]\T1/cmr/m/n/10.95 Table 3.6: []Measures of Kendall's
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--253
+\T1/cmr/m/n/10.95 cor-re-la-tion be-tween the do-main
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -935,35 +1005,10 @@ Package fancyhdr Warning: \headheight is too small (13.6pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-11.6367pt}.
 
-[33]
-Underfull \hbox (badness 10000) in paragraph at lines 226--226
-[]|\T1/cmr/m/n/10.95 Generator ex-ter-nal
- []
+[33] [34 <./images//Experiments/Boxplot_T09.png>]
+Underfull \vbox (badness 3000) has occurred while \output is active []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--226
-[]|\T1/cmr/m/n/10.95 Generator in-ter-nal
- []
-
-
-Underfull \hbox (badness 5954) in paragraph at lines 226--226
-[]|\T1/cmr/m/n/10.95 High-voltage trans-
- []
-
-
-Underfull \hbox (badness 1400) in paragraph at lines 226--226
-[]\T1/cmr/m/n/10.95 Table 3.5: []Measures of Kendall's
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 226--226
-\T1/cmr/m/n/10.95 cor-re-la-tion be-tween the do-main
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [34 <./images//Experiments/Boxplot_T09.png>]
 
 Package fancyhdr Warning: \headheight is too small (13.6pt): 
 (fancyhdr)                Make it at least 25.23671pt, for example:
@@ -972,44 +1017,30 @@ Package fancyhdr Warning: \headheight is too small (13.6pt):
 (fancyhdr)                \addtolength{\topmargin}{-11.6367pt}.
 
 [35]
-Underfull \hbox (badness 10000) in paragraph at lines 344--353
+Underfull \hbox (badness 10000) in paragraph at lines 371--380
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [36]
-<images//Experiments/labels.png, id=620, 844.8363pt x 435.0654pt>
+[36]
+<images//Experiments/labels.png, id=658, 844.8363pt x 435.0654pt>
 File: images//Experiments/labels.png Graphic file (type png)
 <use images//Experiments/labels.png>
-Package pdftex.def Info: images//Experiments/labels.png  used on input line 363.
+Package pdftex.def Info: images//Experiments/labels.png  used on input line 390.
 (pdftex.def)             Requested size: 380.17282pt x 195.7776pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (13.6pt): 
-(fancyhdr)                Make it at least 25.23671pt, for example:
-(fancyhdr)                \setlength{\headheight}{25.23671pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-11.6367pt}.
-
-[37]
-Underfull \hbox (badness 10000) in paragraph at lines 370--374
+Underfull \hbox (badness 10000) in paragraph at lines 397--401
 
  []
 
-<images//Experiments/3pcs.png, id=628, 508.7808pt x 1063.0917pt>
+<images//Experiments/3pcs.png, id=661, 508.7808pt x 1063.0917pt>
 File: images//Experiments/3pcs.png Graphic file (type png)
 <use images//Experiments/3pcs.png>
-Package pdftex.def Info: images//Experiments/3pcs.png  used on input line 399.
+Package pdftex.def Info: images//Experiments/3pcs.png  used on input line 426.
 (pdftex.def)             Requested size: 254.38977pt x 531.54456pt.
 
-Underfull \vbox (badness 7576) has occurred while \output is active []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
- [38 <./images//Experiments/labels.png>])
+)
 
 Package fancyhdr Warning: \headheight is too small (13.6pt): 
 (fancyhdr)                Make it at least 25.23671pt, for example:
@@ -1017,52 +1048,110 @@ Package fancyhdr Warning: \headheight is too small (13.6pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-11.6367pt}.
 
-[39 <./images//Experiments/3pcs.png>]
+[37 <./images//Experiments/labels.png>] [38 <./images//Experiments/3pcs.png>]
 \openout2 = `Conclusions.aux'.
 
- (./Conclusions.tex [40
+ (./Conclusions.tex
+Chapter 4.
+[39
 
 
 
 
 ]
-Chapter 4.
-) [41]
+Underfull \hbox (badness 10000) in paragraph at lines 51--54
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--60
+
+ []
+
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 61--64
+
+ []
+
+
+Underfull \hbox (badness 2237) in paragraph at lines 68--68
+[]\T1/cmr/bx/n/12 Unveiling Deeper In-sights through Domain-Knowledge-
+ []
+
+
+Underfull \hbox (badness 1019) in paragraph at lines 75--80
+\T1/cmr/m/n/10.95 In ad-di-tion, the domain-knowledge-based method em-ployed for la-bel-ing and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--80
+
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 95--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--105
+
+ []
+
+[42]) [43]
 \openout2 = `Appendix1.aux'.
 
- (./Appendix1.tex [42
+ (./Appendix1.tex [44
 
 
 
 
 ]
 Appendix A.
-) [43]
+<images//Appendix1/Power_curve.png, id=700, 620.3175pt x 318.18875pt>
+File: images//Appendix1/Power_curve.png Graphic file (type png)
+<use images//Appendix1/Power_curve.png>
+Package pdftex.def Info: images//Appendix1/Power_curve.png  used on input line 49.
+(pdftex.def)             Requested size: 372.19337pt x 190.9147pt.
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [45] [46 <./images//Appendix1/Power_curve.png>]
 \openout2 = `Appendix2.aux'.
 
- (./Appendix2.tex [44
-
-
-
-
-]
+ (./Appendix2.tex
 Appendix B.
 
 Overfull \hbox (85.7446pt too wide) in paragraph at lines 9--50
  [][] 
  []
 
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45] [46] (./Thesis.bbl (./Thesis.brf)
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [47
+
+
+
+
+] [48] (./Thesis.bbl (./Thesis.brf)
 \tf@brf=\write6
 \openout6 = `Thesis.brf'.
 
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 66.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [47
+) [49
 
 
 
@@ -1086,7 +1175,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--89
 \T1/cmtt/m/n/10.95 renewable-[]energy / renewable-[]energy-[]directive-[]targets-[]and-[]rules /
  []
 
-[48] [49] [50])
+[50] [51] [52])
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the Thesis.maf file.
@@ -1097,37 +1186,25 @@ Package minitoc(hints) Info: I0053
 (minitoc(hints))             please be aware that the minitoc package 
 (minitoc(hints))             facilities can not be used for new types 
 (minitoc(hints))             of floats defined by the float package.
- [51] (./Thesis.aux (./TitlePage.aux) (./DeclAuthorship.aux) (./Introduction.aux) (./Methods.aux) (./Experiments.aux) (./Conclusions.aux) (./Appendix1.aux) (./Appendix2.aux))
-
-LaTeX Warning: There were undefined references.
-
-
-Package rerunfilecheck Warning: File `Thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Thesis.out':
-(rerunfilecheck)             Before: 0385DC092294343F248637FDB63684EA;5575
-(rerunfilecheck)             After:  F091B775B5922E36114EA3E59ACEDA33;5486.
+ [53] (./Thesis.aux (./TitlePage.aux) (./DeclAuthorship.aux) (./Introduction.aux) (./Methods.aux) (./Experiments.aux) (./Conclusions.aux) (./Appendix1.aux) (./Appendix2.aux))
+Package rerunfilecheck Info: File `Thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 07C1E42DFBCDB8762AF77BFD3ABDF3D0;8154.
 Package rerunfilecheck Info: File `Thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: DC25EB68291066A5B6A575D125838403;2948.
+(rerunfilecheck)             Checksum: 586AE30F52C0F7B095DD68C9EC5FFF7F;3119.
  ) 
 Here is how much of TeX's memory you used:
- 17237 strings out of 478268
- 276324 string characters out of 5846348
- 625403 words of memory out of 5000000
- 34678 multiletter control sequences out of 15000+600000
+ 17275 strings out of 478268
+ 277091 string characters out of 5846348
+ 626836 words of memory out of 5000000
+ 34703 multiletter control sequences out of 15000+600000
  493110 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 115i,17n,111p,738b,533s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{section.2.4} has been referenced but does not exist, replaced by a fixed one
-
+ 115i,17n,111p,738b,542s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on Thesis.pdf (59 pages, 6583381 bytes).
+Output written on Thesis.pdf (61 pages, 6611312 bytes).
 PDF statistics:
- 919 PDF objects out of 1000 (max. 8388607)
- 764 compressed objects within 8 object streams
- 193 named destinations out of 1000 (max. 500000)
- 345 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 972 PDF objects out of 1000 (max. 8388607)
+ 812 compressed objects within 9 object streams
+ 204 named destinations out of 1000 (max. 500000)
+ 390 words of extra memory for PDF output out of 10000 (max. 10000000)
 

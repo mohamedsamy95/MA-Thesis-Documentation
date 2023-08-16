@@ -10,12 +10,12 @@ or to visualize relevant warnings.
 In this section, we will describe the dataset used in this work to train, test and validate the models. 
 \par We used open-source data published on the \emph{EDP OpenData} web platform \cite{EDP} and that was made available for research purposes. 
 The data was collected from the SCADA systems of five different Vestas wind turbines (Turbine 01, 06, 07, 09 and 11) in the same wind park between the years 2016 and 2017 
-and is made up of the following four subsets: \emph{Signals, Logs, Failures and Metmast}. We will, however, only describe three sets since \emph{Metmast} was not used in this work.
+and is made up of the following four subsets: \emph{Signals, Logs, Failures, and Metmast}. We will, however, only describe three sets since \emph{Metmast} was not used in this work.
 A full description of the turbines' characteristics (e.g., rated power, cut-in speed, rotor diameter,\dots) and their power curve is documented in Appendix \ref{chap:appendix1}.
 
 \subsection{Signals}
  The \emph{Signals} dataset contains 10-min aggregated data (Mean, STandard Deviation (STD), Minimum (Min), and Maximum (Max) values) collected from the wind turbines' power meters and
- sensors installed at the major components such as gearbox, generator and transformer (see Figure \ref{fig:WTG_Diagram} for a 
+ sensors installed at the major components such as gearbox, generator, and transformer (see Figure \ref{fig:WTG_Diagram} for a 
  demonstration of a turbine's hardware and the location of major components). These built-in sensors measure quantities such as temperatures, angles, wind and rotational speeds, 
  power production,\dots
 
@@ -59,7 +59,7 @@ A full description of the turbines' characteristics (e.g., rated power, cut-in s
 
  \subsection{Logs}
   Some events are logged by the SCADA system in non-fixed intervals. The events recorded by the system are divided into three categories: Alarm log, 
-  Warning log and Operation and System log. According to the VestasOnline Enterprise user manual \cite{voe}, alarms are system notifications that alert operators to 
+  Warning log, and Operation and System log. According to the VestasOnline Enterprise user manual \cite{voe}, alarms are system notifications that alert operators to 
   an error scenario that has forced a wind turbine to cease normal operation and transition to one of three operational states: Pause, Stop, or 
   Emergency (one of the following three acknowledgments is needed to resume operation: Local acknowledgment 
   from the controller unit of the turbine, Remote acknowledgment from VestasOnline®, or Automatic acknowledgment), 
@@ -133,7 +133,7 @@ A full description of the turbines' characteristics (e.g., rated power, cut-in s
 
   In the Alarm and Warning log of Turbine 09, the events \emph{"Hot generator \_\_\_\degree C \_\_\_\_\_\_kW"} (Event class III) and 
   \emph{"High temp. Gen bearing \_:\_\_\_ \degree C"} (Event class IV) occurred 899 and 31 times, respectively, with the following frequencies:
-  \begin{table}[H]
+  \begin{table}[h]
     \centering
     \begin{tabular}{cc|c|}
       \cline{2-3}
@@ -154,7 +154,7 @@ A full description of the turbines' characteristics (e.g., rated power, cut-in s
   Figure \ref{fig:sample_warnings} shows a sample of those events.
   \end{flushleft}
 
-  \begin{figure}[H]
+  \begin{figure}[h]
     \begin{center}
       \includegraphics[scale=0.131]{Methods/Warning_sample.png}
     \end{center}
@@ -175,9 +175,9 @@ A full description of the turbines' characteristics (e.g., rated power, cut-in s
 
 \section{Normal behavior modeling}
 According to Tautz-Weinert and Watson \cite{SCADA_NBM_Review}, Normal Behavior Modeling (NBM) detects anomalies in normal operation by empirically modeling an 
-observed parameter based on a training phase. Figure \ref{fig:NBM} depicts the concept of model-based monitoring.
+observed parameter based on a training phase. Figure \ref{fig:NBM} depicts the concept of model-based condition monitoring.
 During operation, an anomaly is detected by deducting the value of the modeled signal ($\hat{y}$(t)) from the measured one (y(t))  and 
-comparing the residual (e(t)) with a predefined threshold. If the threshold is exceeded, this signal is labeled as an anomaly.
+comparing the residual (e(t)) with a predefined threshold. If the threshold is exceeded, this signal is labeled as an anomaly. \par
 There are two primary approaches for NBM: Full Signal ReConstruction (FSRC), in which only signals other than the target are utilized to predict the target, 
 and AutoRegressive with eXogenous Input Modeling (ARX), in which previous values of the target are also employed.\\
 Having defined NBM on an abstract level, we demonstrate next the machine learning models we used to generate modeled signals (y(t)) from input signals (x(t)) and 
@@ -188,7 +188,7 @@ on the turbine's model, manufacturer and sensors installed, we defined the datas
   \begin{center}
     \includegraphics[scale=0.35]{Methods/NBM.png}
   \end{center}
-  \caption{NBM with the input signals from the SCADA system (x(t)), measured signal (y(t)), modeled signal ($\hat{y}$(t)) and resulting error (e(t))}
+  \caption{NBM with the input signals from the SCADA system (x(t)), measured signal (y(t)), modeled signal ($\hat{y}$(t)), and resulting error (e(t))}
   \label{fig:NBM}
 \end{figure}
 
@@ -198,14 +198,14 @@ on the turbine's model, manufacturer and sensors installed, we defined the datas
   As opposed to classification models, where the algorithm predicts \emph{classes}, a regression model predicts numerical \emph{values} (dependent variables) from the input 
   features (independent variables).\\
   According to Tautz-Weinert and Watson \cite{SCADA_NBM_Review}, there are mainly three types of NBM regression models used in the research field: \emph{Linear and polynomial models},
-  \emph{Artificial Neural Networks (ANNs)} and \emph{Fuzzy Systems}. Given their simplicity, we used linear models in the early phases of this work. Later on, we started using 
+  \emph{Artificial Neural Networks} and \emph{Fuzzy Systems}. Given their simplicity, we used linear models in the early phases of this work. Later on, we started using 
   ANNs for their capability of capturing non-linear dependencies in the data. We define these two types of models in detail in the next subsections.
   A fuzzy system \cite{Neuro_fuzzy} is an artificial intelligence system that employs fuzzy logic \cite{fuzzy_sets}. Fuzzy logic is a mathematical framework for 
   dealing with uncertainty and imprecision.
   The input and output variables in a fuzzy system are represented by fuzzy sets, which are collections of values with degrees of membership rather than tight boundaries. 
   The associations between the input variables and the output variables are then specified using fuzzy rules. 
   These rules are often represented as "if-then" statements, with the "if" section defining the input conditions and the "then" part defining the output actions.
-  Training fuzzy systems was not within the scope of this work. However, we propose testing our methods on them in the future works section (see \ref{sec:future_works}).
+  The training of fuzzy systems was not within the scope of this work. However, we propose testing our methods on them in the future works section (see \ref{sub:fuzzy}).
 
   \subsubsection{Linear regression}
     Sir Francis Galton proposed the idea of linear regression in 1894 \cite{Natural_Inheritance}.
@@ -219,7 +219,7 @@ on the turbine's model, manufacturer and sensors installed, we defined the datas
 
     \begin{figure}[H]
       \begin{center}
-        \includegraphics[scale=0.7]{Methods/Linear_regression.png}
+        \includegraphics[scale=0.5]{Methods/Linear_regression.png}
       \end{center}
       \caption{Example linear regression with one dependent variable: $Y = mX + b$, where m and b are constants}
       \label{fig:linear_regression}
@@ -235,7 +235,7 @@ on the turbine's model, manufacturer and sensors installed, we defined the datas
     Schlechtingen and Santos \cite{Schlechtingen} developed an FSRC linear condition monitoring model for the generator bearings' temperature.\\
     Although multiple linear regression models were also shown capable of fitting the data with high accuracy in many other applications (e.g., \cite{Linear_Regression_Example_1}), 
     they are, by definition, not capable of capturing more complex non-linear dependencies. In addition to that, linear regression may not be appropriate when there are a significant 
-    number of independent variables. Artificial Neural Networks (ANNs) may be a better approach in these situations.
+    number of independent variables. Artificial Neural Networks may be a better approach in these situations \cite{LNR_vs_ANN}.
 
 
   \subsubsection{Artificial Neural Networks}
@@ -251,22 +251,24 @@ on the turbine's model, manufacturer and sensors installed, we defined the datas
     \begin{equation}
       Y = f(\sum_{i=1}^n w_iX_i)
     \end{equation}
+
     The sigmoid function, the rectified linear unit (ReLU) function, and the hyperbolic tangent function are examples of common activation functions.
     Figure \ref{fig:Perceptron} shows a diagram of a perceptron.
 
-    \begin{figure}[H]
+    \begin{figure}[h]
       \begin{center}
-        \includegraphics[scale=0.4]{Methods/Perceptron.png}
+        \includegraphics[scale=0.3]{Methods/Perceptron.png}
       \end{center}
       \caption{Example perceptron with three inputs}
       \label{fig:Perceptron}
     \end{figure}
 
-    In the context of deep learning, an ANN consists of one input layer, one output layer and one or more \emph{hidden} layers.\\
-    A hidden layer is a layer of neurons that is not connected directly to either the input or output layers. 
+
+    In the context of deep learning, an ANN consists of one input layer, one output layer, and one or more \emph{hidden} layers.\\
+    A hidden layer is a layer of neurons that are not connected directly to either the input or output layers. 
     It is referred to as "hidden" because its neurons are not visible to the outside world, implying that its calculations are not directly apparent from input or output.\\
     Information goes from the input layer, through one or more hidden layers, and then to the output layer in a \emph{feedforward} neural network, which is a type of ANN. 
-    Each layer of neurons computes on the input data and sends the results to the next layer. The hidden layers extract and alter information from input data that can be 
+    Each layer of neurons runs computations on the input data and sends the results to the next layer. The hidden layers extract and alter information from input data that can be 
     utilized to make predictions or choices.\\
     The number of hidden layers in an ANN is a hyperparameter that can be tuned during the training process.
     The number of hidden layers and neurons in each layer is determined by the task's complexity, the amount of accessible data, and the required level of accuracy.\\
@@ -275,7 +277,7 @@ on the turbine's model, manufacturer and sensors installed, we defined the datas
     as an activation function in the hidden layers and a linear activation function (input = output) in the output layer. 
     The output of the ReLU activation function is zero for any negative input, and for any positive input, the output is equal to the input.
 
-    \begin{figure}[H]
+    \begin{figure}[h]
       \begin{center}
         \includegraphics[scale=0.4]{Methods/MLP_cropped.png}
       \end{center}
@@ -284,13 +286,21 @@ on the turbine's model, manufacturer and sensors installed, we defined the datas
       \label{fig:MLP}
     \end{figure}
 
-  \subsection{Reconstruction-based Anomaly detection}
+    \clearpage
+
+  \subsection{Reconstruction-based Anomaly Detection}
     The main idea behind training and improving normal behavior models is to allow our models to detect anomalies more accurately.
-    An anomaly is defined as an occurrence or observation that differs from what is expected, usual, or typical. 
-    By comparing the observed data to a reference set, such as historical data or a pre-defined model, anomalies can be found.
+    An anomaly is defined as an occurrence or observation that differs from what is expected, usual, or typical. There are several techniques 
+    in the research field that can be used to detect anomalies. Ruff et. al. \cite{Anomaly_Detection} provided a comprehensive review of different anomaly 
+    detection techniques which they divided into two groups: Shallow and Deep Methods. 
+    Shallow anomaly detection refers to the use of traditional machine learning algorithms such as One-Class Support Vector Machine (OCSVM), Principal Component Analysis (PCA), Isolation Forest, Local Outlier Factor (LOF) and more,
+    whereas deep anomaly detection refers to the use of deep learning algorithms such as Autoencoder, Variational Autoencoder (VAE), Generative Adversarial Networks (GANs) and other techniques. \\
+    In this work, we focus on Reconstruction-based anomaly detection techniques utilized by normal behavior models, which can be considered either shallow or deep depending on the 
+    architecture of the normal behavior model.
+    In reconstruction-based anomaly detection, by comparing the observed data to a reference set, such as historical data or a pre-defined model, anomalies can be found.
     Positive and negative anomalies are also possible. In the context of wind
     turbine condition monitoring and when mainly monitoring temperatures of the system, we focus on positive anomalies because a component that is 
-    overheating---due to wear and tear, oil leakage, faulty fan,\dots---is likely to fail. There is, however, no unified method in the research field to identify a data point 
+    overheating---due to wear and tear, oil leakage, faulty fan, or other reasons---is likely to fail. There is, however, no unified method in the research field to identify a data point 
     as an anomaly. Brandao et al. (\cite{Brandao_1}, \cite{Brandao_2}) used a fixed value of the mean absolute error as an anomaly threshold in their 
     gearbox and generator fault detection model, even though this number was particular and no longer valid following maintenance procedures. 
     Schlechtingen and Santos \cite{Schlechtingen} used daily average prediction errors in generator bearings temperature to trigger alarms. 
@@ -322,11 +332,11 @@ on the turbine's model, manufacturer and sensors installed, we defined the datas
     The way the independent variables are chosen is usually done by measuring the correlation coefficients between available features in a
     dataset and the target feature and then selecting the features having a high correlation coefficient. Depending on the problem setting, other features can be also considered 
     based on domain knowledge, especially when dealing with a mechanical system as in the case of this work. A good example of this would be the incorporation of 
-    the ambient temperature measurement as an input feature---even if it does not highly correlate with the target feature---to make sure that your model generalizes when 
+    the ambient temperature measurement as an input feature---even if it does not highly correlate with the target feature---to make sure that the model generalizes when 
     trying to predict a component's temperature throughout the year, by considering the effect of seasonality 
     (temperatures are expected to be higher in summer than in winter).\\
     In this work, we selected input features based on both domain knowledge and correlation coefficients. We used Kendall's method to measure the rank correlation \cite{Kendall}.
-    In contrast to Pearson's correlation coefficient, Kendall's rank correlation can capture both linear and non-linear dependency between two variables by 
+    In contrast to Pearson's correlation coefficient, Kendall's rank correlation can capture both linear and non-linear dependencies between two variables by 
     measuring the monotonic relationship \cite{corr_comp}. Kendall's correlation factor ($\tau$) is calculated as follows:
     \begin{equation}
       \tau = \frac{C-D}{C+D}
@@ -335,7 +345,7 @@ on the turbine's model, manufacturer and sensors installed, we defined the datas
     decrease in the same direction, whereas discordant pairings are observations in which the ranks of both variables increase or decrease in opposing ways.
     The value of $\tau$ can range from -1 to 1, with -1 indicating a perfect negative relationship, 0 indicating no relationship, and 1 indicating a perfect positive relationship.\\
     As a result of our analysis, alongside the generated log embeddings/features (discussed in Section \ref{sec:LA}), the following sensor signals were used as 
-    input features to the generator bearings normal behavior and condition monitoring models: 
+    input features to the generator bearings' normal behavior and condition monitoring models: 
     \emph{Average generator Revolutions Per Minute (RPM)}, \emph{Average temperature in the nacelle (\degree C)}, \emph{Total active power (Wh)} and 
     \emph{Average ambient temperature (\degree C)}. For the power curve condition monitoring models (discussed in \ref{subsub:PC}), 
     the \emph{Average windspeed within average timebase (m/s)} and \emph{Average ambient temperature (\degree C)} were the only features used to predict the power production values of 
@@ -347,7 +357,7 @@ on the turbine's model, manufacturer and sensors installed, we defined the datas
 \label{sec:LA}
 In this section, we will describe the different approaches we propose to utilize SCADA log messages and incorporate them into normal behavior models.\\
 Most machine-learning architectures can only work with vector-shaped numerical inputs. Given that there are limited resources in the research field on how to generate 
-numerical vectors from wind turbine SCADA system logs (see chapter \ref{chap:soa}), we introduce two methods that were proven capable of not only generating embeddings for 
+numerical vectors from wind turbine SCADA system logs (as discussed in the introduction section), we introduce two methods that were proven capable of not only generating embeddings for 
 machine-learning normal behavior models but also improving their accuracy (see chapter \ref{chap:experiments}): a domain-knowledge-based method and 
 utilizing an open-source framework for analyzing log data called LogPAI. We will discuss each method in detail.
 
@@ -357,7 +367,7 @@ utilizing an open-source framework for analyzing log data called LogPAI. We will
   \subsubsection{Creating log embeddings}
     We scanned through the different log messages available in the dataset looking for information that reflects the turbine state and might help the normal behavior model 
     fit the data more accurately. Since many normal behavior models monitor mechanical parts' temperature to mimic their thermal behavior, we narrowed the search down to operation and system logs
-    that reflect events causing a change of temperature in major components. We, then, ended up with a category of logs that shows the states of internal or external ventilators
+    that reflect events causing a change of temperature in major components. We, then, ended up with a category of logs that show the states of internal or external ventilators
     of some components (see table \ref{tab:logs}). Being parts of the cooling systems of major components, fans or ventilators affect the components' temperature significantly.
     Therefore, log messages related to these are promising candidates.
     \begin{table}[H]
@@ -384,23 +394,33 @@ utilizing an open-source framework for analyzing log data called LogPAI. We will
       \begin{center}
         \includegraphics[scale=0.65]{Methods/Vent_Signals.png}
       \end{center}
-      \caption{Generator internal vent control signals and their effect on the generator bearings temperature}
+      \caption{Generator internal vent control signals and their effect on the generator bearings' temperature}
       \label{fig:vent}
     \end{figure}
 
     Analyzing the log texts of interest (e.g., \emph{Gen. ext. vent. 2, temp:65\degree C}), we deduce that they provide three pieces of information: 
     1. Description of the ventilator (e.g., \emph{Gen. ext. vent.}), 2. State of the ventilator (\emph{0, 1, 2 or 3}), 
-    3. Temperature of the turbine component the ventilator is installed in (e.g., \emph{65\degree C}).
+    3. The temperature of the turbine component the ventilator is installed in (e.g., \emph{65\degree C}).
     Since the component temperature is regularly provided as a SCADA sensor signal, we decided to focus on the other two parts of the log messages. 
     Our proposed method simply filters log messages containing the word "vent." and creates a new feature for every ventilator found in the data having its state as a value.\\
     In contrast to the signals data fixed rate of occurrence (10 min), the generated log embeddings have an inconsistent frequency (the SCADA system creates a new log entry only 
     when a ventilator changes states). We join both datasets by taking the value of the last occurrence in the log embeddings vector within a 10-minute window relative to a signal reading.
     Gaps in the log feature columns in the resulting dataset are then filled by propagating the last valid observation forward to the next valid (a ventilator has the same state as long as it hasn't changed).
-    Figure \ref{fig:log-merge} demonstrates an example of the join operation described. Gaps occurring on the first records of the resulting dataset are, however, not filled by this 
+    Figure \ref{fig:log-merge} demonstrates an example of the join operation described. 
+
+    \begin{figure}[H]
+      \begin{center}
+        \includegraphics[scale=0.35]{Methods/Log_Merge.png}
+      \end{center}
+      \caption{Demonstration of the join operation between the signals 10-min dataset and a log embeddings vector}
+      \label{fig:log-merge}
+    \end{figure}
+
+    Gaps occurring on the first records of the resulting dataset are, however, not filled by this 
     method. These are then filled in the next step by taking an inverse value of the first-occurring non-empty value. This inverse value simply represents an estimation of 
     the previous state of a ventilator: e.g., 0 or 2 if the first recorded value was equal to 1. There are cases where the state of 
     a ventilator changes more than once in a 10-minute window. We handle those by calculating \emph{time-based weighted averages} in windows of 10 minutes and replace 
-    the values---representing the ventilator states---of those individual timeframes by the weighted averages. The Time-based Weighted Average (TWA) is calculated as follows:
+    the values---representing the ventilator states---of those individual timeframes with the weighted averages. The Time-based Weighted Average (TWA) is calculated as follows:
     \begin{equation}
       TWA = \sum_{i}^{n} v_i * w_i
     \end{equation}
@@ -417,15 +437,9 @@ utilizing an open-source framework for analyzing log data called LogPAI. We will
 
 
     Measuring the Kendall correlation factor between the generated log embeddings and all the signals of the turbines, we found that for every temperature signal, there is at least 
-    one log embeddings feature that, on average, highly correlates ($Rank>0.5$) with it.
+    one log embedding feature that, on average, highly correlates ($Rank>0.5$) with it.
 
-    \begin{figure}[H]
-      \begin{center}
-        \includegraphics[scale=0.35]{Methods/Log_Merge.png}
-      \end{center}
-      \caption{Demonstration of the join operation between the signals 10-min dataset and a log embeddings vector}
-      \label{fig:log-merge}
-    \end{figure}
+    
 
     \subsubsection{Data labeling and filtering}
     \label{subsub:PC}
@@ -440,7 +454,7 @@ utilizing an open-source framework for analyzing log data called LogPAI. We will
       From a condition monitoring perspective, being informed that the turbine is underperforming when in an operating state is crucial as it's a sign 
       of a potential failure in one or more of the turbine's components. That is why, we introduce this method that focuses on isolating the data points collected 
       from the turbine's SCADA system when it's in operative mode. Handling the effect of grid curtailment on the turbine's performance is beyond
-      the scope of this work, it's, however, discussed further in (TODO reference future works).\\
+      the scope of this work, it's, however, discussed further in Subsection \ref{sub:Curtailment} of the Future Works.\\
       
       We start by extracting the log messages that report the current state of operation; namely, logs containing one of the following regular expressions:
       \begin{bulletList}
@@ -460,8 +474,8 @@ utilizing an open-source framework for analyzing log data called LogPAI. We will
       will be filtered out. Those are also times when the turbine isn't necessarily underperforming but is gradually slowing down until it comes to a complete stop.
       One could argue that this proposed method could be simply replaced by filtering the data based on the turbine's rotor rotational speed 
       (if speed equals zero, then the turbine is not in operative mode). However, doing so wouldn't cover the transitional phases of the turbine, but simply 
-      filter out the data at times when the turbine wasn't spinning regardless of the reason. This includes times when the turbine isn't spinning 
-      due to a technical failure while in operation or due to low wind speeds.
+      filter out the data at times when the turbine wasn't spinning regardless of the reason. This also includes times when the turbine isn't spinning 
+      due to a technical failure while in operation or due to low wind speeds, which are of high interest when it comes to monitoring the turbine's state.
       
       \begin{figure}[H]
         \begin{center}
@@ -474,7 +488,7 @@ utilizing an open-source framework for analyzing log data called LogPAI. We will
       The log-based feature we introduced showed a clear improvement in the accuracy of power curve models (see experiment \ref{sec:Experiment IV}) when used to filter the data being input 
       to the normal behavior model (using data points having \emph{"Run"} as the state of operation exclusively). It also led to better results compared to 
       simply filtering by the rotor speed.
-     
+
 
     \subsubsection{Visualization of warnings}
     \label{subsub:vis_warnings}
@@ -491,7 +505,7 @@ utilizing an open-source framework for analyzing log data called LogPAI. We will
       (e.g., "Gen" for Generator and "Gear" for Gearbox). Figure \ref{fig:dashboard} shows an example of how these messages could be displayed 
       on a simple operation dashboard.
 
-      \begin{figure}[H]
+      \begin{figure}[h]
         \begin{center}
           \includegraphics[scale=0.08]{Methods/Dashboard.png}
         \end{center}
@@ -500,6 +514,7 @@ utilizing an open-source framework for analyzing log data called LogPAI. We will
         \label{fig:dashboard}
       \end{figure}
     
+      \clearpage
 
   \subsection{Utilizing LogPAI}
     LogPAI (Log Analytics Powered by AI) is a study project and open-source platform for analyzing and managing log data \cite{LogPAI}. 
@@ -576,8 +591,8 @@ utilizing an open-source framework for analyzing log data called LogPAI. We will
         \begin{equation}
           TF-IDF(t,d,D) = TF(t,d) * IDF(t,D)
         \end{equation}
-        where $t$ is a term in a document, $d$ a document in a collection of documents, $D$ the entire collection of documents, $TF(t,d)$ the term frequency of term $t$ in document $d$
-        (the number of times term $t$ appears in document $d$) and $IDF(t,D)$ the inverse document frequency of term $t$ across all documents in collection $D$, defined as:
+        where $t$ is a term in a document, $d$ is a document in a collection of documents, $D$ is the entire collection of documents, $TF(t,d)$ is the term frequency of term $t$ in document $d$
+        (the number of times term $t$ appears in document $d$) and $IDF(t,D)$ is the inverse document frequency of term $t$ across all documents in collection $D$, defined as:
         \begin{equation}
           IDF(t,D) = log(\frac{N}{df(t)})
         \end{equation}

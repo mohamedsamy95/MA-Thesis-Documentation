@@ -3,5 +3,109 @@
 
 \section{Conclusions}
 
+In this study, titled "Utilizing SCADA-Log Data to Improve Normal Behavior Models for Wind Turbine Condition Monitoring," 
+we aimed to leverage SCADA event log data to enhance the performance of condition-monitoring machine learning models, 
+improve anomaly detection, and provide valuable insights for wind turbine operation and maintenance. 
+This section presents the key findings and contributions of the research. \par
+
+Firstly, we successfully generated log embeddings based on the SCADA event log, which served as informative input features 
+for the condition monitoring machine learning models. The utilization of these log embeddings led to significant 
+improvements in the models' fitting to the target feature, enhancing their ability to detect anomalies. 
+The incorporation of SCADA-log data as input features demonstrated its effectiveness in improving the performance of 
+wind turbine condition monitoring systems. Two methods were employed to generate log embeddings as input features for machine learning models. \\
+The first method utilized domain knowledge, incorporating expert insights and understanding of wind turbine operations to develop the log embeddings. 
+This approach capitalized on the specific characteristics and patterns present in the SCADA event log data, allowing for an accurate representation of normal behavior. \\
+The second method involved the utilization of an open-source framework known as LogPAI, which facilitated the generation of log embeddings. 
+By employing this framework, the study leveraged existing resources and techniques, benefiting from the advancements in log analysis and embedding generation. 
+\par
+
+Furthermore, we implemented a method for labeling and filtering data used in power curve models, leveraging the SCADA event log. 
+By incorporating the insights gained from the log data, we were able to optimize the accuracy and reliability of power curve models, 
+contributing to more accurate predictions of wind turbine performance and improved decision-making processes in wind farm operations. \par
+
+In addition to the improvements in machine learning models and power curve modeling, we also developed a simple operation dashboard that visualizes 
+relevant warnings and alarms extracted from the SCADA event log. 
+This dashboard provides a comprehensive overview of the turbine's operational status and facilitates the timely identification of potential issues. 
+By highlighting relevant events and trends, it empowers operators to make informed decisions and take proactive measures to ensure the optimal performance 
+and maintenance of wind turbines. \par
+
+Overall, the findings of this study demonstrate the significant potential of utilizing SCADA event log data for wind turbine condition monitoring. 
+The integration of log embeddings as input features enhances the performance of machine learning models, while the utilization of SCADA data in power curve modeling 
+improves the accuracy of performance predictions. 
+Additionally, the developed operation dashboard allows for effective visualization and monitoring of relevant alarms and warnings. 
+These contributions collectively contribute to the advancement of wind turbine monitoring and maintenance practices, ultimately leading to increased operational efficiency and reduced downtime. \par
+
+The insights gained from this research lay the foundation for future studies in the field of wind turbine condition monitoring. 
+Further exploration of the potential of SCADA-log data integration, optimization of machine learning models, and the development of advanced visualization techniques can foster continued advancements in the industry.
+
 \section{Future Works}
 \label{sec:future_works}
+
+The preceding research has provided valuable insights into the utilization of SCADA-log data for improving normal behavior models in wind turbine condition monitoring. 
+However, several avenues for future exploration and development could contribute to further advancements in this field. 
+This section presents potential areas of focus for future research, aiming to expand the current knowledge and address the existing gaps. 
+By considering these future works, researchers and practitioners can continue to enhance the accuracy, robustness, and applicability of condition-monitoring techniques for wind turbines.
+
+\subsection{Expanding Dataset Size for Enhanced Model Training and Generalization}
+
+An important aspect to consider in future research is the expansion of the dataset used for training the condition monitoring models. 
+While the dataset utilized in this work provided valuable insights and yielded promising results, its size was inherently limited. 
+Therefore, one potential avenue for future exploration involves gathering a larger and more diverse dataset encompassing a wider range of wind turbine operational scenarios. \\
+
+By incorporating a larger dataset, the machine learning models can potentially capture a more comprehensive representation of the normal behavior patterns and variations present in wind turbine operations. 
+This increased data volume would allow for more robust training, improved generalization, and enhanced anomaly detection capabilities. \\
+
+To obtain a larger dataset, collaborative efforts among industry stakeholders, research institutions, and wind farm operators may be necessary. 
+Sharing anonymized SCADA-log data across multiple sites and leveraging international collaborations could facilitate the creation of a more extensive and representative dataset. \\
+
+Furthermore, the availability of a larger dataset would enable the evaluation and comparison of the proposed methods and techniques on a broader scale. 
+Robustness and reliability assessments could be conducted across multiple wind farm installations, considering variations in turbine models, geographical locations, and environmental conditions. 
+This would provide a more comprehensive understanding of the efficacy and potential limitations of the developed models and algorithms. \\
+
+Therefore, future research endeavors should prioritize the acquisition and utilization of larger datasets to refine and validate the proposed condition monitoring models. 
+By encompassing a broader range of operational scenarios, the models can be further optimized and their performance can be thoroughly evaluated, ultimately enhancing their practical applicability in real-world wind turbine condition monitoring systems.
+
+\subsection{Unveiling Deeper Insights through Domain-Knowledge-Based Analysis of SCADA-Log Data}
+Moreover, the domain-knowledge-based method employed for extracting log embeddings presents an opportunity for further analysis and extraction of additional insights from the SCADA-log data. 
+By delving deeper into the domain knowledge and refining the embedding extraction process, it is possible to uncover more intricate patterns and correlations within the data. 
+Future research should consider exploring advanced techniques, such as feature engineering or domain-specific preprocessing, to enhance the information captured by the log embeddings and extract deeper insights that can contribute to a more comprehensive understanding of wind turbine behavior and performance.
+
+\subsection{Incorporating Grid Curtailment Information to Enhance Labeling and Filtering in Power Curve Models}
+\label{sub:Curtailment}
+In addition, the domain-knowledge-based method employed for labeling and filtering data points in the application of power curve models 
+can be further enhanced by incorporating valuable information about grid curtailment, 
+which can be extracted from the SCADA log.
+By considering grid curtailment events, characterized by instances where the turbine's power output is deliberately limited due to grid constraints or other external factors, 
+the labeling and filtering process can be refined to account for these specific conditions. \\
+
+This additional information from the SCADA log about grid curtailment events can contribute to a more precise identification and 
+classification of data points in the power curve models. For example, the log event "External power ref.:1392kW" shows that the turbine 
+was curtailed and can only produce up to 1392 kW (instead of 2000 kW).
+By factoring in the influence of grid curtailment, the models can better capture the true normal behavior of the wind turbine under varying operational conditions, 
+resulting in improved accuracy and reliability.
+
+\subsection{Extending Methodology to Monitor Other Wind Turbine Components}
+Additionally, it is crucial to explore the applicability of the developed methods to components beyond the generator bearings. 
+While this study focused on the condition monitoring of generator bearings, there are other critical components within wind turbines that require monitoring for efficient and reliable operation. 
+Future research should aim to test and validate the proposed methods on various turbine components, such as gearbox, pitch system, yaw system, or tower structural elements, to assess their effectiveness and adaptability in detecting anomalies and predicting failures across the entire turbine system.
+
+\subsection{Potential Application of Fuzzy Systems as Normal Behavior Models}
+\label{sub:fuzzy}
+
+Furthermore, as part of future work, the exploration of fuzzy systems as alternative normal behavior models holds significant promise. 
+Fuzzy systems have demonstrated their effectiveness in capturing and representing complex and uncertain relationships in various domains \cite{SCADA_NBM_Review}. 
+By incorporating fuzzy logic and linguistic variables, these systems can provide a flexible and interpretable framework for modeling the normal behavior of wind turbines based on SCADA-log data. \\
+
+The utilization of fuzzy systems in wind turbine condition monitoring could offer advantages such as robustness to data variations and the ability to handle imprecise or incomplete information. 
+By integrating fuzzy systems into the existing framework, researchers and practitioners can further improve the accuracy and reliability of anomaly detection algorithms, enhancing the overall performance of condition monitoring systems. \\
+
+Exploring the feasibility and potential benefits of incorporating fuzzy systems as normal behavior models represents an intriguing avenue for future research in this field. 
+This would involve designing appropriate fuzzy rule sets, membership functions, and inference mechanisms tailored specifically to the characteristics of SCADA-log data and wind turbine operations. 
+Such investigations could deepen our understanding of the strengths and limitations of fuzzy systems in this context and contribute to the advancement of wind turbine condition monitoring techniques. \\
+
+Therefore, investigating the application of fuzzy systems as normal behavior models stands as an important direction for future research, with the potential to further enhance the effectiveness and reliability of condition monitoring approaches in the wind energy industry.
+
+\subsection{Applicability of Methods to Other SCADA-Enabled Systems}
+
+Finally, the methods developed in this study hold the potential for application beyond the specific domain of wind turbine condition monitoring. 
+Given the widespread use of SCADA systems across various industries, these methods can be tested and adapted to other systems that employ SCADA for data collection and monitoring purposes.

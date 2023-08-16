@@ -164,6 +164,13 @@ Kevin Leahy, Colm Gallagher, Ken Bruton, Peter O'Donovan and Dominic
   Stoppages Using SCADA and Alarms System Data: Case Study and Results}.
 \newblock volume 926, page 012011, 11 2017.
 
+\bibitem[Lee~2017]{LNR_vs_ANN}
+K.-Y Lee, K.-H Kim, J.-J Kang, S.-J Choi, Y.-S Im, Y.-D Lee and Y.-S Lim.
+\newblock {\em Comparison and analysis of linear regression \& artificial
+  neural network}.
+\newblock International Journal of Applied Engineering Research, vol.~12, pages
+  9820--9825, 01 2017.
+
 \bibitem[Letzgus~2020]{Letzgus_Log}
 Simon Letzgus.
 \newblock {\em Finding meaningful representations of SCADA-log information for
@@ -196,6 +203,12 @@ F.~Rosenblatt.
 \newblock {\em {The perceptron: A probabilistic model for information storage
   and organization in the brain.}}
 \newblock Psychological Review, vol.~65, no.~6, pages 386--408, 1958.
+
+\bibitem[Ruff~2021]{Anomaly_Detection}
+Lukas Ruff, Jacob Kauffmann, Robert Vandermeulen, Gregoire Montavon, Wojciech
+  Samek, Marius Kloft, Thomas Dietterich and Klaus-Robert Müller.
+\newblock {\em A Unifying Review of Deep and Shallow Anomaly Detection}.
+\newblock Proceedings of the IEEE, vol.~PP, pages 1--40, 02 2021.
 
 \bibitem[Schlechtingen~2011]{Schlechtingen}
 Meik Schlechtingen and Ilmar {Ferreira Santos}.
